@@ -1,0 +1,76 @@
+/* Contact Strip */
+.contact-strip {
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #eaeaea;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  align-items: stretch;
+}
+
+.contact-col {
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.contact-col.main-col {
+  padding-right: 48px;
+}
+
+.contact-col:not(:last-child) {
+  border-right: 1px solid #f0f0f0;
+}
+
+.icon-wrapper {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-info .small-heading {
+  color: var(--color-primary);
+  font-size: 11px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.contact-info h3 {
+  color: var(--color-primary);
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.contact-info h4 {
+  color: #111827;
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 2px;
+}
+
+.contact-info p {
+  color: var(--color-text-dark);
+  font-size: 11px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.contact-info p.time {
+  color: var(--color-text-light);
+  font-size: 11px;
+}
+
+@media (max-width: 1024px) {
+  .contact-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-col:not(:last-child) {
+    border-right: none;
+    border-bottom: 1px solid #f0f0f0;
+  }
+}

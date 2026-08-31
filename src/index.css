@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Colors */
+  --color-primary: #1c1366;
+  --color-primary-light: #2c2182;
+  --color-secondary: #2bb673;
+  --color-secondary-hover: #249961;
+  --color-text-dark: #333333;
+  --color-text-light: #666666;
+  --color-background: #ffffff;
+  --color-background-alt: #f4f6f9;
+  --color-border: #e5e5e5;
+  
+  /* Typography */
+  --font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-size-base: 16px;
+  --font-size-sm: 14px;
+  --font-size-lg: 18px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 36px;
+  --font-size-3xl: 48px;
+  --font-size-4xl: 64px;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+  
+  /* Utilities */
+  --border-radius: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-full: 9999px;
+  --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --box-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  color: var(--color-text-dark);
+  background-color: var(--color-background);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-primary);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--color-secondary);
+}
+
+/* Global utility classes */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md) var(--spacing-xl);
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  font-size: var(--font-size-base);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-light);
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow);
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-secondary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow);
+}

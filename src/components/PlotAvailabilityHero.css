@@ -1,0 +1,100 @@
+.plotavail-hero-section {
+  padding: 0;
+  background-color: #ffffff;
+  margin-top: 30px;
+}
+
+.plotavail-hero-banner {
+  position: relative;
+  width: 100%;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  background-image: url('https://images.unsplash.com/photo-1524813686514-a57563d77965?auto=format&fit=crop&q=80&w=1600'); /* Changed to a plot layout image */
+  background-size: cover;
+  background-position: center;
+}
+
+.plotavail-hero-banner .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(28, 19, 102, 1) 0%, rgba(28, 19, 102, 0.95) 40%, rgba(28, 19, 102, 0.4) 75%, rgba(28, 19, 102, 0) 100%);
+  z-index: 1;
+}
+
+.plotavail-hero-banner .container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.plotavail-hero-content {
+  padding: 60px 0;
+  width: 50%;
+}
+
+.plotavail-hero-content h1 {
+  color: #ffffff;
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.plotavail-hero-content .breadcrumbs {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.plotavail-hero-content .breadcrumb-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.plotavail-hero-content .breadcrumb-link:hover {
+  color: #1a8b38;
+}
+
+.plotavail-hero-content .breadcrumb-separator {
+  color: #ffffff;
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  opacity: 0.8;
+}
+
+.plotavail-hero-content .breadcrumb-current {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #2eac4d;
+}
+
+.plotavail-hero-content p {
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 1.6;
+  opacity: 0.95;
+  font-weight: 500;
+  max-width: 90%;
+}
+
+@media (max-width: 768px) {
+  .plotavail-hero-content {
+    width: 100%;
+    padding: 32px;
+  }
+
+  .plotavail-hero-banner .hero-overlay {
+    background: linear-gradient(to right, rgba(28, 19, 102, 0.95) 0%, rgba(28, 19, 102, 0.85) 100%);
+  }
+}

@@ -1,0 +1,22 @@
+import React from 'react';
+import Hero from '../components/Hero';
+import PropertySearch from '../components/PropertySearch';
+import PremiumProjects from '../components/PremiumProjects';
+import WhyChooseUs from '../components/WhyChooseUs';
+import PlotAvailability from '../components/PlotAvailability';
+import Testimonials from '../components/Testimonials';
+
+const Home = () => {
+  return (
+    <>
+      <Hero />
+      <PropertySearch />
+      <PremiumProjects />
+      <WhyChooseUs />
+      <PlotAvailability />
+      <Testimonials />
+    </>
+  );
+};
+
+export default Home;

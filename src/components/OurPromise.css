@@ -1,0 +1,179 @@
+.our-promise-section {
+  padding: 20px 0 20px 0;
+  background-color: #ffffff;
+}
+
+.promise-banner {
+  background-color: #f6f8fb;
+  /* Matches the very light bluish grey from mockup */
+  border-radius: 16px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  min-height: 220px;
+}
+
+.promise-image-wrapper {
+  flex: 0 0 25%;
+  position: relative;
+}
+
+.promise-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.promise-image-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -1px;
+  width: 250px;
+  height: 100%;
+  background: linear-gradient(to left, rgba(246, 248, 251, 1) 0%, rgba(246, 248, 251, 0.8) 30%, rgba(246, 248, 251, 0) 100%);
+  z-index: 2;
+}
+
+.promise-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 32px 32px 32px 10px;
+  background-color: #f6f8fb;
+  z-index: 3;
+}
+
+.promise-text-area {
+  flex: 0 0 28%;
+  padding-right: 32px;
+}
+
+.promise-text-area h2 {
+  color: var(--color-primary);
+  /* #1c1366 */
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.promise-text-area .divider-line {
+  width: 32px;
+  height: 3px;
+  background-color: #1a8b38;
+  margin-bottom: 12px;
+}
+
+.promise-text-area p {
+  color: #4b5563;
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.promise-text-area .team-sign {
+  color: #1a8b38;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.promise-stats-area {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.promise-stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.promise-stat:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background-color: rgba(0, 0, 0, 0.08);
+  /* Faint vertical divider line */
+}
+
+.promise-stat .stat-icon {
+  margin-bottom: 12px;
+}
+
+.promise-stat h3 {
+  color: var(--color-primary);
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.promise-stat span {
+  color: #4b5563;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+@media (max-width: 1024px) {
+  .promise-banner {
+    flex-direction: column;
+  }
+
+  .promise-image-wrapper {
+    height: 250px;
+  }
+
+  .promise-image-wrapper::after {
+    background: linear-gradient(to top, rgba(246, 248, 251, 1) 0%, rgba(246, 248, 251, 0) 100%);
+    width: 100%;
+    height: 100px;
+    bottom: -1px;
+    top: auto;
+    left: 0;
+  }
+
+  .promise-content {
+    flex-direction: column;
+    padding: 32px;
+  }
+
+  .promise-text-area {
+    margin-bottom: 40px;
+    text-align: center;
+    padding-right: 0;
+  }
+
+  .promise-text-area .divider-line {
+    margin: 12px auto;
+  }
+
+  .promise-stats-area {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  .promise-stat {
+    flex: 0 0 45%;
+  }
+
+  .promise-stat:not(:last-child)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .promise-stat {
+    flex: 0 0 100%;
+  }
+}

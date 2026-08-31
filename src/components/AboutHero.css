@@ -1,0 +1,233 @@
+.about-hero-section {
+  position: relative;
+  background-color: #ffffff;
+  padding-bottom: 60px;
+}
+
+.about-hero-top {
+  position: relative;
+  display: flex;
+  min-height: 500px;
+  align-items: center;
+  padding: 60px 0 120px 0; /* Extra padding at bottom so banner can overlap */
+}
+
+.about-hero-container {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  display: flex;
+}
+
+.about-hero-content {
+  width: 55%;
+  padding-right: 40px;
+}
+
+.about-hero-content .subtitle {
+  color: #1a8b38;
+  font-weight: 800;
+  font-size: 14px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px; /* Tighter */
+  letter-spacing: 0.5px;
+}
+
+.about-hero-content .title {
+  font-size: 46px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.about-hero-content .text-dark {
+  color: var(--color-primary); /* #1c1366 */
+}
+
+.about-hero-content .text-green {
+  color: #1a8b38;
+}
+
+.about-hero-content .description {
+  color: #4b5563;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 500;
+  max-width: 95%;
+}
+
+.about-hero-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50vw; /* Fills right half */
+  height: 100%;
+  z-index: 1;
+}
+
+.about-hero-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%; /* Even wider, smoother fade */
+  height: 100%;
+  background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9) 20%, rgba(255,255,255,0) 100%);
+  z-index: 2;
+}
+
+.about-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* --- Banner Styles --- */
+
+.about-features-banner {
+  background-color: var(--color-primary); /* #1c1366 */
+  border-radius: 16px;
+  display: flex;
+  margin-top: -80px; /* Overlaps exactly the bottom padding */
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.features-left {
+  flex: 0 0 45%;
+  padding: 40px 48px;
+  position: relative;
+}
+
+.features-left::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 80px;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.features-left h3 {
+  color: white;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.divider-line {
+  width: 40px;
+  height: 3px;
+  background-color: #1a8b38;
+  margin-bottom: 16px;
+}
+
+.features-left p {
+  color: #d1d5db;
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.features-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 24px;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  flex: 1;
+  position: relative;
+}
+
+.feature-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 80px;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.feature-item span {
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .about-hero-content {
+    width: 60%;
+  }
+  .about-hero-image {
+    width: 45vw;
+  }
+  .about-features-banner {
+    flex-direction: column;
+  }
+  .features-left {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero-top {
+    flex-direction: column;
+    padding-bottom: 0;
+  }
+  .about-hero-container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .about-hero-content {
+    width: 100%;
+    padding-right: 0;
+  }
+  .about-hero-content .title {
+    font-size: 36px;
+  }
+  .about-hero-image {
+    position: relative;
+    width: 100vw;
+    height: 300px;
+  }
+  .about-features-banner {
+    margin-top: -50px;
+  }
+  .features-right {
+    flex-wrap: wrap;
+    gap: 32px 0;
+  }
+  .feature-item {
+    flex: 0 0 50%;
+  }
+  .feature-item:nth-child(2)::after,
+  .feature-item:last-child::after {
+    display: none;
+  }
+}

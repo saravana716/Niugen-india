@@ -1,0 +1,92 @@
+.gallery-contact-banner {
+  background-color: var(--color-primary);
+  border-radius: 12px;
+  padding: 40px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 80px;
+}
+
+.gcb-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.gcb-text h4 {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.gcb-text p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.gcb-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.gcb-right .btn-solid-green {
+  display: flex;
+  align-items: center;
+  background-color: #1a8b38;
+  color: #ffffff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.gcb-right .btn-solid-green:hover {
+  background-color: #146c2b;
+}
+
+.gcb-right .btn-outline-white {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gcb-right .btn-outline-white:hover {
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 1024px) {
+  .gallery-contact-banner {
+    flex-direction: column;
+    gap: 32px;
+    text-align: center;
+    padding: 32px;
+  }
+  .gcb-left {
+    flex-direction: column;
+  }
+  .gcb-right {
+    flex-direction: column;
+    width: 100%;
+  }
+  .gcb-right button {
+    width: 100%;
+    justify-content: center;
+  }
+}

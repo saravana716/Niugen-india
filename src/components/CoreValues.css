@@ -1,0 +1,84 @@
+.core-values-section {
+  padding: 0px 0;
+  background-color: #ffffff;
+}
+
+.core-values-header h2 {
+  color: var(--color-primary);
+  /* #1c1366 */
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.core-values-header .divider-line {
+  width: 40px;
+  height: 3px;
+  background-color: #1a8b38;
+  margin-bottom: 40px;
+}
+
+.core-values-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.core-value-card {
+  background-color: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  padding: 32px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.core-value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  border-color: #d1d5db;
+}
+
+.core-value-card .icon-wrapper {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.core-value-card h4 {
+  color: var(--color-primary);
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.core-value-card p {
+  color: #4b5563;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 500;
+  margin: 0;
+}
+
+@media (max-width: 1200px) {
+  .core-values-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .core-values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .core-values-grid {
+    grid-template-columns: 1fr;
+  }
+}

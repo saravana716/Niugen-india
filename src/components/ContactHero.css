@@ -1,0 +1,165 @@
+.contact-hero-section {
+  padding: 0;
+  background-color: #ffffff;
+  margin-top: 30px;
+}
+
+.contact-hero-banner {
+  position: relative;
+  width: 100%;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  background-image: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=1600'); /* Architecture background */
+  background-size: cover;
+  background-position: center;
+}
+
+.contact-hero-banner .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(28, 19, 102, 1) 0%, rgba(28, 19, 102, 0.95) 30%, rgba(28, 19, 102, 0.7) 60%, rgba(28, 19, 102, 0.4) 100%);
+  z-index: 1;
+}
+
+.contact-hero-banner .container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.contact-hero-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.contact-hero-content {
+  padding: 60px 0;
+  width: 40%;
+}
+
+.contact-hero-content h1 {
+  color: #ffffff;
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.contact-hero-content .text-green {
+  color: #4ade80;
+}
+
+.contact-hero-content .breadcrumbs {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.contact-hero-content .breadcrumb-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-hero-content .breadcrumb-link:hover {
+  color: #1a8b38;
+}
+
+.contact-hero-content .breadcrumb-separator {
+  color: #ffffff;
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  opacity: 0.8;
+}
+
+.contact-hero-content .breadcrumb-current {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #2eac4d;
+}
+
+.contact-hero-content p {
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 1.6;
+  opacity: 0.95;
+  font-weight: 500;
+  max-width: 90%;
+}
+
+/* Right Badge Box */
+.contact-hero-badges {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 32px;
+  width: 55%;
+  background-color: rgba(28, 19, 102, 0.4);
+  backdrop-filter: blur(4px);
+}
+
+.badge-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.badge-icon {
+  color: #ffffff;
+}
+
+.badge-text {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.badge-divider {
+  width: 1px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 1024px) {
+  .contact-hero-layout {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .contact-hero-content {
+    width: 100%;
+    padding: 40px 0 20px;
+  }
+  .contact-hero-badges {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-hero-badges {
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px;
+  }
+  .badge-divider {
+    width: 100%;
+    height: 1px;
+  }
+}

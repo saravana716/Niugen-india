@@ -1,0 +1,129 @@
+.our-process-section {
+  padding: 0 0 80px 0;
+  background-color: #f7f9fc;
+}
+
+.process-container {
+  background-color: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 16px;
+  padding: 48px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02);
+}
+
+.process-title {
+  text-align: center;
+  color: var(--color-primary);
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 50px;
+}
+
+.process-title span {
+  color: #1a8b38;
+}
+
+.process-flow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.process-step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding: 0 16px;
+}
+
+.process-icon-wrapper {
+  position: relative;
+  margin-bottom: 24px;
+  z-index: 2;
+}
+
+.process-icon {
+  width: 100px;
+  height: 100px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.step-number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  background-color: #1a8b38;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  z-index: 3;
+}
+
+.process-arrow {
+  position: absolute;
+  top: 50px;
+  left: calc(50% + 50px);
+  width: calc(100% - 100px);
+  height: 2px;
+  border-top: 2px dashed rgba(26, 139, 56, 0.4); /* Faint dashed green line */
+  z-index: 1;
+}
+
+.process-arrow::after {
+  content: '';
+  position: absolute;
+  right: -4px;
+  top: -5px;
+  border: solid rgba(26, 139, 56, 0.8);
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 4px;
+  transform: rotate(-45deg);
+}
+
+.process-step h4 {
+  color: var(--color-primary);
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.process-step p {
+  color: #4b5563;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .process-arrow {
+    display: none; /* Hide arrows on smaller screens when wrapping */
+  }
+  .process-flow {
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  .process-step {
+    flex: 0 0 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .process-step {
+    flex: 0 0 100%;
+  }
+}

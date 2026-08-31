@@ -1,0 +1,210 @@
+.plot-availability-section {
+  padding: 0 0 var(--spacing-3xl) 0;
+  background-color: var(--color-background);
+}
+
+.plot-banner {
+  background-color: var(--color-primary);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 32px;
+  margin-bottom: 24px;
+}
+
+.plot-content {
+  flex: 0 0 35%;
+  padding-right: 24px;
+}
+
+.plot-content .subtitle {
+  color: #2bb673;
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.plot-content .title {
+  color: white;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.plot-content .description {
+  color: #e2e8f0;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 24px;
+  max-width: 95%;
+}
+
+.plot-content .legend {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.color-box {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.color-box.available {
+  background-color: #2bb673;
+}
+
+.color-box.booked {
+  background-color: #fbbf24;
+}
+
+.color-box.sold {
+  background-color: #ef4444;
+}
+
+.plot-btn {
+  background-color: #1a8b38;
+  color: white;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  font-size: 11px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-transform: uppercase;
+}
+
+.plot-btn:hover {
+  background-color: #15752e;
+}
+
+.plot-image-wrapper {
+  flex: 0 0 65%;
+  height: 100%;
+}
+
+.plot-image {
+  background: white;
+  padding: 8px;
+  border-radius: 8px;
+  height: 280px;
+}
+
+.plot-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Contact Strip */
+.contact-strip {
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #eaeaea;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  align-items: stretch;
+}
+
+.contact-col {
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.contact-col.main-col {
+  padding-right: 48px;
+}
+
+.contact-col:not(:last-child) {
+  border-right: 1px solid #f0f0f0;
+}
+
+.icon-wrapper {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-info .small-heading {
+  color: var(--color-primary);
+  font-size: 11px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.contact-info h3 {
+  color: var(--color-primary);
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.contact-info h4 {
+  color: #111827;
+  /* Darker near black for phone numbers */
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 2px;
+}
+
+.contact-info p {
+  color: var(--color-text-dark);
+  font-size: 11px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.contact-info p.time {
+  color: var(--color-text-light);
+  font-size: 11px;
+}
+
+@media (max-width: 1024px) {
+  .plot-banner {
+    flex-direction: column;
+    padding: 32px;
+    gap: 32px;
+  }
+
+  .plot-content,
+  .plot-image-wrapper {
+    flex: 1 1 100%;
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .contact-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-col:not(:last-child) {
+    border-right: none;
+    border-bottom: 1px solid #f0f0f0;
+  }
+}
