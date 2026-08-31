@@ -8,7 +8,7 @@ const ContactSection = () => {
         <div className="contact-grid">
           
           {/* Column 1: Get In Touch */}
-          <div className="contact-col">
+          <div className="contact-page-col">
             <div className="col-header">
               <h2>Get In Touch</h2>
               <div className="title-underline"></div>
@@ -73,7 +73,7 @@ const ContactSection = () => {
           </div>
 
           {/* Column 2: Contact Information */}
-          <div className="contact-col">
+          <div className="contact-page-col">
             <div className="col-header">
               <h2>Contact Information</h2>
               <div className="title-underline"></div>
@@ -89,7 +89,7 @@ const ContactSection = () => {
                 </div>
                 <div className="info-text">
                   <h5>Call Us</h5>
-                  <p className="primary-text">+91 87540 45000</p>
+                  <p className="primary-text">+91 63853 84189</p>
                   <p className="sub-text">Mon - Sat (9:00 AM - 7:00 PM)</p>
                 </div>
               </div>
@@ -103,7 +103,7 @@ const ContactSection = () => {
                 </div>
                 <div className="info-text">
                   <h5>Email Us</h5>
-                  <p className="primary-text">info@niugeninfras.com</p>
+                  <p className="primary-text">elevatedigitechnologies@gmail.com</p>
                   <p className="sub-text">We reply within 24 hours</p>
                 </div>
               </div>
@@ -118,7 +118,7 @@ const ContactSection = () => {
                 <div className="info-text">
                   <h5>Visit Us</h5>
                   <p className="primary-text address-text">
-                    123, Niu Gen Tower, Anna Salai,<br/>Kovilpatti, Tamil Nadu - 628501
+                    Kovilpatti, Tamil Nadu, India
                   </p>
                 </div>
               </div>
@@ -145,7 +145,7 @@ const ContactSection = () => {
           </div>
 
           {/* Column 3: Office Image */}
-          <div className="contact-col img-col">
+          <div className="contact-page-col img-col">
             <img 
               src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=600" 
               alt="Niu Gen Office" 

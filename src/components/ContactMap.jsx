@@ -20,8 +20,9 @@ const ContactMap = () => {
               </svg>
             </div>
             <div className="map-card-text">
-              <h6>Niu Gen India Infras</h6>
-              <p>123, Niu Gen Tower, Anna Salai,<br/>Kovilpatti, Tamil Nadu - 628501</p>
+              <h6>Elevate Digi Technologies</h6>
+              <p style={{fontSize: '11px', color: '#1a8b38', marginBottom: '4px'}}>Website Development | Mobile Apps | Branding | Digital Marketing</p>
+              <p>Kovilpatti, Tamil Nadu, India</p>
             </div>
           </div>
         </div>

@@ -32,7 +32,7 @@ const AboutContactBanner = () => {
             </div>
             <div className="contact-text">
               <span className="subtitle">Call Us Now</span>
-              <h4>+91 87540 45000</h4>
+              <h4>+91 63853 84189</h4>
               <p className="time">Mon - Sat (9:00 AM - 7:00 PM)</p>
             </div>
           </div>
@@ -45,7 +45,7 @@ const AboutContactBanner = () => {
             </div>
             <div className="contact-text">
               <span className="subtitle">Chat on WhatsApp</span>
-              <h4>+91 87540 45000</h4>
+              <h4>+91 63853 84189</h4>
               <p className="time">We reply instantly</p>
             </div>
           </div>
