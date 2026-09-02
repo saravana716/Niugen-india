@@ -8,7 +8,7 @@ const Projects = () => {
     <div className="projects-page">
       <ProjectsHero />
       <ProjectsList />
-      <div className="container" style={{ paddingBottom: '40px' }}>
+      <div className="container" style={{ paddingBottom: '0px' }}>
         <ContactStrip />
       </div>
     </div>
