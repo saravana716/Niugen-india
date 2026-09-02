@@ -8,7 +8,7 @@ const PlotAvailabilityPage = () => {
     <div className="plot-availability-page">
       <PlotAvailabilityHero />
       <InteractivePlotMap />
-      <div className="container" style={{ paddingBottom: '80px' }}>
+      <div className="container contact-strip-container">
         <ContactStrip />
       </div>
     </div>

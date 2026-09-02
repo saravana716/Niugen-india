@@ -74,3 +74,25 @@
     border-bottom: 1px solid #f0f0f0;
   }
 }
+
+@media (max-width: 768px) {
+  .contact-col.main-col {
+    padding-right: 24px;
+  }
+  
+  .contact-col {
+    padding: 20px;
+    gap: 12px;
+  }
+}
+
+/* Container spacing when used outside of standard sections */
+.contact-strip-container {
+  padding-bottom: 80px;
+}
+
+@media (max-width: 768px) {
+  .contact-strip-container {
+    padding-bottom: 24px;
+  }
+}

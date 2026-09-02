@@ -93,12 +93,32 @@
 }
 
 @media (max-width: 768px) {
+  .gallery-hero-banner {
+    min-height: 200px;
+  }
+
   .gallery-hero-content {
     width: 100%;
-    padding: 32px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .gallery-hero-content h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+
+  .gallery-hero-content .breadcrumbs {
+    margin-bottom: 12px;
+    font-size: 12px;
+  }
+
+  .gallery-hero-content p {
+    font-size: 13px;
+    line-height: 1.4;
   }
 
   .gallery-hero-banner .hero-overlay {
-    background: linear-gradient(to right, rgba(74, 44, 23, 0.95) 0%, rgba(74, 44, 23, 0.85) 100%);
+    background: linear-gradient(to right, rgba(74, 44, 23, 0.95) 0%, rgba(74, 44, 23, 0.75) 100%);
   }
 }

@@ -89,12 +89,32 @@
 }
 
 @media (max-width: 768px) {
+  .projects-hero-banner {
+    min-height: 200px; /* Reduced height further */
+  }
+
   .projects-hero-content {
     width: 100%;
-    padding: 32px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .projects-hero-content h1 {
+    font-size: 28px; /* Smaller font */
+    margin-bottom: 8px; /* Reduced margin */
+  }
+  
+  .breadcrumbs {
+    margin-bottom: 12px; /* Reduced margin */
+    font-size: 12px;
+  }
+
+  .projects-hero-content p {
+    font-size: 13px; /* Smaller description font */
+    line-height: 1.4;
   }
 
   .hero-overlay {
-    background: linear-gradient(to right, rgba(74, 44, 23, 0.95) 0%, rgba(74, 44, 23, 0.85) 100%);
+    background: linear-gradient(to right, rgba(74, 44, 23, 0.95) 0%, rgba(74, 44, 23, 0.75) 100%);
   }
 }

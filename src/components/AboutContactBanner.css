@@ -110,3 +110,44 @@
     width: 100%;
   }
 }
+
+@media (max-width: 768px) {
+  .about-contact-banner {
+    padding: 24px 20px;
+    gap: 20px;
+  }
+
+  .contact-col-main h3 {
+    font-size: 22px;
+    margin-bottom: 4px;
+  }
+
+  .contact-col-main p {
+    font-size: 13px;
+  }
+  
+  .contact-col-phone h4,
+  .contact-col-whatsapp h4 {
+    font-size: 17px;
+    white-space: normal;
+    word-break: break-word;
+    margin-bottom: 2px;
+  }
+
+  .contact-col-phone p.time,
+  .contact-col-whatsapp p.time {
+    font-size: 12px;
+    white-space: normal;
+  }
+
+  .contact-icon-circle {
+    width: 44px;
+    height: 44px;
+    margin-right: 12px;
+  }
+  
+  .contact-icon-circle svg {
+    width: 20px;
+    height: 20px;
+  }
+}

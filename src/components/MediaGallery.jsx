@@ -22,6 +22,7 @@ const filterTabs = ['All', 'Villa Plots', 'Residential Projects', 'Amenities', '
 
 const MediaGallery = () => {
   const [activeTab, setActiveTab] = useState('All');
+  const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState(null);
 
   return (
@@ -34,16 +35,31 @@ const MediaGallery = () => {
             <h2 className="section-title">Project Gallery</h2>
             <div className="title-underline"></div>
           </div>
-          <div className="gallery-filters">
-            {filterTabs.map(tab => (
-              <button 
-                key={tab} 
-                className={`gallery-filter-btn ${activeTab === tab ? 'active' : ''}`}
-                onClick={() => setActiveTab(tab)}
-              >
-                {tab}
+          
+          <div className="gallery-filter-wrapper">
+            {/* Desktop Filters */}
+            <div className="gallery-filters desktop-only">
+              {filterTabs.map(tab => (
+                <button 
+                  key={tab} 
+                  className={`gallery-filter-btn ${activeTab === tab ? 'active' : ''}`}
+                  onClick={() => setActiveTab(tab)}
+                >
+                  {tab}
+                </button>
+              ))}
+            </div>
+
+            {/* Mobile Filter Button */}
+            <div className="mobile-only">
+              <button className="mobile-filter-btn" onClick={() => setIsFilterModalOpen(true)}>
+                <span>Filter Gallery</span>
+                <span className="filter-badge">{activeTab}</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 6H21M7 12H17M10 18H14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
               </button>
-            ))}
+            </div>
           </div>
         </div>
 
@@ -122,6 +138,40 @@ const MediaGallery = () => {
               ></iframe>
             </div>
             <h3 className="modal-video-title">{selectedVideo.title}</h3>
+          </div>
+        </div>
+      )}
+
+      {/* Mobile Filter Modal */}
+      {isFilterModalOpen && (
+        <div className="mobile-filter-overlay" onClick={() => setIsFilterModalOpen(false)}>
+          <div className="mobile-filter-bottom-sheet" onClick={e => e.stopPropagation()}>
+            <div className="bottom-sheet-header">
+              <h3>Filter Gallery</h3>
+              <button className="close-sheet-btn" onClick={() => setIsFilterModalOpen(false)}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+            <div className="bottom-sheet-content">
+              {filterTabs.map(tab => (
+                <button
+                  key={tab}
+                  className={`sheet-filter-option ${activeTab === tab ? 'selected' : ''}`}
+                  onClick={() => {
+                    setActiveTab(tab);
+                    setIsFilterModalOpen(false);
+                  }}
+                >
+                  <div className="option-label">{tab}</div>
+                  <div className="radio-circle">
+                    {activeTab === tab && <div className="radio-inner"></div>}
+                  </div>
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       )}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import './PremiumProjects.css';
 
 const projects = [
@@ -49,6 +49,28 @@ const projects = [
 ];
 
 const PremiumProjects = () => {
+  const scrollRef = useRef(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (scrollRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+        // Only auto-scroll if it's scrollable (i.e., on mobile slider)
+        if (scrollWidth > clientWidth) {
+          if (scrollLeft + clientWidth >= scrollWidth - 10) {
+            scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+          } else {
+            // Scroll exactly one card width. Assuming card width ~280px + gap
+            // clientWidth is a safe scrolling step.
+            scrollRef.current.scrollBy({ left: clientWidth, behavior: 'smooth' });
+          }
+        }
+      }
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="premium-projects">
       <div className="container">
@@ -67,7 +89,7 @@ const PremiumProjects = () => {
           </div>
         </div>
 
-        <div className="projects-grid">
+        <div className="projects-grid" ref={scrollRef}>
           {projects.map((project) => (
             <div key={project.id} className="project-card">
               <div className="card-image">

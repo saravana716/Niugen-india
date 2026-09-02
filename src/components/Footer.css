@@ -167,6 +167,7 @@
   }
 
   .footer-col,
+  .footer-col:not(:first-child),
   .footer-col:first-child,
   .footer-col:last-child {
     padding: 0;

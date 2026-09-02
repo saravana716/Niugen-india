@@ -6,6 +6,11 @@ import './Navbar.css';
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const handleNavClick = () => {
+    setIsMobileMenuOpen(false);
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  };
+
   return (
     <>
       {/* Top Header Bar */}
@@ -61,16 +66,16 @@ const Navbar = () => {
 
           <div className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>
             <div className="nav-links">
-              <NavLink to="/" className="nav-item" end>HOME</NavLink>
-              <NavLink to="/about" className="nav-item">ABOUT US</NavLink>
-              <NavLink to="/projects" className="nav-item has-dropdown">
+              <NavLink to="/" className="nav-item" end onClick={handleNavClick}>HOME</NavLink>
+              <NavLink to="/about" className="nav-item" onClick={handleNavClick}>ABOUT US</NavLink>
+              <NavLink to="/projects" className="nav-item has-dropdown" onClick={handleNavClick}>
                 PROJECTS
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '2px', marginTop: '2px' }}><polyline points="6 9 12 15 18 9"></polyline></svg>
               </NavLink>
-              <NavLink to="/plot-availability" className="nav-item">PLOT AVAILABILITY</NavLink>
-              <NavLink to="/services" className="nav-item">SERVICES</NavLink>
-              <NavLink to="/gallery" className="nav-item">GALLERY</NavLink>
-              <NavLink to="/contact" className="nav-item">CONTACT US</NavLink>
+              <NavLink to="/plot-availability" className="nav-item" onClick={handleNavClick}>PLOT AVAILABILITY</NavLink>
+              <NavLink to="/services" className="nav-item" onClick={handleNavClick}>SERVICES</NavLink>
+              <NavLink to="/gallery" className="nav-item" onClick={handleNavClick}>GALLERY</NavLink>
+              <NavLink to="/contact" className="nav-item" onClick={handleNavClick}>CONTACT US</NavLink>
             </div>
             <button className="btn btn-primary enquire-btn">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>

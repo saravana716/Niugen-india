@@ -198,10 +198,12 @@
 @media (max-width: 768px) {
   .about-hero-top {
     flex-direction: column;
+    padding-top: 20px;
     padding-bottom: 0;
+    min-height: auto;
   }
   .about-hero-container {
-    padding-top: 40px;
+    padding-top: 0;
     padding-bottom: 40px;
   }
   .about-hero-content {

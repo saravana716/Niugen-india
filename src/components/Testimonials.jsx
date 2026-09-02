@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import './Testimonials.css';
 
 const testimonials = [
@@ -26,6 +26,26 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+  const scrollRef = useRef(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (scrollRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+        // Only auto-scroll if it's scrollable (i.e., on mobile slider)
+        if (scrollWidth > clientWidth) {
+          if (scrollLeft + clientWidth >= scrollWidth - 10) {
+            scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+          } else {
+            scrollRef.current.scrollBy({ left: clientWidth, behavior: 'smooth' });
+          }
+        }
+      }
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="testimonials-section">
       <div className="container">
@@ -51,7 +71,7 @@ const Testimonials = () => {
             </svg>
           </button>
           
-          <div className="testimonials-grid">
+          <div className="testimonials-grid" ref={scrollRef}>
             {testimonials.map((t) => (
               <div key={t.id} className="testimonial-card">
                 <div className="testimonial-content">

@@ -191,8 +191,31 @@
 }
 
 @media (max-width: 768px) {
+  .premium-projects {
+    padding: 40px 0;
+  }
+
   .premium-projects .projects-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: var(--spacing-md);
+    padding-bottom: var(--spacing-lg);
+    -webkit-overflow-scrolling: touch;
+    /* Hide scrollbar for a cleaner look */
+    scrollbar-width: none;
+  }
+  
+  .premium-projects .projects-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .project-card {
+    min-width: 100%;
+    width: 100%;
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    box-sizing: border-box;
   }
 
   .premium-projects .section-header {

@@ -66,23 +66,34 @@ const projectsData = [
 
 const ProjectsList = () => {
   const [activeTab, setActiveTab] = useState('All Projects');
+  const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   const tabs = ['All Projects', 'Ongoing', 'New Launch', 'Upcoming', 'Completed'];
 
   return (
     <section className="projects-list-section">
       <div className="container">
         
-        {/* Filter Tabs */}
-        <div className="projects-filter">
-          {tabs.map(tab => (
-            <button 
-              key={tab} 
-              className={`filter-tab ${activeTab === tab ? 'active' : ''}`}
-              onClick={() => setActiveTab(tab)}
-            >
-              {tab}
-            </button>
-          ))}
+        {/* Filter Tabs & Modal Container */}
+        <div className="projects-filter-container">
+          
+          {/* Desktop Filters */}
+          <div className="projects-filter desktop-only">
+            {tabs.map(tab => (
+              <button 
+                key={tab} 
+                className={`filter-tab ${activeTab === tab ? 'active' : ''}`}
+                onClick={() => setActiveTab(tab)}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
+
+          {/* Mobile Filter Button */}
+          <button className="mobile-filter-btn mobile-only" onClick={() => setIsFilterModalOpen(true)}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+            Filter: {activeTab}
+          </button>
         </div>
 
         {/* Projects List */}
@@ -176,8 +187,38 @@ const ProjectsList = () => {
             </button>
           </div>
         </div>
-
       </div>
+
+      {/* Mobile Filter Modal */}
+      {isFilterModalOpen && (
+        <div className="filter-modal-overlay" onClick={() => setIsFilterModalOpen(false)}>
+          <div className="filter-modal-content" onClick={e => e.stopPropagation()}>
+            <div className="filter-modal-header">
+              <h3>Filter Projects</h3>
+              <button className="close-modal-btn" onClick={() => setIsFilterModalOpen(false)}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              </button>
+            </div>
+            <div className="filter-modal-options">
+              {tabs.map(tab => (
+                <button 
+                  key={tab} 
+                  className={`filter-modal-option ${activeTab === tab ? 'active' : ''}`}
+                  onClick={() => {
+                    setActiveTab(tab);
+                    setIsFilterModalOpen(false);
+                  }}
+                >
+                  {tab}
+                  {activeTab === tab && (
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  )}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

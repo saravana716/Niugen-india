@@ -131,4 +131,42 @@
   .process-step {
     flex: 0 0 100%;
   }
+
+  .process-container {
+    padding: 32px 20px;
+  }
+
+  .process-title {
+    font-size: 22px;
+    margin-bottom: 32px;
+  }
+
+  .process-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .process-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .step-number {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+  }
+
+  .process-icon-wrapper {
+    margin-bottom: 16px;
+  }
+
+  .process-step h4 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .process-step p {
+    font-size: 13px;
+  }
 }

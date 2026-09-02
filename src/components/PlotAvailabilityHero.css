@@ -89,12 +89,32 @@
 }
 
 @media (max-width: 768px) {
+  .plotavail-hero-banner {
+    min-height: 200px;
+  }
+
   .plotavail-hero-content {
     width: 100%;
-    padding: 32px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .plotavail-hero-content h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+  
+  .plotavail-hero-content .breadcrumbs {
+    margin-bottom: 12px;
+    font-size: 12px;
+  }
+
+  .plotavail-hero-content p {
+    font-size: 13px;
+    line-height: 1.4;
   }
 
   .plotavail-hero-banner .hero-overlay {
-    background: linear-gradient(to right, rgba(74, 44, 23, 0.95) 0%, rgba(74, 44, 23, 0.85) 100%);
+    background: linear-gradient(to right, rgba(74, 44, 23, 0.95) 0%, rgba(74, 44, 23, 0.75) 100%);
   }
 }
