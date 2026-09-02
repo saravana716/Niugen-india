@@ -23,7 +23,7 @@
 }
 
 .services-hero-text .subtitle {
-  color: #1a8b38;
+  color: var(--color-primary-light);
   font-weight: 800;
   font-size: 14px;
   letter-spacing: 0.5px;
@@ -32,7 +32,7 @@
 }
 
 .services-hero-text h2 {
-  color: var(--color-primary);
+  color: var(--color-text-dark);
   font-size: 42px;
   font-weight: 800;
   line-height: 1.2;
@@ -40,7 +40,7 @@
 }
 
 .services-hero-text h2 span {
-  color: #1a8b38;
+  color: var(--color-primary-light);
 }
 
 .services-hero-text p {

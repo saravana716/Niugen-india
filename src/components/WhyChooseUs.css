@@ -12,7 +12,7 @@
 
 /* Left Column - Content */
 .why-choose-us .subtitle {
-  color: #1a8b38;
+  color: var(--color-text-dark);
   font-weight: 700;
   font-size: 12px;
   text-transform: uppercase;
@@ -157,7 +157,7 @@
 }
 
 .why-choose-us .stat-icon.green svg {
-  color: #1a8b38;
+  color: var(--color-primary);
 }
 
 .why-choose-us .stat-icon.blue svg {

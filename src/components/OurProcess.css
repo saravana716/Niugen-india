@@ -20,7 +20,7 @@
 }
 
 .process-title span {
-  color: #1a8b38;
+  color: var(--color-primary-light);
 }
 
 .process-flow {
@@ -62,7 +62,7 @@
   left: 0;
   width: 28px;
   height: 28px;
-  background-color: #1a8b38;
+  background-color: var(--color-primary-light);
   color: #ffffff;
   border-radius: 50%;
   display: flex;
@@ -79,16 +79,18 @@
   left: calc(50% + 50px);
   width: calc(100% - 100px);
   height: 2px;
-  border-top: 2px dashed rgba(26, 139, 56, 0.4); /* Faint dashed green line */
+  border-top: 2px dashed var(--color-primary-light);
+  opacity: 0.6;
   z-index: 1;
+  font-weight: 900;
 }
 
 .process-arrow::after {
   content: '';
   position: absolute;
-  right: -4px;
-  top: -5px;
-  border: solid rgba(26, 139, 56, 0.8);
+  right: 4px;
+  top: -5.5px;
+  border: solid var(--color-primary-light);
   border-width: 0 2px 2px 0;
   display: inline-block;
   padding: 4px;
@@ -111,12 +113,15 @@
 
 @media (max-width: 1024px) {
   .process-arrow {
-    display: none; /* Hide arrows on smaller screens when wrapping */
+    display: none;
+    /* Hide arrows on smaller screens when wrapping */
   }
+
   .process-flow {
     flex-wrap: wrap;
     gap: 40px;
   }
+
   .process-step {
     flex: 0 0 45%;
   }

@@ -7,7 +7,7 @@ const SiteVisitBanner = () => {
       <div className="container">
         <div className="sv-banner">
           <div className="sv-left">
-            <svg className="sv-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#1a8b38" strokeWidth="2">
+            <svg className="sv-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-light)" strokeWidth="2">
               <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
               <line x1="16" y1="2" x2="16" y2="6"></line>
               <line x1="8" y1="2" x2="8" y2="6"></line>

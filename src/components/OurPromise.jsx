@@ -27,17 +27,17 @@ const OurPromise = () => {
               
               <div className="promise-stat">
                 <div className="stat-icon">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#1a8b38" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-light)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                     <line x1="16" y1="2" x2="16" y2="6"></line>
                     <line x1="8" y1="2" x2="8" y2="6"></line>
                     <line x1="3" y1="10" x2="21" y2="10"></line>
-                    <circle cx="8" cy="14" r="1" fill="#1a8b38"></circle>
-                    <circle cx="12" cy="14" r="1" fill="#1a8b38"></circle>
-                    <circle cx="16" cy="14" r="1" fill="#1a8b38"></circle>
-                    <circle cx="8" cy="18" r="1" fill="#1a8b38"></circle>
-                    <circle cx="12" cy="18" r="1" fill="#1a8b38"></circle>
-                    <circle cx="16" cy="18" r="1" fill="#1a8b38"></circle>
+                    <circle cx="8" cy="14" r="1" fill="var(--color-primary-light)"></circle>
+                    <circle cx="12" cy="14" r="1" fill="var(--color-primary-light)"></circle>
+                    <circle cx="16" cy="14" r="1" fill="var(--color-primary-light)"></circle>
+                    <circle cx="8" cy="18" r="1" fill="var(--color-primary-light)"></circle>
+                    <circle cx="12" cy="18" r="1" fill="var(--color-primary-light)"></circle>
+                    <circle cx="16" cy="18" r="1" fill="var(--color-primary-light)"></circle>
                   </svg>
                 </div>
                 <h3>10+</h3>
@@ -46,12 +46,11 @@ const OurPromise = () => {
 
               <div className="promise-stat">
                 <div className="stat-icon">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#1a8b38" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M4 22h16"></path>
-                    <path d="M6 22V10l4-4 4 4v12"></path>
-                    <path d="M14 22v-8h4v8"></path>
-                    <path d="M8 6v4"></path>
-                    <polyline points="20 4 15 9 12 6 6 12"></polyline>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-light)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <path d="M2 15h10"></path>
+                    <path d="M5 12l2 3 4-4"></path>
                   </svg>
                 </div>
                 <h3>250+</h3>
@@ -60,11 +59,12 @@ const OurPromise = () => {
 
               <div className="promise-stat">
                 <div className="stat-icon">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#1a8b38" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M18 21v-2a4 4 0 0 0-4-4H10a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="12" cy="11" r="4"></circle>
-                    <path d="M12 2C10.5 2 9.5 3 9.5 4.5S11 7 12 7s2.5-1 2.5-2.5S13.5 2 12 2z"></path>
-                    <path d="M12 2v2"></path>
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-light)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    <path d="M14.5 12s2.5 1 2.5 4v1"></path>
                   </svg>
                 </div>
                 <h3>5000+</h3>
@@ -73,7 +73,7 @@ const OurPromise = () => {
 
               <div className="promise-stat">
                 <div className="stat-icon">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#1a8b38" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-light)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M15 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                     <circle cx="8.5" cy="8" r="4"></circle>
                     <polygon points="19 7 20.5 10 24 10 21.2 12 22.3 15 19.5 13.2 16.7 15 17.8 12 15 10 18.5 10" strokeLinejoin="round"></polygon>

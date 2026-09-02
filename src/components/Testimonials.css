@@ -10,7 +10,7 @@
 }
 
 .testimonials-section .subtitle {
-  color: #1a8b38;
+  color: var(--color-text-dark);
   font-weight: 700;
   font-size: 12px;
   text-transform: uppercase;
@@ -36,7 +36,7 @@
 }
 
 .testimonials-section .view-all-link:hover {
-  color: var(--color-secondary);
+  color: var(--color-primary-light);
 }
 
 .testimonials-carousel {

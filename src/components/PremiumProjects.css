@@ -11,7 +11,7 @@
 }
 
 .premium-projects .subtitle {
-  color: var(--color-secondary);
+  color: var(--color-text-dark);
   font-weight: 700;
   font-size: var(--font-size-sm);
   text-transform: uppercase;
@@ -88,15 +88,15 @@
 }
 
 .status-green {
-  background-color: #1a8b38;
+  background-color: var(--color-primary-light);
 }
 
 .status-purple {
-  background-color: #5b21b6;
+  background-color: var(--color-primary);
 }
 
 .status-purple-dark {
-  background-color: #3730a3;
+  background-color: var(--color-text-light);
 }
 
 .card-content {
@@ -152,7 +152,7 @@
 }
 
 .price {
-  color: #1a8b38;
+  color: var(--color-text-dark);
   font-size: 16px;
   font-weight: 800;
   line-height: 1.2;
@@ -168,8 +168,8 @@
   width: 100%;
   padding: 8px;
   background: transparent;
-  border: 1px solid #1a8b38;
-  color: #1a8b38;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-dark);
   border-radius: 4px;
   font-weight: 600;
   cursor: pointer;
@@ -179,8 +179,9 @@
 }
 
 .btn-outline:hover {
-  background: #1a8b38;
+  background: var(--color-primary);
   color: white;
+  border-color: var(--color-primary);
 }
 
 @media (max-width: 1200px) {

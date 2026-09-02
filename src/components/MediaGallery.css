@@ -55,7 +55,7 @@
 }
 
 .gallery-filter-btn.active {
-  background-color: var(--color-secondary);
+  background-color: var(--color-primary-light);
   color: #ffffff;
 }
 
@@ -101,7 +101,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--color-primary);
+  color: var(--color-primary-light);
   font-weight: 800;
   font-size: 13px;
   text-decoration: none;
@@ -109,7 +109,7 @@
 }
 
 .view-all-link:hover {
-  color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 .video-grid {

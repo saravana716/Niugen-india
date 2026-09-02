@@ -26,7 +26,7 @@ const ServicesSection = () => {
             
             <div className="service-card">
               <div className="service-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-light)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <polygon points="3 11 9 8 15 11 21 8 21 19 15 22 9 19 3 22 3 11"></polygon>
                   <line x1="9" y1="8" x2="9" y2="19"></line>
                   <line x1="15" y1="11" x2="15" y2="22"></line>
@@ -40,7 +40,7 @@ const ServicesSection = () => {
 
             <div className="service-card">
               <div className="service-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-light)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M3 10l9-7 9 7"></path>
                   <path d="M5 10v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V10"></path>
                   <rect x="10" y="14" width="4" height="7"></rect>
@@ -54,7 +54,7 @@ const ServicesSection = () => {
 
             <div className="service-card">
               <div className="service-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-light)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                   <polyline points="14 2 14 8 20 8"></polyline>
                   <circle cx="12" cy="14" r="3"></circle>
@@ -67,7 +67,7 @@ const ServicesSection = () => {
 
             <div className="service-card">
               <div className="service-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-light)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M2 22L10 2h4l8 20"></path>
                   <line x1="12" y1="22" x2="12" y2="16"></line>
                   <line x1="12" y1="12" x2="12" y2="8"></line>
@@ -79,7 +79,7 @@ const ServicesSection = () => {
 
             <div className="service-card">
               <div className="service-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-light)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8l-6-6z"></path>
                   <path d="M14 3v5h5M9 15l2 2 4-4"></path>
                 </svg>
@@ -90,7 +90,7 @@ const ServicesSection = () => {
 
             <div className="service-card">
               <div className="service-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-light)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M3 14v-4a9 9 0 0 1 18 0v4"></path>
                   <rect x="2" y="14" width="3" height="6" rx="1"></rect>
                   <rect x="19" y="14" width="3" height="6" rx="1"></rect>

@@ -25,7 +25,7 @@
 }
 
 .about-hero-content .subtitle {
-  color: #1a8b38;
+  color: var(--color-primary-light);
   font-weight: 800;
   font-size: 14px;
   text-transform: uppercase;
@@ -42,11 +42,11 @@
 }
 
 .about-hero-content .text-dark {
-  color: var(--color-primary); /* #1c1366 */
+  color: var(--color-text-dark); /* text-dark */
 }
 
 .about-hero-content .text-green {
-  color: #1a8b38;
+  color: var(--color-text-dark);
 }
 
 .about-hero-content .description {
@@ -124,7 +124,7 @@
 .divider-line {
   width: 40px;
   height: 3px;
-  background-color: #1a8b38;
+  background-color: var(--color-primary-light);
   margin-bottom: 16px;
 }
 

@@ -14,7 +14,7 @@ const CoreValues = () => {
           
           <div className="core-value-card">
             <div className="icon-wrapper">
-               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#1a8b38" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+               <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-light)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M8 9l-4 4a2.83 2.83 0 0 0 0 4v0a2.83 2.83 0 0 0 4 0l6-6"></path>
                   <path d="M11.5 12.5l5.5 5.5a2.83 2.83 0 0 0 4 0v0a2.83 2.83 0 0 0 0-4l-4-4"></path>
                   <path d="M12 12l-2-2"></path>
@@ -27,7 +27,7 @@ const CoreValues = () => {
 
           <div className="core-value-card">
             <div className="icon-wrapper">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#1a8b38" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-light)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 15a7 7 0 1 0 0-14 7 7 0 0 0 0 14z"></path>
                 <path d="M8.21 13.89L7 23l5-3 5 3-1.21-9.12"></path>
                 <circle cx="12" cy="8" r="3"></circle>
@@ -39,7 +39,7 @@ const CoreValues = () => {
 
           <div className="core-value-card">
             <div className="icon-wrapper">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#1a8b38" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-light)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                 <polyline points="9 12 11 14 15 10"></polyline>
               </svg>
@@ -50,7 +50,7 @@ const CoreValues = () => {
 
           <div className="core-value-card">
             <div className="icon-wrapper">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#1a8b38" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-light)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                  <path d="M9 18h6"></path>
                  <path d="M10 22h4"></path>
                  <path d="M12 15a5.5 5.5 0 0 0 5.5-5.5c0-3.03-2.47-5.5-5.5-5.5S6.5 6.47 6.5 9.5a5.5 5.5 0 0 0 5.5 5.5z"></path>
@@ -67,7 +67,7 @@ const CoreValues = () => {
 
           <div className="core-value-card">
             <div className="icon-wrapper">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#1a8b38" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-light)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="10"></circle>
                 <circle cx="12" cy="12" r="6"></circle>
                 <circle cx="12" cy="12" r="2"></circle>

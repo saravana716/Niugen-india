@@ -1,4 +1,5 @@
 import React from 'react';
+import logoImage from '../assets/NIU GEN INDIA INFRAS LOGO.png';
 import './Footer.css';
 
 const Footer = () => {
@@ -10,11 +11,7 @@ const Footer = () => {
             {/* Column 1: Brand */}
             <div className="footer-col brand-col">
               <div className="footer-logo">
-                <svg width="180" height="40" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M20 15v30M20 15c0-8 15-8 15 0v30M35 15c0-8 15-8 15 0v30" stroke="white" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round"/>
-                  <text x="70" y="32" fill="white" fontSize="24" fontWeight="800" fontFamily="sans-serif">NIU GEN</text>
-                  <text x="70" y="48" fill="white" fontSize="10" letterSpacing="2" fontFamily="sans-serif">— INDIA INFRAS —</text>
-                </svg>
+                <img src={logoImage} alt="Niu Gen India Infras" className="footer-logo-img" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
               </div>
               <p className="footer-desc">
                 Building stronger foundations and creating better futures through quality, innovation, and trust.

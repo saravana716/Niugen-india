@@ -14,7 +14,7 @@
 .core-values-header .divider-line {
   width: 40px;
   height: 3px;
-  background-color: #1a8b38;
+  background-color: var(--color-primary-light);
   margin-bottom: 40px;
 }
 

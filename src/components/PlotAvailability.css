@@ -19,7 +19,7 @@
 }
 
 .plot-content .subtitle {
-  color: #2bb673;
+  color: var(--color-primary-light);
   font-weight: 700;
   font-size: 11px;
   text-transform: uppercase;
@@ -80,7 +80,7 @@
 }
 
 .plot-btn {
-  background-color: #1a8b38;
+  background-color: var(--color-primary-light);
   color: white;
   border-radius: 4px;
   display: inline-flex;
@@ -96,7 +96,7 @@
 }
 
 .plot-btn:hover {
-  background-color: #15752e;
+  background-color: var(--color-primary);
 }
 
 .plot-image-wrapper {
@@ -120,7 +120,7 @@
 
 /* Contact Strip */
 .contact-strip {
-  background: white;
+  background: var(--color-background);
   border-radius: 8px;
   border: 1px solid #eaeaea;
   display: grid;

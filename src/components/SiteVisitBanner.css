@@ -43,7 +43,7 @@
 .sv-right .btn-solid-green {
   display: flex;
   align-items: center;
-  background-color: #1a8b38;
+  background-color: var(--color-primary-light);
   color: #ffffff;
   border: none;
   padding: 14px 28px;
@@ -55,15 +55,15 @@
 }
 
 .sv-right .btn-solid-green:hover {
-  background-color: #146c2b;
+  background-color: var(--color-primary);
 }
 
 .sv-right .btn-outline-green {
   display: flex;
   align-items: center;
   background-color: transparent;
-  color: #1a8b38;
-  border: 1px solid #1a8b38;
+  color: var(--color-primary-light);
+  border: 1px solid var(--color-primary-light);
   padding: 14px 28px;
   border-radius: 6px;
   font-weight: 700;
@@ -73,7 +73,7 @@
 }
 
 .sv-right .btn-outline-green:hover {
-  background-color: #1a8b38;
+  background-color: var(--color-primary-light);
   color: #ffffff;
 }
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import logoImage from '../assets/NIU GEN INDIA INFRAS LOGO.png';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -47,14 +48,7 @@ const Navbar = () => {
       <nav className="navbar-main">
         <div className="container navbar-inner">
           <div className="logo-container">
-            <div className="logo-mark">
-              <span className="logo-n">n</span>
-              <span className="logo-g">G</span>
-            </div>
-            <div className="logo-text-wrapper">
-              <div className="logo-brand">NIU GEN</div>
-              <div className="logo-sub">— INDIA INFRAS —</div>
-            </div>
+            <img src={logoImage} alt="Niu Gen India Infras" className="navbar-logo-img" />
           </div>
 
           <button
@@ -78,7 +72,7 @@ const Navbar = () => {
               <NavLink to="/gallery" className="nav-item">GALLERY</NavLink>
               <NavLink to="/contact" className="nav-item">CONTACT US</NavLink>
             </div>
-            <button className="btn btn-secondary enquire-btn">
+            <button className="btn btn-primary enquire-btn">
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
               ENQUIRE NOW
             </button>

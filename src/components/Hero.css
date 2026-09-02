@@ -37,7 +37,7 @@
 }
 
 .hero-subtitle {
-  color: var(--color-secondary);
+  color: var(--color-text-dark);
   font-weight: 800;
   font-size: 13px;
   letter-spacing: 0.5px;
@@ -52,12 +52,12 @@
 }
 
 .hero-title .text-primary {
-  color: var(--color-primary);
+  color: var(--color-text-dark);
   font-weight: 800;
 }
 
 .hero-title .text-secondary {
-  color: var(--color-secondary);
+  color: var(--color-primary-light);
   font-weight: 800;
 }
 
@@ -91,9 +91,9 @@
 }
 
 .hero-btn-outline {
-  background-color: white;
-  color: var(--color-secondary);
-  border: 1px solid var(--color-secondary);
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
   padding: 12px 24px;
   font-size: 13px;
   font-weight: 700;
@@ -104,7 +104,8 @@
 }
 
 .hero-btn-outline:hover {
-  background-color: var(--color-background-alt);
+  background-color: var(--color-primary);
+  color: white;
 }
 
 /* Stats Container over background */

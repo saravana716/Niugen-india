@@ -16,28 +16,28 @@ const WhyChooseUs = () => {
             <ul className="features-list">
               <li>
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" fill="#1a8b38"/>
+                  <circle cx="12" cy="12" r="10" fill="var(--color-primary-light)"/>
                   <path d="M8 12.5L10.5 15L16 9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
                 Clear Titles & Legal Approvals
               </li>
               <li>
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" fill="#1a8b38"/>
+                  <circle cx="12" cy="12" r="10" fill="var(--color-primary-light)"/>
                   <path d="M8 12.5L10.5 15L16 9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
                 Premium Infrastructure & Amenities
               </li>
               <li>
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" fill="#1a8b38"/>
+                  <circle cx="12" cy="12" r="10" fill="var(--color-primary-light)"/>
                   <path d="M8 12.5L10.5 15L16 9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
                 Excellent Connectivity
               </li>
               <li>
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" fill="#1a8b38"/>
+                  <circle cx="12" cy="12" r="10" fill="var(--color-primary-light)"/>
                   <path d="M8 12.5L10.5 15L16 9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
                 High Investment Value

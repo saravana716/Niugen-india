@@ -1,5 +1,5 @@
 .projects-list-section {
-  padding: 60px 0 60px 0;
+  padding: 60px 0 20px 0;
   background-color: #ffffff;
 }
 
@@ -153,11 +153,11 @@
 }
 
 .stat-value.highlight {
-  color: #1a8b38;
+  color: var(--color-primary);
 }
 
 .stat-value.text-green {
-  color: #1a8b38;
+  color: var(--color-primary);
 }
 
 .stat-action {
@@ -166,8 +166,8 @@
 
 .btn-outline-green {
   background: transparent;
-  border: 1px solid #1a8b38;
-  color: #1a8b38;
+  border: 1px solid var(--color-primary-light);
+  color: var(--color-primary-light);
   padding: 10px 20px;
   border-radius: 6px;
   font-weight: 700;
@@ -177,7 +177,7 @@
 }
 
 .btn-outline-green:hover {
-  background-color: #1a8b38;
+  background-color: var(--color-primary-light);
   color: #ffffff;
 }
 
@@ -215,7 +215,7 @@
   display: flex;
   align-items: center;
   padding: 14px 28px;
-  background-color: #1a8b38;
+  background-color: var(--color-primary-light);
   color: #ffffff;
   border: none;
   border-radius: 6px;
@@ -226,7 +226,7 @@
 }
 
 .pcb-right .btn-primary:hover {
-  background-color: #146c2b;
+  background-color: var(--color-primary);
 }
 
 @media (max-width: 1024px) {
