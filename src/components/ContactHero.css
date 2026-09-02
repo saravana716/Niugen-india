@@ -177,12 +177,14 @@
   }
 
   .contact-hero-badges {
-    flex-direction: row; /* Keep in a row to save space */
+    flex-direction: row;
+    flex-wrap: wrap; /* Allow wrapping on small screens to prevent horizontal overflow */
+    justify-content: center;
     padding: 16px;
-    margin: 0 20px 32px 20px;
-    width: calc(100% - 40px);
+    margin: 0 0 32px 0;
+    width: 100%;
     box-sizing: border-box;
-    gap: 8px;
+    gap: 16px;
   }
 
   .badge-item {
@@ -199,7 +201,6 @@
   }
 
   .badge-divider {
-    width: 1px;
-    height: 30px;
+    display: none; /* Hide dividers when wrapping to keep it clean */
   }
 }
