@@ -203,4 +203,28 @@
     grid-template-columns: 1fr;
     gap: 32px;
   }
+
+  .why-choose-us .stats-card {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .why-choose-us .stat-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 12px;
+    gap: 8px;
+  }
+
+  .why-choose-us .stat-info h4 {
+    font-size: 20px;
+  }
+
+  .why-choose-us .stat-info p {
+    font-size: 11px;
+  }
+  
+  .why-choose-us .stat-icon svg {
+    width: 28px;
+    height: 28px;
+  }
 }

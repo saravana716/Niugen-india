@@ -228,7 +228,27 @@
   }
   
   .image-grid, .video-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .gallery-img-wrapper {
+    height: 120px;
+    margin-bottom: 8px;
+  }
+  
+  .video-thumbnail-wrapper {
+    height: 120px;
+    margin-bottom: 8px;
+  }
+
+  .gallery-item h4, .video-item h4 {
+    font-size: 13px;
+  }
+
+  .play-button {
+    width: 40px;
+    height: 40px;
   }
   
   .gallery-filter-wrapper {

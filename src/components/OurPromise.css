@@ -172,8 +172,43 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+  .promise-stats-area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 16px;
+  }
+  
   .promise-stat {
-    flex: 0 0 100%;
+    flex: unset;
+    width: 100%;
+  }
+
+  .promise-stat h3 {
+    font-size: 26px;
+  }
+  
+  .promise-stat span {
+    font-size: 12px;
+  }
+  
+  .promise-stat .stat-icon svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .promise-stat h3 {
+    font-size: 22px;
+  }
+  
+  .promise-stat span {
+    font-size: 11px;
+  }
+  
+  .promise-stat .stat-icon svg {
+    width: 26px;
+    height: 26px;
   }
 }

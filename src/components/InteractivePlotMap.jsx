@@ -38,6 +38,9 @@ const plotsData = generatePlots();
 
 const InteractivePlotMap = () => {
   const [selectedPlot, setSelectedPlot] = useState(plotsData.find(p => p.status === 'available') || plotsData[0]);
+  const [selectedProjectName, setSelectedProjectName] = useState('All Projects');
+  const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
+  const projectOptions = ['All Projects', 'Greenfield City', 'Royal Meadows'];
 
   return (
     <section className="interactive-plot-section">
@@ -47,11 +50,28 @@ const InteractivePlotMap = () => {
         <div className="plot-header">
           <div className="ph-left">
             <span className="ph-label">Select Project</span>
-            <select className="project-select">
-              <option>All Projects</option>
-              <option>Greenfield City</option>
-              <option>Royal Meadows</option>
+            
+            {/* Desktop Select */}
+            <select 
+              className="project-select desktop-only" 
+              value={selectedProjectName}
+              onChange={(e) => setSelectedProjectName(e.target.value)}
+            >
+              {projectOptions.map(opt => (
+                <option key={opt} value={opt}>{opt}</option>
+              ))}
             </select>
+
+            {/* Mobile Select Button */}
+            <button 
+              className="mobile-project-select-btn mobile-only" 
+              onClick={() => setIsProjectModalOpen(true)}
+            >
+              <span>{selectedProjectName}</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
 
             <div className="plot-legend">
               <div className="legend-item">
@@ -150,6 +170,41 @@ const InteractivePlotMap = () => {
         </div>
 
       </div>
+
+      {/* Mobile Project Select Modal */}
+      {isProjectModalOpen && (
+        <div className="mobile-filter-overlay" onClick={() => setIsProjectModalOpen(false)}>
+          <div className="mobile-filter-bottom-sheet" onClick={e => e.stopPropagation()}>
+            <div className="bottom-sheet-header">
+              <h3>Select Project</h3>
+              <button className="close-sheet-btn" onClick={() => setIsProjectModalOpen(false)}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+            <div className="bottom-sheet-content">
+              {projectOptions.map(opt => (
+                <button
+                  key={opt}
+                  className={`sheet-filter-option ${selectedProjectName === opt ? 'selected' : ''}`}
+                  onClick={() => {
+                    setSelectedProjectName(opt);
+                    setIsProjectModalOpen(false);
+                  }}
+                >
+                  <div className="option-label">{opt}</div>
+                  <div className="radio-circle">
+                    {selectedProjectName === opt && <div className="radio-inner"></div>}
+                  </div>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
     </section>
   );
 };

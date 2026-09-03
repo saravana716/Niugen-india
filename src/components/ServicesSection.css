@@ -133,11 +133,53 @@
   .services-grid {
     grid-template-columns: 1fr;
   }
+  
+  .services-hero {
+    min-height: 650px;
+    padding-top: 20px;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .services-hero-image {
+    display: block;
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .services-hero-image::after {
+    width: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.95) 45%, rgba(255, 255, 255, 0) 100%);
+    left: 0;
+  }
+
+  .services-hero-content {
+    margin-bottom: 240px;
+  }
+
   .services-hero-text {
     flex: 0 0 100%;
     padding-right: 0;
+    text-align: left;
   }
-  .services-hero-image {
-    display: none;
+
+  .services-hero-text h2 {
+    font-size: 38px;
+    line-height: 1.1;
+  }
+  
+  .services-hero-text p {
+    font-size: 14px;
+    max-width: 85%;
+  }
+
+  .services-grid-area {
+    margin-top: -60px;
   }
 }
