@@ -4,47 +4,25 @@ import './PremiumProjects.css';
 const projects = [
   {
     id: 1,
-    title: 'Greenfield City',
+    title: 'Green Orchid',
     location: 'Kovilpatti',
-    type: 'Villa Plots',
-    size: '1200 - 2400 Sq.ft',
-    price: '7.99',
-    status: 'ONGOING',
-    statusColor: 'green',
+    type: 'Premium Villa Plots',
+    size: 'Green Living Concept',
+    price: 'TBA',
+    status: 'NEW LAUNCH',
+    statusColor: 'purple',
     image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
   },
   {
     id: 2,
-    title: 'Royal Meadows',
-    location: 'Kovilpatti',
-    type: 'Villa Plots',
-    size: '1000 - 2400 Sq.ft',
-    price: '5.99',
-    status: 'NEW LAUNCH',
-    statusColor: 'purple',
-    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
-  },
-  {
-    id: 3,
-    title: 'Sunrise Avenue',
+    title: 'Sri Siva Sakthi Nagar',
     location: 'Kovilpatti',
     type: 'Residential Plots',
-    size: '600 - 2400 Sq.ft',
-    price: '6.49',
+    size: '120 Plots Available',
+    price: '2.99',
     status: 'ONGOING',
     statusColor: 'green',
-    image: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
-  },
-  {
-    id: 4,
-    title: 'Serenity Villas',
-    location: 'Kovilpatti',
-    type: 'Luxury Villas',
-    size: '1500 - 3000 Sq.ft',
-    price: '35.99',
-    status: 'UPCOMING',
-    statusColor: 'purple-dark',
-    image: 'https://images.unsplash.com/photo-1600566753086-00f18efc2291?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
   }
 ];
 
@@ -113,14 +91,14 @@ const PremiumProjects = () => {
                       <rect x="3" y="3" width="18" height="18" rx="2" ry="2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                       <path d="M3 9h18M9 21V9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
-                    <span>{project.type}</span>
+                    <span title={project.type}>{project.type}</span>
                   </div>
                   <div className="detail-item">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                       <path d="M22 6l-10 7L2 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
-                    <span>{project.size}</span>
+                    <span title={project.size}>{project.size}</span>
                   </div>
                 </div>
                 <div className="project-footer">

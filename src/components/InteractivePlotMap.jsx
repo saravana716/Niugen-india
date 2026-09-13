@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './InteractivePlotMap.css';
+import CustomSelect from './CustomSelect';
 
 const generatePlots = () => {
   const plots = [];
@@ -52,15 +53,14 @@ const InteractivePlotMap = () => {
             <span className="ph-label">Select Project</span>
             
             {/* Desktop Select */}
-            <select 
-              className="project-select desktop-only" 
-              value={selectedProjectName}
-              onChange={(e) => setSelectedProjectName(e.target.value)}
-            >
-              {projectOptions.map(opt => (
-                <option key={opt} value={opt}>{opt}</option>
-              ))}
-            </select>
+            <div className="desktop-only" style={{ width: '250px' }}>
+              <CustomSelect 
+                placeholder="Select Project"
+                value={selectedProjectName}
+                onChange={setSelectedProjectName}
+                options={projectOptions.map(opt => ({ value: opt, label: opt }))}
+              />
+            </div>
 
             {/* Mobile Select Button */}
             <button 

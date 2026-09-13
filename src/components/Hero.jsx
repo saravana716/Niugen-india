@@ -11,9 +11,9 @@ const Hero = () => {
         <div className="hero-content">
           <p className="hero-subtitle">BUILDING STRONGER FOUNDATIONS</p>
           <h1 className="hero-title">
-            <span className="text-primary">Creating</span><br/>
-            <span className="text-primary">Better</span><br/>
-            <span className="text-secondary">Futures.</span>
+            <span className="text-primary">Building</span><br/>
+            <span className="text-primary">Dreams.</span><br/>
+            <span className="text-secondary">Creating Value.</span>
           </h1>
           <p className="hero-description">
             Premium Villa Plots & Residential Projects<br/>

@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './PropertySearch.css';
+import CustomSelect from './CustomSelect';
 
 const PropertySearch = () => {
+  const [location, setLocation] = useState("");
+  const [propertyType, setPropertyType] = useState("");
+  const [budget, setBudget] = useState("");
+  const [status, setStatus] = useState("");
+
   return (
     <section className="property-search-section">
       <div className="container">
@@ -13,51 +19,55 @@ const PropertySearch = () => {
           <div className="search-filters">
             <div className="filter-group">
               <label>Location</label>
-              <div className="select-wrapper">
-                <select>
-                  <option>All Locations</option>
-                  <option>Kovilpatti</option>
-                </select>
-                <svg className="select-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-              </div>
+              <CustomSelect 
+                placeholder="All Locations"
+                value={location}
+                onChange={setLocation}
+                options={[
+                  { value: 'kovilpatti', label: 'Kovilpatti' }
+                ]}
+              />
             </div>
             
             <div className="filter-group">
               <label>Property Type</label>
-              <div className="select-wrapper">
-                <select>
-                  <option>All Types</option>
-                  <option>Villa Plots</option>
-                  <option>Residential Plots</option>
-                </select>
-                <svg className="select-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-              </div>
+              <CustomSelect 
+                placeholder="All Types"
+                value={propertyType}
+                onChange={setPropertyType}
+                options={[
+                  { value: 'villa_plots', label: 'Villa Plots' },
+                  { value: 'residential_plots', label: 'Residential Plots' }
+                ]}
+              />
             </div>
             
             <div className="filter-group">
               <label>Budget</label>
-              <div className="select-wrapper">
-                <select>
-                  <option>All Budgets</option>
-                  <option>Below 10 Lakhs</option>
-                  <option>10 - 20 Lakhs</option>
-                  <option>Above 20 Lakhs</option>
-                </select>
-                <svg className="select-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-              </div>
+              <CustomSelect 
+                placeholder="All Budgets"
+                value={budget}
+                onChange={setBudget}
+                options={[
+                  { value: 'below_10', label: 'Below 10 Lakhs' },
+                  { value: '10_20', label: '10 - 20 Lakhs' },
+                  { value: 'above_20', label: 'Above 20 Lakhs' }
+                ]}
+              />
             </div>
             
             <div className="filter-group">
               <label>Status</label>
-              <div className="select-wrapper">
-                <select>
-                  <option>All Status</option>
-                  <option>Ongoing</option>
-                  <option>New Launch</option>
-                  <option>Upcoming</option>
-                </select>
-                <svg className="select-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-              </div>
+              <CustomSelect 
+                placeholder="All Status"
+                value={status}
+                onChange={setStatus}
+                options={[
+                  { value: 'ongoing', label: 'Ongoing' },
+                  { value: 'new_launch', label: 'New Launch' },
+                  { value: 'upcoming', label: 'Upcoming' }
+                ]}
+              />
             </div>
             
             <button className="btn btn-secondary search-btn">

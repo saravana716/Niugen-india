@@ -5,6 +5,7 @@ import PremiumProjects from '../components/PremiumProjects';
 import WhyChooseUs from '../components/WhyChooseUs';
 import PlotAvailability from '../components/PlotAvailability';
 import Testimonials from '../components/Testimonials';
+import FAQ from '../components/FAQ';
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <WhyChooseUs />
       <PlotAvailability />
       <Testimonials />
+      <FAQ />
     </>
   );
 };

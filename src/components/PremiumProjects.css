@@ -137,10 +137,19 @@
   color: var(--color-text-dark);
   font-size: 12px;
   font-weight: 500;
+  min-width: 0; /* Important for flex children to allow text truncation */
+}
+
+.detail-item span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
 }
 
 .detail-item svg {
   color: var(--color-text-light);
+  flex-shrink: 0;
 }
 
 .project-footer {

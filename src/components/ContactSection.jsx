@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ContactSection.css';
+import CustomSelect from './CustomSelect';
 
 const ContactSection = () => {
+  const [project, setProject] = useState("");
+  const [plotSize, setPlotSize] = useState("");
+  const [budget, setBudget] = useState("");
+
   return (
     <section className="contact-main-section">
       <div className="container">
@@ -10,63 +15,74 @@ const ContactSection = () => {
           {/* Column 1: Get In Touch */}
           <div className="contact-page-col">
             <div className="col-header">
-              <h2>Get In Touch</h2>
+              <h2>Let's Find the Right Property for You.</h2>
               <div className="title-underline"></div>
             </div>
             <p className="contact-desc">
-              Have a question or need assistance? Fill out the form and our team will get back to you shortly.
+              Whether you're planning to build your dream home or looking for a property investment, our team is ready to help.
             </p>
             
             <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
               <div className="input-group">
-                <svg className="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="12" cy="7" r="4"></circle>
-                </svg>
-                <input type="text" placeholder="Your Name" />
+                <input type="text" placeholder="Full Name*" required />
               </div>
               
               <div className="input-group">
-                <svg className="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                </svg>
-                <input type="tel" placeholder="Phone Number" />
+                <input type="tel" placeholder="Phone Number*" required />
               </div>
 
               <div className="input-group">
-                <svg className="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                  <polyline points="22,6 12,13 2,6"></polyline>
-                </svg>
+                <input type="tel" placeholder="WhatsApp Number" />
+              </div>
+
+              <div className="input-group">
                 <input type="email" placeholder="Email Address" />
               </div>
 
               <div className="input-group">
-                <svg className="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
-                </svg>
-                <select defaultValue="">
-                  <option value="" disabled hidden>Select Subject</option>
-                  <option value="buy">Buy Property</option>
-                  <option value="sell">Sell Property</option>
-                  <option value="invest">Investment</option>
-                  <option value="other">Other Inquiry</option>
-                </select>
-                <svg className="dropdown-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
+                <CustomSelect 
+                  placeholder="Select Project"
+                  value={project}
+                  onChange={setProject}
+                  options={[
+                    { value: 'green_orchid', label: 'Green Orchid' },
+                    { value: 'sri_siva_sakthi_nagar', label: 'Sri Siva Sakthi Nagar' }
+                  ]}
+                />
+              </div>
+
+              <div className="input-group">
+                <CustomSelect 
+                  placeholder="Select Plot Size"
+                  value={plotSize}
+                  onChange={setPlotSize}
+                  options={[
+                    { value: 'small', label: '600 - 1000 Sq.ft' },
+                    { value: 'medium', label: '1000 - 1500 Sq.ft' },
+                    { value: 'large', label: '1500+ Sq.ft' }
+                  ]}
+                />
+              </div>
+
+              <div className="input-group">
+                <CustomSelect 
+                  placeholder="Select Budget"
+                  value={budget}
+                  onChange={setBudget}
+                  options={[
+                    { value: 'under_5', label: 'Under 5 Lakhs' },
+                    { value: '5_10', label: '5 - 10 Lakhs' },
+                    { value: 'above_10', label: 'Above 10 Lakhs' }
+                  ]}
+                />
               </div>
 
               <div className="input-group textarea-group">
-                <svg className="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M12 20h9"></path>
-                  <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
-                </svg>
-                <textarea placeholder="Your Message" rows="4"></textarea>
+                <textarea placeholder="Tell us what you're looking for..." rows="4"></textarea>
               </div>
 
               <button type="submit" className="btn btn-solid-green contact-submit">
-                SEND MESSAGE 
+                SUBMIT ENQUIRY 
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ marginLeft: '8px' }}><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </button>
             </form>
@@ -89,7 +105,7 @@ const ContactSection = () => {
                 </div>
                 <div className="info-text">
                   <h5>Call Us</h5>
-                  <p className="primary-text">+91 63853 84189</p>
+                  <p className="primary-text">+91 96888 66000</p>
                   <p className="sub-text">Mon - Sat (9:00 AM - 7:00 PM)</p>
                 </div>
               </div>
@@ -103,7 +119,7 @@ const ContactSection = () => {
                 </div>
                 <div className="info-text">
                   <h5>Email Us</h5>
-                  <p className="primary-text">elevatedigitechnologies@gmail.com</p>
+                  <p className="primary-text">niugeninfra2.0@gmail.com</p>
                   <p className="sub-text">We reply within 24 hours</p>
                 </div>
               </div>
@@ -118,7 +134,7 @@ const ContactSection = () => {
                 <div className="info-text">
                   <h5>Visit Us</h5>
                   <p className="primary-text address-text">
-                    Kovilpatti, Tamil Nadu, India
+                    No 121B/2, New Town Subha Nagar,<br/>Inammaniyachi, Kovilpatti,<br/>Thoothukudi District - 628 502.
                   </p>
                 </div>
               </div>

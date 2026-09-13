@@ -31,7 +31,7 @@ const ContactStrip = () => {
         </div>
         <div className="contact-info">
           <span className="small-heading">Call Us Now</span>
-          <h4>+91 63853 84189</h4>
+          <h4>+91 96888 66000</h4>
           <p className="time">Mon - Sat (9:00 AM - 7:00 PM)</p>
         </div>
       </div>
@@ -45,7 +45,7 @@ const ContactStrip = () => {
         </div>
         <div className="contact-info">
           <span className="small-heading">Chat on WhatsApp</span>
-          <h4>+91 63853 84189</h4>
+          <h4>+91 96888 66000</h4>
           <p className="time">We reply instantly</p>
         </div>
       </div>

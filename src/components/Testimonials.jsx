@@ -4,24 +4,17 @@ import './Testimonials.css';
 const testimonials = [
   {
     id: 1,
-    text: "Excellent project and amazing infrastructure. Very happy with the investment. Highly recommended!",
-    name: "Ramesh Kumar",
-    project: "Greenfield City",
+    text: "The team guided us throughout the property selection process and made the experience simple and comfortable.",
+    name: "Ramesh K.",
+    project: "Kovilpatti",
     image: "https://randomuser.me/api/portraits/men/32.jpg"
   },
   {
     id: 2,
-    text: "Great location, good amenities and transparent process. Niu Gen India Infras is truly trustworthy.",
-    name: "Anitha Raj",
-    project: "Royal Meadows",
+    text: "We liked the location and the overall development of the project. The site visit helped us make our decision.",
+    name: "Priya S.",
+    project: "Tuticorin",
     image: "https://randomuser.me/api/portraits/women/44.jpg"
-  },
-  {
-    id: 3,
-    text: "Professional team and quick support. The plot booking process was smooth and easy.",
-    name: "Suresh Babu",
-    project: "Sunrise Avenue",
-    image: "https://randomuser.me/api/portraits/men/46.jpg"
   }
 ];
 

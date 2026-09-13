@@ -20,8 +20,8 @@ const SiteVisitBanner = () => {
               <circle cx="16" cy="18" r="1"></circle>
             </svg>
             <div className="sv-text">
-              <h3>Schedule a Site Visit</h3>
-              <p>Want to visit our project site?<br/>Book an appointment with our team.</p>
+              <h3>Your Next Property Starts Here.</h3>
+              <p>Want to visit our project site?<br/>Book an appointment with our team to take the next step.</p>
             </div>
           </div>
           <div className="sv-right">

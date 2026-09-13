@@ -25,12 +25,30 @@
 
 .process-flow {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  gap: 20px;
+  padding-bottom: 24px; /* Space for scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary-light) #f0f0f0;
+}
+
+.process-flow::-webkit-scrollbar {
+  height: 8px;
+}
+
+.process-flow::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+
+.process-flow::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary-light);
+  border-radius: 4px;
 }
 
 .process-step {
-  flex: 1;
+  flex: 0 0 250px; /* Fixed width for each step to ensure scrolling */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,58 +61,52 @@
   position: relative;
   margin-bottom: 24px;
   z-index: 2;
-}
-
-.process-icon {
-  width: 100px;
-  height: 100px;
-  background-color: #ffffff;
-  border-radius: 50%;
   display: flex;
-  align-items: center;
   justify-content: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  align-items: center;
+  height: 48px;
 }
 
 .step-number {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 28px;
-  height: 28px;
+  width: 48px;
+  height: 48px;
   background-color: var(--color-primary-light);
   color: #ffffff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 700;
-  font-size: 14px;
+  font-weight: 800;
+  font-size: 20px;
   z-index: 3;
 }
 
 .process-arrow {
   position: absolute;
-  top: 50px;
-  left: calc(50% + 50px);
-  width: calc(100% - 100px);
+  top: 24px;
+  left: calc(50% + 35px);
+  width: calc(100% - 70px + 20px); /* Account for gap */
   height: 2px;
   border-top: 2px dashed var(--color-primary-light);
   opacity: 0.6;
   z-index: 1;
-  font-weight: 900;
 }
 
 .process-arrow::after {
   content: '';
   position: absolute;
-  right: 4px;
+  right: -2px;
   top: -5.5px;
   border: solid var(--color-primary-light);
   border-width: 0 2px 2px 0;
   display: inline-block;
   padding: 4px;
   transform: rotate(-45deg);
+}
+
+/* Hide arrow on the very last item */
+.process-step:last-child .process-arrow {
+  display: none;
 }
 
 .process-step h4 {
@@ -111,27 +123,11 @@
   font-weight: 500;
 }
 
-@media (max-width: 1024px) {
-  .process-arrow {
-    display: none;
-    /* Hide arrows on smaller screens when wrapping */
-  }
-
-  .process-flow {
-    flex-wrap: wrap;
-    gap: 40px;
-  }
-
-  .process-step {
-    flex: 0 0 45%;
-  }
-}
-
 @media (max-width: 768px) {
   .process-step {
-    flex: 0 0 100%;
+    flex: 0 0 220px;
   }
-
+  
   .process-container {
     padding: 32px 20px;
   }
@@ -139,22 +135,6 @@
   .process-title {
     font-size: 22px;
     margin-bottom: 32px;
-  }
-
-  .process-icon {
-    width: 70px;
-    height: 70px;
-  }
-
-  .process-icon svg {
-    width: 32px;
-    height: 32px;
-  }
-
-  .step-number {
-    width: 24px;
-    height: 24px;
-    font-size: 12px;
   }
 
   .process-icon-wrapper {

@@ -8,47 +8,70 @@ const WhyChooseUs = () => {
         <div className="wcu-grid">
           {/* Left Column */}
           <div className="wcu-content">
-            <span className="subtitle">WHY CHOOSE US</span>
-            <h2 className="title">Building Trust,<br/>Delivering Value</h2>
-            <p className="description">
-              Niu Gen India Infras 2.0 is committed to delivering premium real estate projects with transparency, quality and customer satisfaction.
-            </p>
-            <ul className="features-list">
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" fill="var(--color-primary-light)"/>
-                  <path d="M8 12.5L10.5 15L16 9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-                Clear Titles & Legal Approvals
+            <span className="subtitle">WHY CHOOSE NIU GEN?</span>
+            <h2 className="title">A Smarter Choice<br/>for a Brighter Tomorrow</h2>
+            <ul className="features-list" style={{gap: '15px'}}>
+              <li style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
+                <div style={{display: 'flex', alignItems: 'center', fontWeight: 'bold'}}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginRight: '10px'}}>
+                    <circle cx="12" cy="12" r="10" fill="var(--color-primary-light)"/>
+                    <path d="M8 12.5L10.5 15L16 9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Strategic Locations
+                </div>
+                <span style={{fontSize: '0.9rem', color: '#666', marginTop: '4px', paddingLeft: '34px'}}>Properties positioned with connectivity and future development in mind.</span>
               </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" fill="var(--color-primary-light)"/>
-                  <path d="M8 12.5L10.5 15L16 9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-                Premium Infrastructure & Amenities
+              <li style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
+                <div style={{display: 'flex', alignItems: 'center', fontWeight: 'bold'}}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginRight: '10px'}}>
+                    <circle cx="12" cy="12" r="10" fill="var(--color-primary-light)"/>
+                    <path d="M8 12.5L10.5 15L16 9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Thoughtfully Planned
+                </div>
+                <span style={{fontSize: '0.9rem', color: '#666', marginTop: '4px', paddingLeft: '34px'}}>Organized developments designed around practical residential needs.</span>
               </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" fill="var(--color-primary-light)"/>
-                  <path d="M8 12.5L10.5 15L16 9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-                Excellent Connectivity
+              <li style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
+                <div style={{display: 'flex', alignItems: 'center', fontWeight: 'bold'}}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginRight: '10px'}}>
+                    <circle cx="12" cy="12" r="10" fill="var(--color-primary-light)"/>
+                    <path d="M8 12.5L10.5 15L16 9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Better Living
+                </div>
+                <span style={{fontSize: '0.9rem', color: '#666', marginTop: '4px', paddingLeft: '34px'}}>Peaceful surroundings and infrastructure designed for comfortable living.</span>
               </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" fill="var(--color-primary-light)"/>
-                  <path d="M8 12.5L10.5 15L16 9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-                High Investment Value
+              <li style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
+                <div style={{display: 'flex', alignItems: 'center', fontWeight: 'bold'}}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginRight: '10px'}}>
+                    <circle cx="12" cy="12" r="10" fill="var(--color-primary-light)"/>
+                    <path d="M8 12.5L10.5 15L16 9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Infrastructure Focus
+                </div>
+                <span style={{fontSize: '0.9rem', color: '#666', marginTop: '4px', paddingLeft: '34px'}}>Roads, electricity, lighting and other essential development features.</span>
+              </li>
+              <li style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
+                <div style={{display: 'flex', alignItems: 'center', fontWeight: 'bold'}}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginRight: '10px'}}>
+                    <circle cx="12" cy="12" r="10" fill="var(--color-primary-light)"/>
+                    <path d="M8 12.5L10.5 15L16 9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Customer First
+                </div>
+                <span style={{fontSize: '0.9rem', color: '#666', marginTop: '4px', paddingLeft: '34px'}}>Your requirements and satisfaction remain at the centre of our approach.</span>
+              </li>
+              <li style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
+                <div style={{display: 'flex', alignItems: 'center', fontWeight: 'bold'}}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginRight: '10px'}}>
+                    <circle cx="12" cy="12" r="10" fill="var(--color-primary-light)"/>
+                    <path d="M8 12.5L10.5 15L16 9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Future Potential
+                </div>
+                <span style={{fontSize: '0.9rem', color: '#666', marginTop: '4px', paddingLeft: '34px'}}>Property opportunities selected with long-term usability and value in mind.</span>
               </li>
             </ul>
-            <button className="btn-primary wcu-btn">
-              KNOW MORE ABOUT US
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
           </div>
 
           {/* Middle Column */}
