@@ -2,6 +2,10 @@
   padding: 60px 0;
   background-color: #ffffff;
 }
+.interactive-plot-section.mini {
+  padding: 0;
+  background-color: transparent;
+}
 
 /* Header */
 .plot-header {
@@ -425,19 +429,21 @@
   .plot-map-wrapper {
     width: 100%;
     margin: 0;
-    padding: 4px; /* Reduced padding */
+    padding: 4px;
     border-radius: 6px;
     box-sizing: border-box;
-    overflow: hidden; /* Prevent any bleed */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    -webkit-overflow-scrolling: touch;
   }
   
   .map-grid-container {
     width: 100%;
+    min-width: 600px; /* Ensure map stays readable and scrolls */
     box-sizing: border-box;
   }
   
-  .road.horizontal, .map-grid-container {
-    min-width: 0; /* Remove min-width to fit screen */
+  .road.horizontal {
+    min-width: 600px; /* Match the grid */
   }
   
   .plot-grid {

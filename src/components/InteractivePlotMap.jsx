@@ -37,17 +37,18 @@ const generatePlots = () => {
 
 const plotsData = generatePlots();
 
-const InteractivePlotMap = () => {
+const InteractivePlotMap = ({ variant = 'full' }) => {
   const [selectedPlot, setSelectedPlot] = useState(plotsData.find(p => p.status === 'available') || plotsData[0]);
   const [selectedProjectName, setSelectedProjectName] = useState('All Projects');
   const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
   const projectOptions = ['All Projects', 'Greenfield City', 'Royal Meadows'];
 
   return (
-    <section className="interactive-plot-section">
-      <div className="container">
+    <section className={`interactive-plot-section ${variant === 'mini' ? 'mini' : ''}`}>
+      <div className={variant === 'mini' ? 'mini-container' : 'container'}>
         
         {/* Top Header */}
+        {variant !== 'mini' && (
         <div className="plot-header">
           <div className="ph-left">
             <span className="ph-label">Select Project</span>
@@ -100,6 +101,7 @@ const InteractivePlotMap = () => {
             </svg>
           </div>
         </div>
+        )}
 
         {/* Map Grid */}
         <div className="plot-map-wrapper">
@@ -132,6 +134,8 @@ const InteractivePlotMap = () => {
           <div className="road horizontal bottom-road">30' WIDE ROAD</div>
         </div>
 
+        {variant !== 'mini' && (
+        <>
         <div className="map-helper-text">
           * Click on any plot to view details and booking information
         </div>
@@ -168,6 +172,8 @@ const InteractivePlotMap = () => {
             <button className="btn btn-outline-green-large">BOOK SITE VISIT</button>
           </div>
         </div>
+        </>
+        )}
 
       </div>
 
