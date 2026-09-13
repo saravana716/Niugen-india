@@ -11,6 +11,7 @@ import PlotAvailabilityPage from './pages/PlotAvailabilityPage';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
 import SplashScreen from './components/SplashScreen';
+import ProjectDetails from './pages/ProjectDetails';
 import './index.css';
 
 const AnimatedRoutes = () => {
@@ -23,6 +24,7 @@ const AnimatedRoutes = () => {
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/projects/:id" element={<ProjectDetails />} />
         <Route path="/plot-availability" element={<PlotAvailabilityPage />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />

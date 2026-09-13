@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import './ProjectsList.css';
 
 const projectsData = [
@@ -169,7 +170,9 @@ const ProjectsList = () => {
                   </div>
                   
                   <div className="stat-action">
-                    <button className="btn-outline-green">VIEW DETAILS</button>
+                    <Link to={`/projects/${project.id}`} className="btn-outline-green" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}>
+                      VIEW DETAILS
+                    </Link>
                   </div>
                 </div>
 

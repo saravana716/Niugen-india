@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import './PremiumProjects.css';
 
 const projects = [
@@ -127,7 +128,9 @@ const PremiumProjects = () => {
                     <div className="price">₹ {project.price} Lakhs*</div>
                     <div className="price-label">Onwards</div>
                   </div>
-                  <button className="btn-outline">VIEW DETAILS</button>
+                  <Link to={`/projects/${project.id}`} className="btn-outline" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}>
+                    VIEW DETAILS
+                  </Link>
                 </div>
               </div>
             </motion.div>
