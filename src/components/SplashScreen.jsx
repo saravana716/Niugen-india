@@ -33,7 +33,7 @@ const SplashScreen = ({ finishLoading }) => {
             className="loading-bar-fill"
             initial={{ width: "0%" }}
             animate={{ width: "100%" }}
-            transition={{ delay: 0.5, duration: 2.0, ease: "easeInOut" }}
+            transition={{ delay: 0.5, duration: 1.0, ease: "easeInOut" }}
           />
         </motion.div>
       </motion.div>

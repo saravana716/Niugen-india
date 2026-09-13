@@ -39,7 +39,7 @@ function App() {
       // Hide splash screen after 9.5 seconds to match the 9.0s loading bar animation
       const timer = setTimeout(() => {
         setIsLoading(false);
-      }, 2500);
+      }, 1000);
       return () => clearTimeout(timer);
     }
   }, [isLoading]);
