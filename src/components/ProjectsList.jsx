@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import './ProjectsList.css';
 
 const projectsData = [
@@ -97,9 +98,28 @@ const ProjectsList = () => {
         </div>
 
         {/* Projects List */}
-        <div className="projects-list">
+        <motion.div 
+          className="projects-list"
+          variants={{
+            hidden: { opacity: 0 },
+            show: {
+              opacity: 1,
+              transition: { staggerChildren: 0.15 }
+            }
+          }}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           {projectsData.map(project => (
-            <div className="project-list-card" key={project.id}>
+            <motion.div 
+              className="project-list-card" 
+              key={project.id}
+              variants={{
+                hidden: { opacity: 0, x: -30 },
+                show: { opacity: 1, x: 0, transition: { duration: 0.5, ease: "easeOut" } }
+              }}
+            >
               
               <div className="project-card-image">
                 <div className="project-badge" style={{ backgroundColor: project.badgeColor }}>
@@ -154,9 +174,9 @@ const ProjectsList = () => {
                 </div>
 
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Bottom Banner */}
         <div className="projects-contact-banner">

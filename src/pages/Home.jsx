@@ -1,6 +1,7 @@
 import React from 'react';
 import Hero from '../components/Hero';
 import PropertySearch from '../components/PropertySearch';
+import StatsSection from '../components/StatsSection';
 import PremiumProjects from '../components/PremiumProjects';
 import WhyChooseUs from '../components/WhyChooseUs';
 import PlotAvailability from '../components/PlotAvailability';
@@ -15,6 +16,7 @@ const Home = () => {
       <div className="home-page">
         <Hero />
         <ScrollReveal direction="up"><PropertySearch /></ScrollReveal>
+        <ScrollReveal direction="up"><StatsSection /></ScrollReveal>
         <ScrollReveal direction="left"><PremiumProjects /></ScrollReveal>
         <ScrollReveal direction="right"><WhyChooseUs /></ScrollReveal>
         <ScrollReveal direction="left"><PlotAvailability /></ScrollReveal>

@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import './PremiumProjects.css';
 
 const projects = [
@@ -67,9 +68,29 @@ const PremiumProjects = () => {
           </div>
         </div>
 
-        <div className="projects-grid" ref={scrollRef}>
+        <motion.div 
+          className="projects-grid" 
+          ref={scrollRef}
+          variants={{
+            hidden: { opacity: 0 },
+            show: {
+              opacity: 1,
+              transition: { staggerChildren: 0.2 }
+            }
+          }}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.1 }}
+        >
           {projects.map((project) => (
-            <div key={project.id} className="project-card">
+            <motion.div 
+              key={project.id} 
+              className="project-card"
+              variants={{
+                hidden: { opacity: 0, y: 50 },
+                show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+              }}
+            >
               <div className="card-image">
                 <img src={project.image} alt={project.title} />
                 <span className={`status-badge status-${project.statusColor}`}>
@@ -109,9 +130,9 @@ const PremiumProjects = () => {
                   <button className="btn-outline">VIEW DETAILS</button>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

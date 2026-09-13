@@ -1,10 +1,14 @@
 import React from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import './Hero.css';
 import heroBg from '../assets/hero_bg.jpg';
 
 const Hero = () => {
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 1000], ['0%', '50%']);
+
   return (
-    <section className="hero-banner" style={{ backgroundImage: `url(${heroBg})` }}>
+    <motion.section className="hero-banner" style={{ backgroundImage: `url(${heroBg})`, backgroundPositionY: y }}>
       <div className="hero-gradient-overlay"></div>
       
       <div className="container hero-container">
