@@ -88,7 +88,7 @@ a:hover {
   border-radius: var(--border-radius);
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   border: none;
   font-size: var(--font-size-base);
 }
@@ -100,8 +100,8 @@ a:hover {
 
 .btn-primary:hover {
   background-color: var(--color-primary-light);
-  transform: translateY(-2px);
-  box-shadow: var(--box-shadow);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(74, 44, 23, 0.3);
 }
 
 .btn-secondary {
@@ -111,6 +111,6 @@ a:hover {
 
 .btn-secondary:hover {
   background-color: var(--color-primary);
-  transform: translateY(-2px);
-  box-shadow: var(--box-shadow);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(74, 44, 23, 0.3);
 }

@@ -1,11 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import './ProjectsHero.css';
 
 const ProjectsHero = () => {
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 1000], ['0%', '50%']);
+
   return (
     <section className="projects-hero-section">
-      <div className="projects-hero-banner">
+      <motion.div className="projects-hero-banner" style={{ backgroundPositionY: y }}>
         <div className="hero-overlay"></div>
         <div className="container">
           <div className="projects-hero-content">
@@ -37,7 +41,7 @@ const ProjectsHero = () => {
             <p>Explore our premium villa plots and residential projects in prime locations.</p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

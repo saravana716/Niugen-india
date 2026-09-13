@@ -1,7 +1,11 @@
 import React from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import './AboutHero.css';
 
 const AboutHero = () => {
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 1000], [0, 150]);
+
   return (
     <section className="about-hero-section">
       <div className="about-hero-top">
@@ -24,10 +28,11 @@ const AboutHero = () => {
             </button>
           </div>
         </div>
-        <div className="about-hero-image">
-          <img
+        <div className="about-hero-image" style={{ overflow: 'hidden' }}>
+          <motion.img
             src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=2000"
             alt="Modern Villa at Sunset"
+            style={{ y, scale: 1.15, height: '115%', width: '100%', objectFit: 'cover' }}
           />
         </div>
       </div>
