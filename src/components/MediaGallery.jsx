@@ -1,21 +1,27 @@
 import React, { useState } from 'react';
 import './MediaGallery.css';
 
+import galleryImg1 from '../assets/gallerimg1.jpeg';
+import galleryImg2 from '../assets/galleryimg2.jpeg';
+import galleryImg3 from '../assets/galleryimg3.jpeg';
+import galleryImg5 from '../assets/galleryimg5.jpeg';
+import galleryImg6 from '../assets/galleryimg6.jpeg';
+import galleryVideo1 from '../assets/galleryimg4.mp4';
+import galleryVideo2 from '../assets/galleryvideo2.mp4';
+import galleryVideo3 from '../assets/galleryvideo3.mp4';
+
 const images = [
-  { id: 1, title: 'Greenfield City', src: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800' },
-  { id: 2, title: 'Royal Meadows', src: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=800' },
-  { id: 3, title: 'Sunrise Avenue', src: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=800' },
-  { id: 4, title: 'Serenity Villas', src: 'https://images.unsplash.com/photo-1600607687920-4e2a09be15c7?auto=format&fit=crop&q=80&w=800' },
-  { id: 5, title: 'Villa Exterior', src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800' },
-  { id: 6, title: 'Internal Road', src: 'https://images.unsplash.com/photo-1517594422361-5e18aece015f?auto=format&fit=crop&q=80&w=800' },
-  { id: 7, title: 'Park & Green Area', src: 'https://images.unsplash.com/photo-1571216345479-79944d180860?auto=format&fit=crop&q=80&w=800' },
-  { id: 8, title: 'Street Lighting', src: 'https://images.unsplash.com/photo-1519504566373-f112e457f920?auto=format&fit=crop&q=80&w=800' }
+  { id: 1, title: 'Project Entrance', src: galleryImg1 },
+  { id: 2, title: 'Villa Exterior View', src: galleryImg2 },
+  { id: 3, title: 'Street & Greenery', src: galleryImg3 },
+  { id: 4, title: 'Modern Amenities', src: galleryImg5 },
+  { id: 5, title: 'Park & Recreation', src: galleryImg6 }
 ];
 
 const videos = [
-  { id: 1, title: 'Greenfield City - Project Overview', src: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800', duration: '01:25' },
-  { id: 2, title: 'Royal Meadows - Luxury Living', src: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=800', duration: '01:40' },
-  { id: 3, title: 'Sunrise Avenue - Site Progress', src: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=800', duration: '01:18' }
+  { id: 1, title: 'Greenfield City - Project Overview', src: galleryVideo1, duration: 'Video' },
+  { id: 2, title: 'Royal Meadows - Luxury Living', src: galleryVideo2, duration: 'Video' },
+  { id: 3, title: 'Sunrise Avenue - Site Progress', src: galleryVideo3, duration: 'Video' }
 ];
 
 const filterTabs = ['All', 'Villa Plots', 'Residential Projects', 'Amenities', 'Site Views'];
@@ -98,7 +104,7 @@ const MediaGallery = () => {
                 className="video-thumbnail-wrapper" 
                 onClick={() => setSelectedVideo(video)}
               >
-                <img src={video.src} alt={video.title} className="video-thumbnail" />
+                <video src={video.src} className="video-thumbnail" muted />
                 <div className="video-overlay">
                   <button className="play-button">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="white" stroke="none">
@@ -126,16 +132,17 @@ const MediaGallery = () => {
               </svg>
             </button>
             <div className="video-player-container">
-              {/* Placeholder iframe for YouTube/Vimeo video */}
-              <iframe 
+              {/* Video Player for local mp4 files */}
+              <video 
                 width="100%" 
                 height="100%" 
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" 
-                title="Video Player" 
-                frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowFullScreen
-              ></iframe>
+                controls 
+                autoPlay 
+                src={selectedVideo.src}
+                style={{ objectFit: 'contain' }}
+              >
+                Your browser does not support the video tag.
+              </video>
             </div>
             <h3 className="modal-video-title">{selectedVideo.title}</h3>
           </div>
