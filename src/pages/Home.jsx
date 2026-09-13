@@ -14,12 +14,12 @@ const Home = () => {
     <PageTransition>
       <div className="home-page">
         <Hero />
-        <ScrollReveal><PropertySearch /></ScrollReveal>
-        <ScrollReveal><PremiumProjects /></ScrollReveal>
-        <ScrollReveal><WhyChooseUs /></ScrollReveal>
-        <ScrollReveal><PlotAvailability /></ScrollReveal>
-        <ScrollReveal><Testimonials /></ScrollReveal>
-        <ScrollReveal><FAQ /></ScrollReveal>
+        <ScrollReveal direction="up"><PropertySearch /></ScrollReveal>
+        <ScrollReveal direction="left"><PremiumProjects /></ScrollReveal>
+        <ScrollReveal direction="right"><WhyChooseUs /></ScrollReveal>
+        <ScrollReveal direction="left"><PlotAvailability /></ScrollReveal>
+        <ScrollReveal direction="up"><Testimonials /></ScrollReveal>
+        <ScrollReveal direction="right"><FAQ /></ScrollReveal>
       </div>
     </PageTransition>
   );

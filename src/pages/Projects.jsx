@@ -10,8 +10,8 @@ const Projects = () => {
     <PageTransition>
       <div className="projects-page">
         <ProjectsHero />
-        <ScrollReveal><ProjectsList /></ScrollReveal>
-        <ScrollReveal>
+        <ScrollReveal direction="left"><ProjectsList /></ScrollReveal>
+        <ScrollReveal direction="up">
           <div className="container" style={{ paddingBottom: '0px' }}>
             <ContactStrip />
           </div>

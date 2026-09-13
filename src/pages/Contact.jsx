@@ -11,9 +11,9 @@ const Contact = () => {
     <PageTransition>
       <div className="contact-page">
         <ContactHero />
-        <ScrollReveal><ContactSection /></ScrollReveal>
-        <ScrollReveal><ContactMap /></ScrollReveal>
-        <ScrollReveal><SiteVisitBanner /></ScrollReveal>
+        <ScrollReveal direction="left"><ContactSection /></ScrollReveal>
+        <ScrollReveal direction="right"><ContactMap /></ScrollReveal>
+        <ScrollReveal direction="up"><SiteVisitBanner /></ScrollReveal>
       </div>
     </PageTransition>
   );

@@ -10,8 +10,8 @@ const Gallery = () => {
     <PageTransition>
       <div className="gallery-page">
         <GalleryHero />
-        <ScrollReveal><MediaGallery /></ScrollReveal>
-        <ScrollReveal>
+        <ScrollReveal direction="up"><MediaGallery /></ScrollReveal>
+        <ScrollReveal direction="left">
           <div className="container">
             <GalleryContactBanner />
           </div>

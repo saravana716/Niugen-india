@@ -12,10 +12,10 @@ const About = () => {
     <PageTransition>
       <div className="about-page" style={{backgroundColor: "var(--color-background)"}}>
         <AboutHero />
-        <ScrollReveal><OurPromise /></ScrollReveal>
-        <ScrollReveal><CoreValues /></ScrollReveal>
-        <ScrollReveal><OurProcess /></ScrollReveal>
-        <ScrollReveal><AboutContactBanner /></ScrollReveal>
+        <ScrollReveal direction="up"><OurPromise /></ScrollReveal>
+        <ScrollReveal direction="left"><CoreValues /></ScrollReveal>
+        <ScrollReveal direction="right"><OurProcess /></ScrollReveal>
+        <ScrollReveal direction="up"><AboutContactBanner /></ScrollReveal>
       </div>
     </PageTransition>
   );

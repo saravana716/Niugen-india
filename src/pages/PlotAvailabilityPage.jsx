@@ -10,8 +10,8 @@ const PlotAvailabilityPage = () => {
     <PageTransition>
       <div className="plot-availability-page">
         <PlotAvailabilityHero />
-        <ScrollReveal><InteractivePlotMap /></ScrollReveal>
-        <ScrollReveal>
+        <ScrollReveal direction="up"><InteractivePlotMap /></ScrollReveal>
+        <ScrollReveal direction="right">
           <div className="container contact-strip-container">
             <ContactStrip />
           </div>

@@ -9,9 +9,9 @@ const Services = () => {
   return (
     <PageTransition>
       <div className="services-page">
-        <ScrollReveal><ServicesSection /></ScrollReveal>
-        <ScrollReveal><OurProcess /></ScrollReveal>
-        <ScrollReveal><AboutContactBanner /></ScrollReveal>
+        <ScrollReveal direction="left"><ServicesSection /></ScrollReveal>
+        <ScrollReveal direction="right"><OurProcess /></ScrollReveal>
+        <ScrollReveal direction="up"><AboutContactBanner /></ScrollReveal>
       </div>
     </PageTransition>
   );
