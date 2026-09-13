@@ -6,18 +6,22 @@ import WhyChooseUs from '../components/WhyChooseUs';
 import PlotAvailability from '../components/PlotAvailability';
 import Testimonials from '../components/Testimonials';
 import FAQ from '../components/FAQ';
+import PageTransition from '../components/PageTransition';
+import ScrollReveal from '../components/ScrollReveal';
 
 const Home = () => {
   return (
-    <>
-      <Hero />
-      <PropertySearch />
-      <PremiumProjects />
-      <WhyChooseUs />
-      <PlotAvailability />
-      <Testimonials />
-      <FAQ />
-    </>
+    <PageTransition>
+      <div className="home-page">
+        <Hero />
+        <ScrollReveal><PropertySearch /></ScrollReveal>
+        <ScrollReveal><PremiumProjects /></ScrollReveal>
+        <ScrollReveal><WhyChooseUs /></ScrollReveal>
+        <ScrollReveal><PlotAvailability /></ScrollReveal>
+        <ScrollReveal><Testimonials /></ScrollReveal>
+        <ScrollReveal><FAQ /></ScrollReveal>
+      </div>
+    </PageTransition>
   );
 };
 

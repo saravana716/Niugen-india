@@ -1,17 +1,23 @@
 import React from 'react';
 import AboutHero from '../components/AboutHero';
-import CoreValues from '../components/CoreValues';
 import OurPromise from '../components/OurPromise';
+import CoreValues from '../components/CoreValues';
+import OurProcess from '../components/OurProcess';
 import AboutContactBanner from '../components/AboutContactBanner';
+import PageTransition from '../components/PageTransition';
+import ScrollReveal from '../components/ScrollReveal';
 
 const About = () => {
   return (
-    <div className="about-page">
-      <AboutHero />
-      <CoreValues />
-      <OurPromise />
-      <AboutContactBanner />
-    </div>
+    <PageTransition>
+      <div className="about-page" style={{backgroundColor: "var(--color-background)"}}>
+        <AboutHero />
+        <ScrollReveal><OurPromise /></ScrollReveal>
+        <ScrollReveal><CoreValues /></ScrollReveal>
+        <ScrollReveal><OurProcess /></ScrollReveal>
+        <ScrollReveal><AboutContactBanner /></ScrollReveal>
+      </div>
+    </PageTransition>
   );
 };
 
