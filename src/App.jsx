@@ -15,7 +15,7 @@ import './index.css';
 
 const AnimatedRoutes = () => {
   const location = useLocation();
-  
+
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
@@ -35,19 +35,14 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Check if it's the first time loading in this session
-    const hasVisited = sessionStorage.getItem('hasVisitedNiugen');
-    if (hasVisited) {
-      setIsLoading(false);
-    } else {
-      sessionStorage.setItem('hasVisitedNiugen', 'true');
+    if (isLoading) {
       // Hide splash screen after 9.5 seconds to match the 9.0s loading bar animation
       const timer = setTimeout(() => {
         setIsLoading(false);
-      }, 9500);
+      }, 2500);
       return () => clearTimeout(timer);
     }
-  }, []);
+  }, [isLoading]);
 
   return (
     <Router>
@@ -56,7 +51,7 @@ function App() {
           {isLoading ? (
             <SplashScreen key="splash" />
           ) : (
-            <motion.div 
+            <motion.div
               key="main-content"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
