@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './ContactSection.css';
 import CustomSelect from './CustomSelect';
+import contactBanner from '../assets/contactbanner.jpeg';
 
 const ContactSection = () => {
   const [project, setProject] = useState("");
@@ -64,7 +65,7 @@ const ContactSection = () => {
                 />
               </div>
 
-              <div className="input-group">
+              <div className="input-group full-width-group">
                 <CustomSelect 
                   placeholder="Select Budget"
                   value={budget}
@@ -163,7 +164,7 @@ const ContactSection = () => {
           {/* Column 3: Office Image */}
           <div className="contact-page-col img-col">
             <img 
-              src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=600" 
+              src={contactBanner} 
               alt="Niu Gen Office" 
               className="office-img"
             />

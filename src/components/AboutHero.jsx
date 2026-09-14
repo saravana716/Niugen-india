@@ -23,9 +23,7 @@ const AboutHero = () => {
               <br /><br />
               Our focus is on combining strategic locations, thoughtful planning, quality infrastructure and transparent customer service to create better property experiences.
             </p>
-            <button className="btn btn-primary" style={{ marginTop: "1.5rem" }}>
-              KNOW MORE ABOUT US →
-            </button>
+
           </div>
         </div>
         <div className="about-hero-image" style={{ overflow: 'hidden' }}>

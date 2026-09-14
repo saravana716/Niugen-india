@@ -5,8 +5,8 @@
 
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 48px;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 32px;
 }
 
 .col-header {
@@ -36,28 +36,9 @@
 }
 
 .contact-form {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 16px;
-  max-height: 420px;
-  overflow-y: auto;
-  padding-right: 8px;
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-primary-light) #f0f0f0;
-}
-
-.contact-form::-webkit-scrollbar {
-  width: 6px;
-}
-
-.contact-form::-webkit-scrollbar-track {
-  background: #f0f0f0;
-  border-radius: 4px;
-}
-
-.contact-form::-webkit-scrollbar-thumb {
-  background-color: var(--color-primary-light);
-  border-radius: 4px;
 }
 
 .input-group {
@@ -110,7 +91,13 @@
   top: 16px;
 }
 
+.textarea-group,
+.full-width-group {
+  grid-column: span 2;
+}
+
 .contact-submit {
+  grid-column: span 2;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -134,19 +121,24 @@
 .info-list {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 16px;
 }
 
 .info-item {
   display: flex;
   gap: 16px;
+  background-color: #ffffff;
+  padding: 24px 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f3f4f6;
 }
 
 .info-icon {
   width: 48px;
   height: 48px;
   min-width: 48px;
-  background-color: var(--color-primary-light);
+  background-color: #9c7345;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -198,16 +190,16 @@
   border: 1px solid #d1d5db;
 }
 
-.social-circle.fb { color: #1877F2; border-color: #1877F2; }
-.social-circle.fb:hover { background-color: #1877F2; color: white; }
+.social-circle.fb { color: white; background-color: #557bda; border-color: #557bda; }
+.social-circle.fb:hover { opacity: 0.8; }
 
-.social-circle.ig { color: #E4405F; border-color: #E4405F; }
+.social-circle.ig { color: #E4405F; border-color: #E4405F; background-color: transparent; }
 .social-circle.ig:hover { background-color: #E4405F; color: white; }
 
-.social-circle.yt { color: #FF0000; border-color: #FF0000; }
-.social-circle.yt:hover { background-color: #FF0000; color: white; }
+.social-circle.yt { color: white; background-color: #e54c5a; border-color: #e54c5a; }
+.social-circle.yt:hover { opacity: 0.8; }
 
-.social-circle.wa { color: #25D366; border-color: #25D366; }
+.social-circle.wa { color: #25D366; border-color: #25D366; background-color: transparent; }
 .social-circle.wa:hover { background-color: #25D366; color: white; }
 
 /* Image Col */
