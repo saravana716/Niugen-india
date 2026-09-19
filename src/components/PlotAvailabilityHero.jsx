@@ -1,12 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ParallaxHero from './ParallaxHero';
 import './PlotAvailabilityHero.css';
 
 const PlotAvailabilityHero = () => {
   return (
     <section className="plotavail-hero-section">
-      <div className="plotavail-hero-banner">
-        <div className="hero-overlay"></div>
+      <ParallaxHero
+        bgImage="https://images.unsplash.com/photo-1524813686514-a57563d77965?auto=format&fit=crop&q=80&w=1600"
+        height="380px"
+        overlayClass="hero-overlay"
+      >
         <div className="container">
           <div className="plotavail-hero-content">
             <h1>Plot Availability</h1>
@@ -37,7 +41,7 @@ const PlotAvailabilityHero = () => {
             <p>Choose your perfect plot from our premium projects across prime locations.</p>
           </div>
         </div>
-      </div>
+      </ParallaxHero>
     </section>
   );
 };

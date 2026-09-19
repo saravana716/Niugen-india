@@ -7,6 +7,13 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Projects from './pages/Projects';
+import LandAndPlots from './pages/LandAndPlots';
+import Residential from './pages/Residential';
+import Commercial from './pages/Commercial';
+import Construction from './pages/Construction';
+import Architects from './pages/Architects';
+import InteriorDesign from './pages/InteriorDesign';
+import Brands from './pages/Brands';
 import PlotAvailabilityPage from './pages/PlotAvailabilityPage';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
@@ -24,6 +31,13 @@ const AnimatedRoutes = () => {
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/projects/land-and-plots" element={<LandAndPlots />} />
+        <Route path="/projects/residential" element={<Residential />} />
+        <Route path="/projects/commercial" element={<Commercial />} />
+        <Route path="/projects/construction" element={<Construction />} />
+        <Route path="/projects/architects" element={<Architects />} />
+        <Route path="/projects/interior-design" element={<InteriorDesign />} />
+        <Route path="/projects/brands" element={<Brands />} />
         <Route path="/projects/:id" element={<ProjectDetails />} />
         <Route path="/plot-availability" element={<PlotAvailabilityPage />} />
         <Route path="/gallery" element={<Gallery />} />

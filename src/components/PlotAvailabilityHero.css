@@ -4,16 +4,7 @@
   margin-top: 0px;
 }
 
-.plotavail-hero-banner {
-  position: relative;
-  width: 100%;
-  min-height: 380px;
-  display: flex;
-  align-items: center;
-  background-image: url('https://images.unsplash.com/photo-1524813686514-a57563d77965?auto=format&fit=crop&q=80&w=1600'); /* Changed to a plot layout image */
-  background-size: cover;
-  background-position: center;
-}
+/* Banner handled by ParallaxHero */
 
 .plotavail-hero-banner .hero-overlay {
   position: absolute;

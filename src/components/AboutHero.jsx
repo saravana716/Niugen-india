@@ -1,13 +1,32 @@
-import React from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React, { useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
 import './AboutHero.css';
 
+gsap.registerPlugin(ScrollTrigger);
+
 const AboutHero = () => {
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 1000], [0, 150]);
+  const containerRef = useRef(null);
+  const imgRef = useRef(null);
+
+  useGSAP(() => {
+    // 3D Parallax effect on scroll for the side image
+    gsap.to(imgRef.current, {
+      yPercent: 40, 
+      scale: 1.25, 
+      ease: "power1.out",
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top center", // trigger when top of container hits center of viewport
+        end: "bottom top", 
+        scrub: 1, 
+      }
+    });
+  }, { scope: containerRef });
 
   return (
-    <section className="about-hero-section">
+    <section className="about-hero-section" ref={containerRef}>
       <div className="about-hero-top">
         <div className="container about-hero-container">
           <div className="about-hero-content">
@@ -27,10 +46,17 @@ const AboutHero = () => {
           </div>
         </div>
         <div className="about-hero-image" style={{ overflow: 'hidden' }}>
-          <motion.img
+          <img
+            ref={imgRef}
             src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=2000"
             alt="Modern Villa at Sunset"
-            style={{ y, scale: 1.15, height: '115%', width: '100%', objectFit: 'cover' }}
+            style={{ 
+              width: '100%',
+              height: '130%',
+              objectFit: 'cover',
+              willChange: 'transform',
+              marginTop: '-15%'
+            }}
           />
         </div>
       </div>

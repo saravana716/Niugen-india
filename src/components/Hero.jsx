@@ -1,16 +1,15 @@
 import React from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import ParallaxHero from './ParallaxHero';
 import './Hero.css';
 import heroBg from '../assets/hero_bg.jpg';
 
 const Hero = () => {
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 1000], ['0%', '50%']);
-
   return (
-    <motion.section className="hero-banner" style={{ backgroundImage: `url(${heroBg})`, backgroundPositionY: y }}>
-      <div className="hero-gradient-overlay"></div>
-      
+    <ParallaxHero 
+      bgImage={heroBg}
+      height="600px"
+      overlayClass="hero-gradient-overlay"
+    >
       <div className="container hero-container">
         <div className="hero-content">
           <p className="hero-subtitle">BUILDING STRONGER FOUNDATIONS</p>
@@ -72,7 +71,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </motion.section>
+    </ParallaxHero>
   );
 };
 

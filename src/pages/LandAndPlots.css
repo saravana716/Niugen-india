@@ -1,0 +1,313 @@
+/* Land & Plots Page CSS */
+
+.land-plots-page {
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+/* HERO SECTION */
+.lp-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Lightened the overlay so the image is more visible, only darkening the bottom for text readability */
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 20%, rgba(0,0,0,0.6) 100%);
+  z-index: 1;
+}
+
+.lp-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  width: 100%;
+  padding-bottom: 40px;
+}
+
+.lp-hero-title {
+  color: white;
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.lp-hero-subtitle {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 18px;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+.lp-hero-badges {
+  display: flex;
+  gap: 40px; /* Increased gap to match mockup spread */
+  flex-wrap: wrap;
+}
+
+.lp-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-size: 15px; /* Slightly larger text */
+  font-weight: 600;
+}
+
+.lp-badge svg {
+  color: #d4af37; /* Match exact gold */
+  width: 28px; /* Slightly larger icon */
+  height: 28px;
+}
+
+/* SEARCH BAR SECTION */
+.lp-search-section {
+  position: relative;
+  z-index: 10;
+  margin-top: 30px; 
+}
+
+.lp-search-bar {
+  background-color: transparent; 
+  padding: 0; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: none; 
+  width: 100%; /* Full width cover */
+  /* Removed max-width to allow full container width */
+}
+
+.lp-filter-group {
+  flex: 1;
+  position: relative;
+}
+
+.lp-custom-select {
+  width: 100%;
+  position: relative;
+}
+
+.lp-custom-select .select-trigger {
+  background: #ffffff;
+  border: 1px solid #d4af37; /* Exact gold border from mockup */
+  border-radius: 8px; /* Slightly tighter rounded corners */
+  padding: 14px 20px; 
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02); 
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 52px; /* Ensure consistent height */
+}
+
+.lp-custom-select.open .select-trigger,
+.lp-custom-select .select-trigger:focus {
+  border-color: #b8860b;
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1); 
+}
+
+.lp-custom-select .dropdown-arrow {
+  color: #666;
+  transition: transform 0.3s ease;
+}
+
+.lp-custom-select.open .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.lp-custom-select .select-options {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  z-index: 100;
+  overflow: hidden;
+  animation: slideDown 0.2s ease forwards;
+  transform-origin: top;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: scaleY(0.95); }
+  to { opacity: 1; transform: scaleY(1); }
+}
+
+.lp-custom-select .option {
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #444;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.lp-custom-select .option:hover {
+  background: #fdfbf5; /* Very subtle gold tint */
+  color: #a9801d;
+}
+
+.lp-custom-select .option.selected {
+  background: rgba(212, 175, 55, 0.1);
+  color: #a9801d;
+  font-weight: 600;
+}
+
+.lp-search-btn {
+  background: #a9801d; /* Solid gold color matching mockup */
+  color: white;
+  border: none;
+  border-radius: 8px; 
+  padding: 14px 40px; 
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 160px;
+  box-shadow: 0 4px 10px rgba(169, 128, 29, 0.2); 
+}
+
+.lp-search-btn:hover {
+  opacity: 0.9;
+}
+
+/* FEATURED PLOTS SECTION */
+.lp-featured-section {
+  padding: 50px 0;
+}
+
+.lp-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 24px;
+}
+
+.lp-section-title {
+  color: #222;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.lp-view-all {
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.lp-view-all:hover {
+  color: var(--color-secondary);
+}
+
+.lp-view-all .arrow {
+  color: var(--color-secondary);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.lp-plots-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.lp-plot-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border: 1px solid #f0f0f0;
+  transition: transform 0.3s ease;
+}
+
+.lp-plot-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.lp-plot-image {
+  width: 100%;
+  height: 180px;
+}
+
+.lp-plot-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lp-plot-content {
+  padding: 16px;
+}
+
+.lp-plot-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 4px;
+}
+
+.lp-plot-location {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 12px;
+}
+
+.lp-plot-price {
+  font-size: 16px;
+  font-weight: 800;
+  color: #222;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .lp-plots-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .lp-hero {
+    height: 350px;
+  }
+  
+  .lp-hero-title {
+    font-size: 36px;
+  }
+  
+  .lp-hero-badges {
+    gap: 15px;
+  }
+  
+  .lp-badge {
+    width: 45%;
+  }
+
+  .lp-search-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .lp-search-btn {
+    width: 100%;
+  }
+  
+  .lp-plots-grid {
+    grid-template-columns: 1fr;
+  }
+}

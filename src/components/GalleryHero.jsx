@@ -1,12 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ParallaxHero from './ParallaxHero';
 import './GalleryHero.css';
 
 const GalleryHero = () => {
   return (
     <section className="gallery-hero-section">
-      <div className="gallery-hero-banner">
-        <div className="hero-overlay"></div>
+      <ParallaxHero
+        bgImage="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1600"
+        height="380px"
+        overlayClass="hero-overlay"
+      >
         <div className="container">
           <div className="gallery-hero-content">
             <h1>Gallery <span className="text-green">&</span> Video</h1>
@@ -37,7 +41,7 @@ const GalleryHero = () => {
             <p>Explore our premium projects, site views, and the lifestyle we create.</p>
           </div>
         </div>
-      </div>
+      </ParallaxHero>
     </section>
   );
 };

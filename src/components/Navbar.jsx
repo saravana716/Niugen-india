@@ -68,10 +68,21 @@ const Navbar = () => {
             <div className="nav-links">
               <NavLink to="/" className="nav-item" end onClick={handleNavClick}>HOME</NavLink>
               <NavLink to="/about" className="nav-item" onClick={handleNavClick}>ABOUT US</NavLink>
-              <NavLink to="/projects" className="nav-item has-dropdown" onClick={handleNavClick}>
-                PROJECTS
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '2px', marginTop: '2px' }}><polyline points="6 9 12 15 18 9"></polyline></svg>
-              </NavLink>
+              <div className="nav-item has-dropdown group">
+                <NavLink to="/projects" onClick={handleNavClick} className="dropdown-toggle" style={{ display: 'flex', alignItems: 'center' }}>
+                  PROJECTS
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: '2px', marginTop: '2px' }}><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </NavLink>
+                <div className="dropdown-menu">
+                  <NavLink to="/projects/land-and-plots" className="dropdown-item" onClick={handleNavClick}>Land & Plots</NavLink>
+                  <NavLink to="/projects/residential" className="dropdown-item" onClick={handleNavClick}>Residential</NavLink>
+                  <NavLink to="/projects/commercial" className="dropdown-item" onClick={handleNavClick}>Commercial</NavLink>
+                  <NavLink to="/projects/construction" className="dropdown-item" onClick={handleNavClick}>Construction</NavLink>
+                  <NavLink to="/projects/architects" className="dropdown-item" onClick={handleNavClick}>Architects</NavLink>
+                  <NavLink to="/projects/interior-design" className="dropdown-item" onClick={handleNavClick}>Interior Design</NavLink>
+                  <NavLink to="/projects/brands" className="dropdown-item" onClick={handleNavClick}>Brands</NavLink>
+                </div>
+              </div>
               <NavLink to="/plot-availability" className="nav-item" onClick={handleNavClick}>PLOT AVAILABILITY</NavLink>
               <NavLink to="/services" className="nav-item" onClick={handleNavClick}>SERVICES</NavLink>
               <NavLink to="/gallery" className="nav-item" onClick={handleNavClick}>GALLERY</NavLink>

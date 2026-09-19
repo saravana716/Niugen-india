@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import ParallaxHero from './ParallaxHero';
 import './ProjectsHero.css';
 
 const ProjectsHero = () => {
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 1000], ['0%', '50%']);
-
   return (
     <section className="projects-hero-section">
-      <motion.div className="projects-hero-banner" style={{ backgroundPositionY: y }}>
-        <div className="hero-overlay"></div>
+      <ParallaxHero
+        bgImage="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1600"
+        height="380px"
+        overlayClass="hero-overlay"
+      >
         <div className="container">
           <div className="projects-hero-content">
             <h1>Our Projects</h1>
@@ -41,7 +41,7 @@ const ProjectsHero = () => {
             <p>Explore our premium villa plots and residential projects in prime locations.</p>
           </div>
         </div>
-      </motion.div>
+      </ParallaxHero>
     </section>
   );
 };

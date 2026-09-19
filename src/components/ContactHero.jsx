@@ -1,12 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ParallaxHero from './ParallaxHero';
 import './ContactHero.css';
 
 const ContactHero = () => {
   return (
     <section className="contact-hero-section">
-      <div className="contact-hero-banner">
-        <div className="hero-overlay"></div>
+      <ParallaxHero
+        bgImage="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=1600"
+        height="380px"
+        overlayClass="hero-overlay"
+      >
         <div className="container">
           <div className="contact-hero-layout">
             
@@ -82,7 +86,7 @@ const ContactHero = () => {
 
           </div>
         </div>
-      </div>
+      </ParallaxHero>
     </section>
   );
 };

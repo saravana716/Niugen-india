@@ -1,9 +1,31 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
 import './ServicesSection.css';
 
+gsap.registerPlugin(ScrollTrigger);
+
 const ServicesSection = () => {
+  const containerRef = useRef(null);
+  const imgRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.to(imgRef.current, {
+      yPercent: 40,
+      scale: 1.25,
+      ease: "power1.out",
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top center",
+        end: "bottom top",
+        scrub: 1,
+      }
+    });
+  }, { scope: containerRef });
+
   return (
-    <div className="services-section-wrapper">
+    <div className="services-section-wrapper" ref={containerRef}>
       
       <div className="services-hero">
         <div className="container">
@@ -15,8 +37,19 @@ const ServicesSection = () => {
             </div>
           </div>
         </div>
-        <div className="services-hero-image">
-          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1200" alt="Gated Community Entrance" />
+        <div className="services-hero-image" style={{ overflow: 'hidden' }}>
+          <img 
+            ref={imgRef}
+            src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1200" 
+            alt="Gated Community Entrance" 
+            style={{ 
+              width: '100%', 
+              height: '130%', 
+              objectFit: 'cover', 
+              willChange: 'transform',
+              marginTop: '-15%' 
+            }} 
+          />
         </div>
       </div>
 
