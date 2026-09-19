@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import './MediaGallery.css';
+import StaggerReveal from './StaggerReveal';
 
 import galleryImg1 from '../assets/gallerimg1.jpeg';
 import galleryImg2 from '../assets/galleryimg2.jpeg';
@@ -21,7 +24,12 @@ const images = [
 const videos = [
   { id: 1, title: 'Greenfield City - Project Overview', src: galleryVideo1, duration: 'Video' },
   { id: 2, title: 'Royal Meadows - Luxury Living', src: galleryVideo2, duration: 'Video' },
-  { id: 3, title: 'Sunrise Avenue - Site Progress', src: galleryVideo3, duration: 'Video' }
+  { id: 3, title: 'Sunrise Avenue - Site Progress', src: galleryVideo3, duration: 'Video' },
+  { id: 4, title: 'Sunrise Avenue - Site Progress', src: galleryVideo3, duration: 'Video' },
+  { id: 5, title: 'Sunrise Avenue - Site Progress', src: galleryVideo3, duration: 'Video' },
+  { id: 6, title: 'Sunrise Avenue - Site Progress', src: galleryVideo3, duration: 'Video' },
+  { id: 7, title: 'Sunrise Avenue - Site Progress', src: galleryVideo3, duration: 'Video' },
+  { id: 8, title: 'Sunrise Avenue - Site Progress', src: galleryVideo3, duration: 'Video' }
 ];
 
 const filterTabs = ['All', 'Villa Plots', 'Residential Projects', 'Amenities', 'Site Views'];
@@ -30,24 +38,39 @@ const MediaGallery = () => {
   const [activeTab, setActiveTab] = useState('All');
   const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState(null);
+  
+  const marqueeRef = useRef(null);
+  const tweenRef = useRef(null);
+  
+  useGSAP(() => {
+    if (marqueeRef.current) {
+      // Infinite horizontal scroll animation
+      tweenRef.current = gsap.to(marqueeRef.current, {
+        xPercent: -50,
+        ease: "none",
+        duration: 20, // Adjust speed here (higher = slower)
+        repeat: -1
+      });
+    }
+  }, { scope: marqueeRef });
 
   return (
     <section className="media-gallery-section">
       <div className="container">
-        
+
         {/* Project Gallery Header */}
         <div className="section-header space-between">
           <div className="header-left">
             <h2 className="section-title">Project Gallery</h2>
             <div className="title-underline"></div>
           </div>
-          
+
           <div className="gallery-filter-wrapper">
             {/* Desktop Filters */}
             <div className="gallery-filters desktop-only">
               {filterTabs.map(tab => (
-                <button 
-                  key={tab} 
+                <button
+                  key={tab}
                   className={`gallery-filter-btn ${activeTab === tab ? 'active' : ''}`}
                   onClick={() => setActiveTab(tab)}
                 >
@@ -62,15 +85,15 @@ const MediaGallery = () => {
                 <span>Filter Gallery</span>
                 <span className="filter-badge">{activeTab}</span>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3 6H21M7 12H17M10 18H14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M3 6H21M7 12H17M10 18H14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </button>
             </div>
           </div>
         </div>
 
-        {/* Image Grid */}
-        <div className="image-grid">
+        {/* Image Grid with StaggerReveal */}
+        <StaggerReveal className="image-grid" yOffset={40} stagger={0.15}>
           {images.map(image => (
             <div className="gallery-item" key={image.id}>
               <div className="gallery-img-wrapper">
@@ -79,7 +102,7 @@ const MediaGallery = () => {
               <h4>{image.title}</h4>
             </div>
           ))}
-        </div>
+        </StaggerReveal>
 
         {/* Project Videos Header */}
         <div className="section-header space-between videos-header">
@@ -96,27 +119,59 @@ const MediaGallery = () => {
           </a>
         </div>
 
-        {/* Video Grid */}
-        <div className="video-grid">
-          {videos.map(video => (
-            <div className="video-item" key={video.id}>
-              <div 
-                className="video-thumbnail-wrapper" 
-                onClick={() => setSelectedVideo(video)}
-              >
-                <video src={video.src} className="video-thumbnail" muted />
-                <div className="video-overlay">
-                  <button className="play-button">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white" stroke="none">
-                      <polygon points="5 3 19 12 5 21 5 3"></polygon>
-                    </svg>
-                  </button>
-                  <span className="video-duration">{video.duration}</span>
+        {/* Video Grid Marquee */}
+        <div 
+          className="video-marquee-container"
+          onMouseEnter={() => tweenRef.current?.pause()}
+          onMouseLeave={() => tweenRef.current?.play()}
+        >
+          <div className="video-marquee-track" ref={marqueeRef}>
+            {/* First set of videos */}
+            <div className="video-grid">
+              {videos.map((video, index) => (
+                <div className="video-item" key={`v1-${index}`}>
+                  <div
+                    className="video-thumbnail-wrapper"
+                    onClick={() => setSelectedVideo(video)}
+                  >
+                    <video src={video.src} className="video-thumbnail" muted />
+                    <div className="video-overlay">
+                      <button className="play-button">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="white" stroke="none">
+                          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                      </button>
+                      <span className="video-duration">{video.duration}</span>
+                    </div>
+                  </div>
+                  <h4>{video.title}</h4>
                 </div>
-              </div>
-              <h4>{video.title}</h4>
+              ))}
             </div>
-          ))}
+            
+            {/* Duplicated set for seamless loop */}
+            <div className="video-grid">
+              {videos.map((video, index) => (
+                <div className="video-item" key={`v2-${index}`}>
+                  <div
+                    className="video-thumbnail-wrapper"
+                    onClick={() => setSelectedVideo(video)}
+                  >
+                    <video src={video.src} className="video-thumbnail" muted />
+                    <div className="video-overlay">
+                      <button className="play-button">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="white" stroke="none">
+                          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                      </button>
+                      <span className="video-duration">{video.duration}</span>
+                    </div>
+                  </div>
+                  <h4>{video.title}</h4>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
       </div>
@@ -133,11 +188,11 @@ const MediaGallery = () => {
             </button>
             <div className="video-player-container">
               {/* Video Player for local mp4 files */}
-              <video 
-                width="100%" 
-                height="100%" 
-                controls 
-                autoPlay 
+              <video
+                width="100%"
+                height="100%"
+                controls
+                autoPlay
                 src={selectedVideo.src}
                 style={{ objectFit: 'contain' }}
               >

@@ -115,15 +115,35 @@
   color: var(--color-primary);
 }
 
+/* Video Grid Marquee CSS */
+.video-marquee-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.video-marquee-track {
+  display: flex;
+  width: max-content; /* allows content to flow horizontally infinitely */
+}
+
 .video-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
   gap: 24px;
+  padding-bottom: 24px;
+  /* removing overflow and scroll snapping so GSAP controls it */
+}
+
+.video-grid + .video-grid {
+  margin-left: 24px; /* Maintain gap between original and duplicate set */
 }
 
 .video-item {
   display: flex;
   flex-direction: column;
+  width: 380px; /* Fixed width for marquee */
+  max-width: 85vw; /* Responsive on mobile */
+  flex-shrink: 0;
 }
 
 .video-thumbnail-wrapper {
@@ -208,8 +228,8 @@
   .image-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .video-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .video-item {
+    /* removed flex basis calculation as it breaks marquee */
   }
   .section-header.space-between {
     flex-direction: column;
@@ -227,9 +247,17 @@
     display: flex;
   }
   
-  .image-grid, .video-grid {
+  .image-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
+  }
+
+  .video-grid {
+    gap: 12px;
+  }
+
+  .video-item {
+    /* removed flex basis calculation as it breaks marquee */
   }
 
   .gallery-img-wrapper {

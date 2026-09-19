@@ -9,6 +9,7 @@ import Testimonials from '../components/Testimonials';
 import FAQ from '../components/FAQ';
 import PageTransition from '../components/PageTransition';
 import ScrollReveal from '../components/ScrollReveal';
+import HorizontalScrollGallery from '../components/HorizontalScrollGallery';
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
         <ScrollReveal direction="up"><CategoryCards /></ScrollReveal>
         <ScrollReveal direction="up"><StatsSection /></ScrollReveal>
         <ScrollReveal direction="left"><PremiumProjects /></ScrollReveal>
+        <HorizontalScrollGallery />
         <ScrollReveal direction="right"><WhyChooseUs /></ScrollReveal>
         <ScrollReveal direction="left"><PlotAvailability /></ScrollReveal>
         <ScrollReveal direction="up"><Testimonials /></ScrollReveal>
