@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PageTransition from '../components/PageTransition';
 import ScrollReveal from '../components/ScrollReveal';
 import ParallaxHero from '../components/ParallaxHero';
+import TextReveal from '../components/TextReveal';
 import './Construction.css';
 
 const services = [
@@ -55,8 +56,10 @@ const Construction = () => {
           overlayClass="const-hero-overlay"
         >
           <div className="container const-hero-content">
-            <h1 className="const-hero-title">Building the Future</h1>
-            <p className="const-hero-subtitle">Expert Contracting & Turnkey Construction</p>
+            <h1 className="const-hero-title">
+              <TextReveal text="Building the Future" />
+            </h1>
+            <TextReveal elementType="p" className="const-hero-subtitle" text="Expert Contracting & Turnkey Construction" delay={0.2} />
           </div>
         </ParallaxHero>
 

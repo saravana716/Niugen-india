@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ParallaxHero from './ParallaxHero';
+import TextReveal from './TextReveal';
 import './GalleryHero.css';
 
 const GalleryHero = () => {
@@ -13,7 +14,9 @@ const GalleryHero = () => {
       >
         <div className="container">
           <div className="gallery-hero-content">
-            <h1>Gallery <span className="text-green">&</span> Video</h1>
+            <h1>
+              <TextReveal text="Gallery" /> <TextReveal elementType="span" className="text-green" text="&" delay={0.2} /> <TextReveal text="Video" delay={0.4} />
+            </h1>
             
             <div className="breadcrumbs">
               <Link to="/" className="breadcrumb-link home-link">

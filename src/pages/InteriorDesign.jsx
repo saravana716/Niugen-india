@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PageTransition from '../components/PageTransition';
 import ScrollReveal from '../components/ScrollReveal';
 import ParallaxHero from '../components/ParallaxHero';
+import TextReveal from '../components/TextReveal';
 import './InteriorDesign.css';
 
 const services = [
@@ -46,8 +47,11 @@ const InteriorDesign = () => {
           overlayClass="int-hero-overlay"
         >
           <div className="container int-hero-content">
-            <h1 className="int-hero-title">Elevate Your<br/>Interiors</h1>
-            <p className="int-hero-subtitle">Premium Designs for<br/>Modern Living</p>
+            <h1 className="int-hero-title">
+              <TextReveal text="Elevate Your" /><br/>
+              <TextReveal text="Interiors" delay={0.2} />
+            </h1>
+            <TextReveal elementType="p" className="int-hero-subtitle" text="Premium Designs for Modern Living" delay={0.4} />
           </div>
         </ParallaxHero>
 

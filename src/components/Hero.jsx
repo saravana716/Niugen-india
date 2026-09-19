@@ -1,5 +1,6 @@
 import React from 'react';
 import ParallaxHero from './ParallaxHero';
+import TextReveal from './TextReveal';
 import './Hero.css';
 import heroBg from '../assets/hero_bg.jpg';
 
@@ -12,16 +13,18 @@ const Hero = () => {
     >
       <div className="container hero-container">
         <div className="hero-content">
-          <p className="hero-subtitle">BUILDING STRONGER FOUNDATIONS</p>
+          <TextReveal elementType="p" className="hero-subtitle" text="BUILDING STRONGER FOUNDATIONS" />
           <h1 className="hero-title">
-            <span className="text-primary">Building</span><br/>
-            <span className="text-primary">Dreams.</span><br/>
-            <span className="text-secondary">Creating Value.</span>
+            <TextReveal className="text-primary" text="Building" delay={0.2} /><br/>
+            <TextReveal className="text-primary" text="Dreams." delay={0.4} /><br/>
+            <TextReveal className="text-secondary" text="Creating Value." delay={0.6} />
           </h1>
-          <p className="hero-description">
-            Premium Villa Plots & Residential Projects<br/>
-            in and around Kovilpatti.
-          </p>
+          <TextReveal 
+            elementType="p" 
+            className="hero-description" 
+            text="Premium Villa Plots & Residential Projects in and around Kovilpatti." 
+            delay={0.8}
+          />
           
           <div className="hero-buttons">
             <button className="btn hero-btn-primary">

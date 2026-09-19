@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import TextReveal from './TextReveal';
 import './AboutHero.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -30,10 +31,10 @@ const AboutHero = () => {
       <div className="about-hero-top">
         <div className="container about-hero-container">
           <div className="about-hero-content">
-            <span className="subtitle">ABOUT NIU GEN INDIA INFRAS</span>
+            <TextReveal elementType="span" className="subtitle" text="ABOUT NIU GEN INDIA INFRAS" />
             <h1 className="title">
-              <span className="text-dark">Building Trust.</span>
-              <span className="text-green">Creating Value.</span>
+              <TextReveal elementType="span" className="text-dark" text="Building Trust." delay={0.2} /><br />
+              <TextReveal elementType="span" className="text-green" text="Creating Value." delay={0.4} />
             </h1>
             <p className="description">
               NIU GEN INDIA INFRAS is a real estate development company focused on creating thoughtfully planned residential developments and premium villa plots in and around Kovilpatti.

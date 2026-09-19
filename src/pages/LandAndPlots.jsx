@@ -4,6 +4,7 @@ import PageTransition from '../components/PageTransition';
 import ScrollReveal from '../components/ScrollReveal';
 import CustomSelect from '../components/CustomSelect';
 import ParallaxHero from '../components/ParallaxHero';
+import TextReveal from '../components/TextReveal';
 import './LandAndPlots.css';
 
 const featuredPlots = [
@@ -52,8 +53,10 @@ const LandAndPlots = () => {
           alignItems="flex-end"
         >
           <div className="container lp-hero-content">
-            <h1 className="lp-hero-title">Land & Plots</h1>
-            <p className="lp-hero-subtitle">Invest Today for a Brighter Tomorrow</p>
+            <h1 className="lp-hero-title">
+              <TextReveal text="Land & Plots" />
+            </h1>
+            <TextReveal elementType="p" className="lp-hero-subtitle" text="Invest Today for a Brighter Tomorrow" delay={0.2} />
             
             <div className="lp-hero-badges">
               <div className="lp-badge">

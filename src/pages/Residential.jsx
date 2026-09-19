@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PageTransition from '../components/PageTransition';
 import ScrollReveal from '../components/ScrollReveal';
-import CustomSelect from '../components/CustomSelect';
 import ParallaxHero from '../components/ParallaxHero';
+import TextReveal from '../components/TextReveal';
+import CustomSelect from '../components/CustomSelect';
 import './Residential.css';
 
 const featuredProperties = [
@@ -60,8 +61,11 @@ const Residential = () => {
           overlayClass="res-hero-overlay"
         >
           <div className="container res-hero-content">
-            <h1 className="res-hero-title">Find Your<br/>Dream Home</h1>
-            <p className="res-hero-subtitle">Premium Villas, Independent Houses<br/>and Apartments</p>
+            <h1 className="res-hero-title">
+              <TextReveal text="Find Your" /><br/>
+              <TextReveal text="Dream Home" delay={0.2} />
+            </h1>
+            <TextReveal elementType="p" className="res-hero-subtitle" text="Premium Villas, Independent Houses and Apartments" delay={0.4} />
           </div>
         </ParallaxHero>
 

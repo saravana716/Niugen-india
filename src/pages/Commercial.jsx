@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PageTransition from '../components/PageTransition';
 import ScrollReveal from '../components/ScrollReveal';
-import CustomSelect from '../components/CustomSelect';
 import ParallaxHero from '../components/ParallaxHero';
+import TextReveal from '../components/TextReveal';
+import CustomSelect from '../components/CustomSelect';
 import './Commercial.css';
 
 const featuredProperties = [
@@ -59,8 +60,11 @@ const Commercial = () => {
           overlayClass="com-hero-overlay"
         >
           <div className="container com-hero-content">
-            <h1 className="com-hero-title">Spaces for<br/>Bigger Ideas</h1>
-            <p className="com-hero-subtitle">Commercial Spaces for<br/>Growing Businesses</p>
+            <h1 className="com-hero-title">
+              <TextReveal text="Spaces for" /><br/>
+              <TextReveal text="Bigger Ideas" delay={0.2} />
+            </h1>
+            <TextReveal elementType="p" className="com-hero-subtitle" text="Commercial Spaces for Growing Businesses" delay={0.4} />
           </div>
         </ParallaxHero>
 

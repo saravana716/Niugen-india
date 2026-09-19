@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import TextReveal from './TextReveal';
 import './ServicesSection.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -31,9 +32,12 @@ const ServicesSection = () => {
         <div className="container">
           <div className="services-hero-content">
             <div className="services-hero-text">
-              <span className="subtitle">OUR SERVICES</span>
-              <h2>Comprehensive Solutions<br/>for <span>Modern Living.</span></h2>
-              <p>From premium villa plots to thoughtfully planned residential projects, we offer end-to-end real estate solutions tailored to your needs.</p>
+              <TextReveal elementType="span" className="subtitle" text="OUR SERVICES" />
+              <h2>
+                <TextReveal text="Comprehensive Solutions" delay={0.2} /><br/>
+                <TextReveal text="for" delay={0.4} /> <TextReveal elementType="span" text="Modern Living." delay={0.4} />
+              </h2>
+              <TextReveal elementType="p" text="From premium villa plots to thoughtfully planned residential projects, we offer end-to-end real estate solutions tailored to your needs." delay={0.6} />
             </div>
           </div>
         </div>

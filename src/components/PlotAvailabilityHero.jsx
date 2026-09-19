@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ParallaxHero from './ParallaxHero';
+import TextReveal from './TextReveal';
 import './PlotAvailabilityHero.css';
 
 const PlotAvailabilityHero = () => {
@@ -13,7 +14,9 @@ const PlotAvailabilityHero = () => {
       >
         <div className="container">
           <div className="plotavail-hero-content">
-            <h1>Plot Availability</h1>
+            <h1>
+              <TextReveal text="Plot Availability" />
+            </h1>
             
             <div className="breadcrumbs">
               <Link to="/" className="breadcrumb-link home-link">

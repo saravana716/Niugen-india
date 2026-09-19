@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PageTransition from '../components/PageTransition';
 import ScrollReveal from '../components/ScrollReveal';
 import ParallaxHero from '../components/ParallaxHero';
+import TextReveal from '../components/TextReveal';
 import './Brands.css';
 
 const brandsList = [
@@ -28,8 +29,11 @@ const Brands = () => {
           overlayClass="brands-hero-overlay"
         >
           <div className="container brands-hero-content">
-            <h1 className="brands-hero-title">Premium Brands<br/>Trusted Quality</h1>
-            <p className="brands-hero-subtitle">We partner with the world's leading brands<br/>to deliver the best for your projects.</p>
+            <h1 className="brands-hero-title">
+              <TextReveal text="Premium Brands" /><br/>
+              <TextReveal text="Trusted Quality" delay={0.2} />
+            </h1>
+            <TextReveal elementType="p" className="brands-hero-subtitle" text="We partner with the world's leading brands to deliver the best for your projects." delay={0.4} />
           </div>
         </ParallaxHero>
 

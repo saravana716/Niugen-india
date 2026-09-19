@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import Navbar from './components/Navbar';
@@ -19,7 +19,12 @@ import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
 import SplashScreen from './components/SplashScreen';
 import ProjectDetails from './pages/ProjectDetails';
+import Lenis from 'lenis';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './index.css';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -59,6 +64,36 @@ function App() {
       return () => clearTimeout(timer);
     }
   }, [isLoading]);
+
+  useEffect(() => {
+    // Initialize Lenis
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 1,
+      smoothTouch: false,
+      touchMultiplier: 2,
+      infinite: false,
+    })
+
+    // Update ScrollTrigger on lenis scroll
+    lenis.on('scroll', ScrollTrigger.update)
+
+    // Sync GSAP ticker with Lenis
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000)
+    })
+
+    gsap.ticker.lagSmoothing(0)
+
+    return () => {
+      lenis.destroy();
+      gsap.ticker.remove(lenis.raf);
+    }
+  }, []);
 
   return (
     <Router>

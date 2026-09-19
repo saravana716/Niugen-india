@@ -1,6 +1,7 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import TextReveal from './TextReveal';
+import StaggerReveal from './StaggerReveal';
 import './PremiumProjects.css';
 
 const categoryData = [
@@ -57,8 +58,10 @@ const PremiumProjects = () => {
           <div key={index} className="project-category-section" style={{ marginBottom: '60px' }}>
             <div className="section-header">
               <div className="header-left">
-                <span className="subtitle">OUR PROJECTS</span>
-                <h2 className="title">{category.title}</h2>
+                <TextReveal elementType="span" className="subtitle" text="OUR PROJECTS" />
+                <h2 className="title">
+                  <TextReveal text={category.title} delay={0.2} />
+                </h2>
               </div>
               <div className="header-right">
                 <a href="#all-projects" className="view-all-link">
@@ -70,27 +73,11 @@ const PremiumProjects = () => {
               </div>
             </div>
 
-            <motion.div 
-              className="projects-grid" 
-              variants={{
-                hidden: { opacity: 0 },
-                show: {
-                  opacity: 1,
-                  transition: { staggerChildren: 0.2 }
-                }
-              }}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.1 }}
-            >
+            <StaggerReveal className="projects-grid">
               {category.projects.map((project) => (
-                <motion.div 
+                <div 
                   key={project.id} 
                   className="project-card"
-                  variants={{
-                    hidden: { opacity: 0, y: 50 },
-                    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
-                  }}
                 >
                   <div className="card-image">
                     <img src={project.image} alt={project.title} />
@@ -133,9 +120,9 @@ const PremiumProjects = () => {
                       </Link>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               ))}
-            </motion.div>
+            </StaggerReveal>
           </div>
         ))}
       </div>

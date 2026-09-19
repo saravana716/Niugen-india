@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ParallaxHero from './ParallaxHero';
+import TextReveal from './TextReveal';
 import './ContactHero.css';
 
 const ContactHero = () => {
@@ -16,7 +17,9 @@ const ContactHero = () => {
             
             {/* Left Content */}
             <div className="contact-hero-content">
-              <h1>Contact <span className="text-green">Us</span></h1>
+              <h1>
+                <TextReveal text="Contact" /> <TextReveal elementType="span" className="text-green" text="Us" delay={0.2} />
+              </h1>
               
               <div className="breadcrumbs">
                 <Link to="/" className="breadcrumb-link home-link">

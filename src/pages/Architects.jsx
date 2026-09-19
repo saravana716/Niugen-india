@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PageTransition from '../components/PageTransition';
 import ScrollReveal from '../components/ScrollReveal';
 import ParallaxHero from '../components/ParallaxHero';
+import TextReveal from '../components/TextReveal';
 import './Architects.css';
 
 const services = [
@@ -46,8 +47,11 @@ const Architects = () => {
           overlayClass="arch-hero-overlay"
         >
           <div className="container arch-hero-content">
-            <h1 className="arch-hero-title">Design Spaces<br/>That Inspire</h1>
-            <p className="arch-hero-subtitle">Innovative Designs.<br/>Functional Spaces.</p>
+            <h1 className="arch-hero-title">
+              <TextReveal text="Design Spaces" /><br/>
+              <TextReveal text="That Inspire" delay={0.2} />
+            </h1>
+            <TextReveal elementType="p" className="arch-hero-subtitle" text="Innovative Designs. Functional Spaces." delay={0.4} />
           </div>
         </ParallaxHero>
 

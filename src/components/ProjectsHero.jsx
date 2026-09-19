@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ParallaxHero from './ParallaxHero';
+import TextReveal from './TextReveal';
 import './ProjectsHero.css';
 
 const ProjectsHero = () => {
@@ -13,7 +14,9 @@ const ProjectsHero = () => {
       >
         <div className="container">
           <div className="projects-hero-content">
-            <h1>Our Projects</h1>
+            <h1>
+              <TextReveal text="Our Projects" />
+            </h1>
             
             <div className="breadcrumbs">
               <Link to="/" className="breadcrumb-link home-link">
