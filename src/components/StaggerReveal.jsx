@@ -5,7 +5,7 @@ import { useGSAP } from '@gsap/react';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const StaggerReveal = ({ children, className = '', stagger = 0.1, yOffset = 50 }) => {
+const StaggerReveal = ({ children, className = '', stagger = 0.1, yOffset = 50, style = {}, elementType = 'div' }) => {
   const containerRef = useRef(null);
 
   useGSAP(() => {
@@ -29,10 +29,12 @@ const StaggerReveal = ({ children, className = '', stagger = 0.1, yOffset = 50 }
     );
   }, { scope: containerRef });
 
+  const Element = elementType;
+
   return (
-    <div ref={containerRef} className={className}>
+    <Element ref={containerRef} className={className} style={style}>
       {children}
-    </div>
+    </Element>
   );
 };
 

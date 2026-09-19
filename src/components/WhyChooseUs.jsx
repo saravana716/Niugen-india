@@ -1,4 +1,5 @@
 import React from 'react';
+import StaggerReveal from './StaggerReveal';
 import './WhyChooseUs.css';
 
 const WhyChooseUs = () => {
@@ -10,7 +11,7 @@ const WhyChooseUs = () => {
           <div className="wcu-content">
             <span className="subtitle">WHY CHOOSE NIU GEN?</span>
             <h2 className="title">A Smarter Choice<br/>for a Brighter Tomorrow</h2>
-            <ul className="features-list" style={{gap: '15px'}}>
+            <StaggerReveal elementType="ul" className="features-list" style={{gap: '15px'}} yOffset={30} stagger={0.15}>
               <li style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start'}}>
                 <div style={{display: 'flex', alignItems: 'center', fontWeight: 'bold'}}>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{marginRight: '10px'}}>
@@ -71,7 +72,7 @@ const WhyChooseUs = () => {
                 </div>
                 <span style={{fontSize: '0.9rem', color: '#666', marginTop: '4px', paddingLeft: '34px'}}>Property opportunities selected with long-term usability and value in mind.</span>
               </li>
-            </ul>
+            </StaggerReveal>
           </div>
 
           {/* Middle Column */}
@@ -86,7 +87,7 @@ const WhyChooseUs = () => {
 
           {/* Right Column */}
           <div className="wcu-stats">
-            <div className="stats-card">
+            <StaggerReveal className="stats-card" yOffset={30} stagger={0.15}>
               <div className="stat-item">
                 <div className="stat-icon green">
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -138,7 +139,7 @@ const WhyChooseUs = () => {
                   <p>Expert<br/>Professionals</p>
                 </div>
               </div>
-            </div>
+            </StaggerReveal>
           </div>
         </div>
       </div>

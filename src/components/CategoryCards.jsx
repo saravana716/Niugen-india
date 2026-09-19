@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import StaggerReveal from './StaggerReveal';
 import './CategoryCards.css';
 
 const categories = [
@@ -90,7 +91,7 @@ const CategoryCards = () => {
   return (
     <section className="category-cards-section">
       <div className="container">
-        <div className="category-cards-wrapper">
+        <StaggerReveal className="category-cards-wrapper" yOffset={40} stagger={0.1}>
           {categories.map((cat, index) => (
             <Link key={index} to={cat.link} className={`category-card ${cat.active ? 'active' : ''}`} style={{ textDecoration: 'none' }}>
               <div className="category-icon">
@@ -99,7 +100,7 @@ const CategoryCards = () => {
               <span className="category-title">{cat.title}</span>
             </Link>
           ))}
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   );
