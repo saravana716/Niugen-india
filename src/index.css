@@ -11,7 +11,7 @@
   --color-background: #FFF7EC;
   --color-background-alt: #F5E9D6;
   --color-border: #e5e5e5;
-  
+
   /* Typography */
   --font-family-base: 'Poppins', system-ui, -apple-system, sans-serif;
   --font-size-base: 16px;
@@ -30,7 +30,7 @@
   --spacing-xl: 32px;
   --spacing-2xl: 48px;
   --spacing-3xl: 64px;
-  
+
   /* Utilities */
   --border-radius: 8px;
   --border-radius-lg: 12px;
@@ -54,9 +54,15 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--color-primary);
   font-weight: 700;
   line-height: 1.2;
