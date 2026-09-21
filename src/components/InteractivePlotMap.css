@@ -408,10 +408,7 @@
     border-radius: 50%;
   }
 
-  @keyframes slideUp {
-    from { transform: translateY(100%); }
-    to { transform: translateY(0); }
-  }
+
 
   .project-select {
     width: 100%;
@@ -492,4 +489,9 @@
     gap: 8px;
     margin-top: 8px;
   }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
 }
