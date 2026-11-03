@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import TextReveal from './TextReveal';
+import servicesBanner from '../assets/banners/services.jpeg';
 import './ServicesSection.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -44,7 +45,7 @@ const ServicesSection = () => {
         <div className="services-hero-image" style={{ overflow: 'hidden' }}>
           <img 
             ref={imgRef}
-            src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1200" 
+            src={servicesBanner} 
             alt="Gated Community Entrance" 
             style={{ 
               width: '100%', 

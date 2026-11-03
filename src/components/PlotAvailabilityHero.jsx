@@ -2,13 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ParallaxHero from './ParallaxHero';
 import TextReveal from './TextReveal';
+import plotBanner from '../assets/banners/plotbanner.jpeg';
 import './PlotAvailabilityHero.css';
 
 const PlotAvailabilityHero = () => {
   return (
     <section className="plotavail-hero-section">
       <ParallaxHero
-        bgImage="https://images.unsplash.com/photo-1524813686514-a57563d77965?auto=format&fit=crop&q=80&w=1600"
+        bgImage={plotBanner}
         height="380px"
         overlayClass="hero-overlay"
       >

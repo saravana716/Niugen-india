@@ -2,13 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ParallaxHero from './ParallaxHero';
 import TextReveal from './TextReveal';
+import projectsBanner from '../assets/banners/ourproject.jpeg';
 import './ProjectsHero.css';
 
 const ProjectsHero = () => {
   return (
     <section className="projects-hero-section">
       <ParallaxHero
-        bgImage="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1600"
+        bgImage={projectsBanner}
         height="380px"
         overlayClass="hero-overlay"
       >

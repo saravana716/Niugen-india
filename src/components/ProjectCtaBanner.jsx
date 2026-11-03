@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import projectVillaImg from '../assets/project-cta-villa.png';
+import projectVillaImg from '../assets/banners/ourproject.jpeg';
 import './ProjectCtaBanner.css';
 
 const ProjectCtaBanner = () => {

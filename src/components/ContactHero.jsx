@@ -2,15 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ParallaxHero from './ParallaxHero';
 import TextReveal from './TextReveal';
+import contactBanner from '../assets/banners/contactusbanner.jpeg';
 import './ContactHero.css';
 
 const ContactHero = () => {
   return (
     <section className="contact-hero-section">
       <ParallaxHero
-        bgImage="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=1600"
+        bgImage={contactBanner}
         height="380px"
-        overlayClass="hero-overlay"
+        overlayClass="contact-hero-overlay"
       >
         <div className="container">
           <div className="contact-hero-layout">

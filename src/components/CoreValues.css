@@ -1,84 +1,226 @@
+/* ==========================================================================
+   CoreValues Component ("ABOUT — FOUR CORE VALUES")
+   Pixel-Exact Custom Designed UI Cards (media_1793711932164_3998e083.jpg)
+   ========================================================================== */
+
 .core-values-section {
-  padding: 0px 0;
-  background-color: #ffffff;
+  padding: 55px 0 75px;
+  background-color: var(--color-background, #FFF7EC);
+  width: 100%;
 }
 
-.core-values-header h2 {
-  color: var(--color-primary);
-  /* #1c1366 */
-  font-size: 32px;
+/* Header: Title with Left-Aligned Underline Bar */
+.core-values-header {
+  margin-bottom: 42px;
+}
+
+.core-values-title {
+  color: #381A0B;
+  font-size: 28px;
   font-weight: 800;
-  margin-bottom: 8px;
+  letter-spacing: -0.2px;
+  margin: 0 0 6px 0;
+  text-transform: uppercase;
+  line-height: 1.2;
 }
 
-.core-values-header .divider-line {
-  width: 40px;
+.core-values-underline {
+  width: 38px;
   height: 3px;
-  background-color: var(--color-primary-light);
-  margin-bottom: 40px;
+  background-color: #381A0B;
+  border-radius: 2px;
 }
 
+/* 4 Core Value Cards Grid */
 .core-values-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 22px;
+  width: 100%;
+  padding-top: 26px; /* Space for the top floating badges */
 }
 
+/* Individual Core Value Card */
 .core-value-card {
-  background-color: #ffffff;
-  border: 1px solid #eaeaea;
-  border-radius: 12px;
-  padding: 32px 20px;
+  background-color: #FFFFFF;
+  border: 1px solid #ECE1D3;
+  border-radius: 22px;
+  position: relative;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 20px rgba(60, 30, 15, 0.05);
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.32s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.32s ease;
+  cursor: pointer;
+  min-height: 400px;
+}
+
+.core-value-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 36px rgba(60, 30, 15, 0.11);
+  border-color: #DFCCA8;
+}
+
+/* Top Floating Circular Badge with Glowing Halo */
+.core-val-badge {
+  position: absolute;
+  top: -26px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 3.5px solid #FFF4DF;
+  box-shadow: 0 4px 14px rgba(225, 155, 35, 0.32), 0 0 0 1px rgba(235, 175, 75, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.core-value-card:hover .core-val-badge {
+  transform: translateX(-50%) scale(1.08);
+  box-shadow: 0 6px 18px rgba(225, 155, 35, 0.42);
+}
+
+/* 3D Photographic Banner Wrapper */
+.core-val-photo-wrapper {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-top-left-radius: 21px;
+  border-top-right-radius: 21px;
+  background-color: #FAF4EB;
+}
+
+.core-val-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.core-value-card:hover .core-val-photo {
+  transform: scale(1.05);
+}
+
+/* Smooth Vignette Gradient dissolving photo into card body */
+.core-val-photo-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.85) 60%, #FFFFFF 100%);
+  pointer-events: none;
+}
+
+/* Card Body Content */
+.core-val-body {
+  padding: 16px 20px 32px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  flex-grow: 1;
+  position: relative;
+  z-index: 2;
 }
 
-.core-value-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-  border-color: #d1d5db;
-}
-
-.core-value-card .icon-wrapper {
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.core-value-card h4 {
-  color: var(--color-primary);
-  font-size: 20px;
+/* Card Title - Increased Font Size */
+.core-val-title {
+  color: #351608;
+  font-size: 19px;
   font-weight: 800;
-  margin-bottom: 12px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  margin: 0 0 10px 0;
+  line-height: 1.25;
 }
 
-.core-value-card p {
-  color: #4b5563;
-  font-size: 14px;
-  line-height: 1.5;
-  font-weight: 500;
+/* Gold Accent Underline */
+.core-val-line {
+  width: 42px;
+  height: 3.5px;
+  background-color: #EAA824;
+  border-radius: 2px;
+  margin: 0 0 14px 0;
+}
+
+/* Card Description - Increased Font Size & Line Height */
+.core-val-desc {
+  color: #4A3B32;
+  font-size: 14.5px;
+  line-height: 1.6;
   margin: 0;
+  max-width: 250px;
+  font-weight: 450;
 }
 
-@media (max-width: 1200px) {
+/* Bottom-Right Golden Corner Swoop */
+.core-val-swoop {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 58px;
+  height: 52px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1100px) {
   .core-values-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    gap: 32px 22px;
+  }
+
+  .core-values-title {
+    font-size: 25px;
+  }
+
+  .core-val-title {
+    font-size: 18px;
+  }
+
+  .core-val-desc {
+    font-size: 14px;
   }
 }
 
-@media (max-width: 768px) {
-  .core-values-grid {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 640px) {
+  .core-values-section {
+    padding: 40px 0 50px;
   }
-}
 
-@media (max-width: 480px) {
+  .core-values-header {
+    margin-bottom: 30px;
+  }
+
+  .core-values-title {
+    font-size: 22px;
+  }
+
   .core-values-grid {
     grid-template-columns: 1fr;
+    max-width: 340px;
+    margin: 0 auto;
+    gap: 36px;
+  }
+
+  .core-val-title {
+    font-size: 18px;
+  }
+
+  .core-val-desc {
+    font-size: 14px;
   }
 }
