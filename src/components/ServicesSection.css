@@ -74,46 +74,40 @@
   z-index: 10;
 }
 
-.services-showcase-container {
-  width: 90%;
-  max-width: 1240px;
-  margin: 0 auto;
-}
-
 /* --------------------------------------------------------------------------
-   Services 3x2 Grid (Pixel-perfect match to mockup)
+   Full-Width Services 3x2 Grid (Enlarged Card Height & Font Sizes)
    -------------------------------------------------------------------------- */
 .services-new-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-bottom: 18px;
+  gap: 22px;
+  margin-bottom: 22px;
 }
 
 .service-card-item {
   background-color: #FFFFFF;
-  border-radius: 16px;
-  border: 1.5px solid #F2E5D6;
+  border-radius: 18px;
+  border: 1.5px solid #F0E3D3;
   display: flex;
   align-items: stretch;
   overflow: hidden;
   text-decoration: none;
-  height: 86px;
-  box-shadow: 0 4px 16px rgba(70, 35, 15, 0.05);
+  height: 106px;
+  box-shadow: 0 4px 18px rgba(70, 35, 15, 0.05);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   position: relative;
   cursor: pointer;
 }
 
 .service-card-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(234, 168, 36, 0.18);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(234, 168, 36, 0.18);
   border-color: #EAA824;
 }
 
 .service-card-thumb-wrap {
-  width: 155px;
-  min-width: 155px;
+  width: 195px;
+  min-width: 195px;
   height: 100%;
   flex-shrink: 0;
   display: flex;
@@ -132,7 +126,7 @@
 .service-card-body {
   flex: 1;
   min-width: 0;
-  padding: 7px 12px 7px 6px;
+  padding: 10px 16px 10px 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -140,36 +134,36 @@
 }
 
 .service-card-icon-wrap {
-  margin-bottom: 2px;
+  margin-bottom: 3px;
   display: flex;
   align-items: center;
 }
 
 .service-card-title {
   color: #34170A;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 800;
-  margin: 0 0 2px 0;
+  margin: 0 0 3px 0;
   line-height: 1.2;
 }
 
 .service-card-desc {
-  color: #584B42;
-  font-size: 11px;
-  line-height: 1.35;
+  color: #55483F;
+  font-size: 13px;
+  line-height: 1.4;
   margin: 0;
-  padding-right: 28px;
+  padding-right: 34px;
   font-weight: 500;
 }
 
 .service-card-arrow {
   position: absolute;
-  right: 10px;
-  bottom: 8px;
-  width: 26px;
-  height: 26px;
+  right: 14px;
+  bottom: 12px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  border: 1.5px solid #EAA824;
+  border: 1.8px solid #EAA824;
   color: #EAA824;
   display: flex;
   align-items: center;
@@ -181,23 +175,23 @@
 .service-card-item:hover .service-card-arrow {
   background-color: #EAA824;
   color: #FFFFFF;
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
 /* --------------------------------------------------------------------------
-   Full-Width Brands Banner Card (Pixel-perfect match to mockup)
+   Full-Width Brands Banner Card (Enlarged Height & Font Sizes)
    -------------------------------------------------------------------------- */
 .services-brands-banner-card {
   background-color: #FFFFFF;
-  border-radius: 16px;
+  border-radius: 18px;
   border: 1.5px solid #F5C66E;
   display: flex;
   align-items: center;
-  padding: 0 24px 0 0;
-  gap: 16px;
+  padding: 0 28px 0 0;
+  gap: 22px;
   text-decoration: none;
-  height: 82px;
-  box-shadow: 0 4px 18px rgba(245, 198, 110, 0.16);
+  height: 100px;
+  box-shadow: 0 4px 20px rgba(245, 198, 110, 0.16);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   cursor: pointer;
   overflow: hidden;
@@ -205,13 +199,13 @@
 
 .services-brands-banner-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 28px rgba(245, 198, 110, 0.25);
+  box-shadow: 0 12px 32px rgba(245, 198, 110, 0.26);
   border-color: #EAA824;
 }
 
 .brands-card-thumb-wrap {
-  width: 246px;
-  min-width: 246px;
+  width: 295px;
+  min-width: 295px;
   height: 100%;
   flex-shrink: 0;
   display: flex;
@@ -230,7 +224,7 @@
 .brands-card-heading-group {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   flex-shrink: 0;
 }
 
@@ -242,17 +236,17 @@
 
 .brands-card-title {
   color: #34170A;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 800;
   margin: 0;
 }
 
 .brands-card-divider {
   width: 1.5px;
-  height: 38px;
+  height: 48px;
   background-color: #DEC8B2;
   flex-shrink: 0;
-  margin: 0 4px;
+  margin: 0 6px;
 }
 
 .brands-card-content {
@@ -261,16 +255,16 @@
 }
 
 .brands-card-content p {
-  color: #3E3027;
-  font-size: 13px;
-  line-height: 1.45;
+  color: #35261D;
+  font-size: 15px;
+  line-height: 1.5;
   font-weight: 500;
   margin: 0;
 }
 
 .brands-banner-arrow {
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: 2px solid #EAA824;
   color: #EAA824;
@@ -285,13 +279,13 @@
 .services-brands-banner-card:hover .brands-banner-arrow {
   background-color: #EAA824;
   color: #FFFFFF;
-  transform: translateX(3px);
+  transform: translateX(4px);
 }
 
 /* --------------------------------------------------------------------------
    Responsive Design
    -------------------------------------------------------------------------- */
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   .services-new-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -301,12 +295,12 @@
   .services-brands-banner-card {
     height: auto;
     flex-wrap: wrap;
-    padding: 14px;
-    gap: 14px;
+    padding: 16px;
+    gap: 16px;
   }
   .brands-card-thumb-wrap {
     width: 100%;
-    height: 110px;
+    height: 120px;
     border-radius: 12px;
   }
   .brands-card-divider {
@@ -321,12 +315,12 @@
   
   .service-card-item {
     height: auto;
-    min-height: 84px;
+    min-height: 95px;
   }
 
   .service-card-thumb-wrap {
-    width: 130px;
-    min-width: 130px;
+    width: 150px;
+    min-width: 150px;
   }
   
   .services-hero {
