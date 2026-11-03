@@ -1,0 +1,479 @@
+/* ==========================================================================
+   OUR PROCESS & WHY CHOOSE NIUGEN INDIA INFRAS
+   Pixel-Exact to Mockup Design
+   ========================================================================== */
+
+.process-why-wrapper {
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   PART 1: OUR PROCESS (Floating Rounded Dark Chocolate Card)
+   -------------------------------------------------------------------------- */
+.our-process-section,
+.process-flow-banner-section {
+  padding: 30px 0 20px;
+  background-color: var(--color-background, #FFF7EC);
+}
+
+.our-process-card,
+.process-flow-card {
+  background-color: #381A0B;
+  border-radius: 22px;
+  padding: 30px 36px 30px 40px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 14px 36px rgba(56, 26, 11, 0.22);
+}
+
+/* Skyline Line-Art Watermark on Far Right */
+.process-watermark-decor {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 140px;
+  height: 160px;
+  opacity: 0.16;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.process-watermark-decor svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Left Column: Heading & Subtitle */
+.process-card-left {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 230px;
+  position: relative;
+  z-index: 2;
+}
+
+.process-eyebrow-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.process-eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #FAC460;
+  margin-bottom: 0;
+}
+
+.process-eyebrow-line {
+  display: inline-block;
+  width: 45px;
+  height: 2px;
+  background-color: #FAC460;
+  opacity: 0.85;
+  border-radius: 2px;
+}
+
+.process-heading {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #FFFFFF;
+  letter-spacing: -0.4px;
+  margin: 0 0 8px 0;
+}
+
+.process-heading-accent {
+  color: #FAC460;
+  font-weight: 800;
+}
+
+.process-subtext {
+  color: #D9C5B2;
+  font-size: 12.5px;
+  line-height: 1.45;
+  margin: 0;
+  max-width: 210px;
+}
+
+/* Vertical Divider Line */
+.process-card-divider {
+  width: 1px;
+  height: 110px;
+  background-color: rgba(228, 169, 109, 0.35);
+  margin: 0 24px;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* Right Column: 5 Process Circles Flow Track */
+.process-flow-track {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  gap: 8px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Individual Process Step Node */
+.process-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Circle Container with Golden Border */
+.process-node-circle {
+  width: 104px;
+  height: 104px;
+  border-radius: 50%;
+  border: 1.8px solid #E0A96D;
+  background: rgba(56, 26, 11, 0.75);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.process-node-circle:hover {
+  border-color: #FAC460;
+  transform: translateY(-3px);
+  box-shadow: 0 0 18px rgba(250, 196, 96, 0.35);
+}
+
+/* Number Pill Badge Sitting on Top Border */
+.process-node-badge {
+  position: absolute;
+  top: -9px;
+  background-color: #FAC460;
+  color: #241208;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 2px 10px;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  letter-spacing: 0.5px;
+  line-height: 1;
+}
+
+/* Icon in Upper Half of Circle */
+.process-node-icon {
+  color: #FAC460;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.process-node-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Label INSIDE Circle in Lower Half */
+.process-node-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.22;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 0 6px;
+  margin: 0;
+}
+
+.process-node-label span {
+  white-space: nowrap;
+}
+
+/* Connecting Arrow Between Circles */
+.process-node-arrow {
+  color: #E0A96D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+  flex-shrink: 0;
+  margin: 0 2px;
+}
+
+.process-node-arrow svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* --------------------------------------------------------------------------
+   PART 2: WHY CHOOSE NIUGEN INDIA INFRAS
+   -------------------------------------------------------------------------- */
+.why-choose-section {
+  background-color: #FAF4EC;
+  padding: 50px 0 50px;
+}
+
+/* Header Block */
+.why-header {
+  margin-bottom: 28px;
+}
+
+.why-eyebrow-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.why-eyebrow {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #381A0B;
+}
+
+.why-eyebrow-line {
+  display: inline-block;
+  width: 55px;
+  height: 2px;
+  background-color: #552712;
+  border-radius: 2px;
+  opacity: 0.85;
+}
+
+.why-heading {
+  font-size: 38px;
+  font-weight: 800;
+  color: #24130A;
+  line-height: 1.15;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.5px;
+}
+
+.why-heading-accent {
+  color: #924D20;
+  font-weight: 800;
+}
+
+.why-subtext {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #4C413A;
+  margin: 0;
+  max-width: 820px;
+}
+
+/* 5 Horizontal Feature Cards */
+.why-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  width: 100%;
+}
+
+.why-card {
+  display: flex;
+  align-items: center;
+  background: #FCF8F3;
+  border: 1px solid #ECE1D3;
+  border-radius: 14px;
+  padding: 13px 14px;
+  box-shadow: 0 2px 5px rgba(60, 30, 15, 0.03);
+  transition: all 0.25s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-3px);
+  background: #FFFFFF;
+  border-color: rgba(146, 77, 32, 0.35);
+  box-shadow: 0 6px 18px rgba(60, 30, 15, 0.08);
+}
+
+/* Icon Box on Left */
+.why-card-icon-box {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 10px;
+  background-color: #F5EAE0;
+  border: 1px solid rgba(146, 77, 32, 0.15);
+  color: #683515;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.why-card:hover .why-card-icon-box {
+  background-color: #683515;
+  color: #FFFFFF;
+  border-color: #683515;
+}
+
+/* Vertical divider inside each card */
+.why-card-divider {
+  width: 1px;
+  height: 38px;
+  background-color: #E2D3C4;
+  margin: 0 12px;
+  flex-shrink: 0;
+}
+
+/* Text Content */
+.why-card-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.why-card-title {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #2D160A;
+  margin: 0 0 2px 0;
+  line-height: 1.22;
+}
+
+.why-card-text {
+  font-size: 11.5px;
+  line-height: 1.38;
+  color: #554A42;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+
+/* Medium Laptops & Desktops (max-width: 1200px) */
+@media (max-width: 1200px) {
+  .our-process-card,
+  .process-flow-card {
+    padding: 26px 28px;
+  }
+
+  .process-card-left {
+    width: 200px;
+  }
+
+  .process-heading {
+    font-size: 28px;
+  }
+
+  .process-card-divider {
+    margin: 0 16px;
+  }
+
+  .process-node-circle {
+    width: 94px;
+    height: 94px;
+  }
+
+  .process-node-label {
+    font-size: 10px;
+  }
+
+  .why-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tablets (max-width: 960px) */
+@media (max-width: 960px) {
+  .our-process-card,
+  .process-flow-card {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 26px 22px;
+  }
+
+  .process-card-left {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .process-subtext {
+    max-width: 100%;
+  }
+
+  .process-card-divider {
+    width: 100%;
+    height: 1px;
+    margin: 16px 0 20px;
+  }
+
+  .process-flow-track {
+    overflow-x: auto;
+    padding: 12px 4px 6px;
+    justify-content: flex-start;
+    gap: 14px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .process-node {
+    flex-shrink: 0;
+  }
+
+  .why-heading {
+    font-size: 32px;
+  }
+
+  .why-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile Devices (max-width: 640px) */
+@media (max-width: 640px) {
+  .our-process-card,
+  .process-flow-card {
+    border-radius: 16px;
+    padding: 22px 16px;
+  }
+
+  .process-heading {
+    font-size: 25px;
+  }
+
+  .process-node-circle {
+    width: 88px;
+    height: 88px;
+  }
+
+  .process-node-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .process-node-label {
+    font-size: 9.5px;
+  }
+
+  .why-choose-section {
+    padding: 40px 0 32px;
+  }
+
+  .why-heading {
+    font-size: 26px;
+  }
+
+  .why-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,5 +1,7 @@
 .testimonials-section {
   background-color: var(--color-background);
+  padding: 40px 0 20px;
+
 }
 
 .testimonials-section .section-header {
