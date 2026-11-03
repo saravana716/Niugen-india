@@ -5,7 +5,7 @@
 
 .contact-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
+  grid-template-columns: 1.7fr 1fr 1fr;
   gap: 32px;
 }
 
@@ -41,7 +41,7 @@
 
 .contact-new-form {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   gap: 16px;
   width: 100%;
 }
@@ -51,6 +51,7 @@
   display: flex;
   align-items: center;
   width: 100%;
+  min-width: 0 !important;
 }
 
 .contact-form-group.full-width {
@@ -59,7 +60,7 @@
 
 .contact-field-icon {
   position: absolute;
-  left: 16px;
+  left: 14px;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
@@ -77,8 +78,9 @@
 
 .contact-field-input {
   width: 100%;
+  min-width: 0 !important;
   height: 52px;
-  padding: 0 16px 0 46px;
+  padding: 0 14px 0 44px;
   background-color: #FFFFFF;
   border: 1.5px solid #E2D6CA;
   border-radius: 10px;
@@ -132,7 +134,7 @@
 .contact-field-textarea {
   height: auto;
   min-height: 110px;
-  padding: 16px 16px 16px 46px;
+  padding: 16px 14px 16px 44px;
   resize: vertical;
   line-height: 1.5;
 }
@@ -265,35 +267,48 @@
   font-size: 15px !important;
 }
 
-/* Social Row */
+/* Social media list in contact */
+.social-media-contact {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid #ECE1D3;
+  box-shadow: 0 4px 12px rgba(60, 30, 15, 0.04);
+}
+
+.social-media-contact h5 {
+  color: #554A42;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
 .social-icons-row {
   display: flex;
-  gap: 12px;
-  margin-top: 8px;
+  gap: 10px;
 }
 
 .social-circle {
   width: 36px;
   height: 36px;
   border-radius: 50%;
+  background-color: #F7EFE6;
+  color: #683515;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.2s;
   text-decoration: none;
-  transition: all 0.2s ease;
-  border: 1px solid #d1d5db;
 }
 
-.social-circle.fb { color: white; background-color: #557bda; border-color: #557bda; }
-.social-circle.fb:hover { opacity: 0.8; }
+.social-circle:hover {
+  background-color: #683515;
+  color: white;
+}
 
-.social-circle.ig { color: #E4405F; border-color: #E4405F; background-color: transparent; }
+.social-circle.fb:hover { background-color: #1877F2; color: white; }
 .social-circle.ig:hover { background-color: #E4405F; color: white; }
-
-.social-circle.yt { color: white; background-color: #e54c5a; border-color: #e54c5a; }
-.social-circle.yt:hover { opacity: 0.8; }
-
-.social-circle.wa { color: #25D366; border-color: #25D366; background-color: transparent; }
+.social-circle.yt:hover { background-color: #FF0000; color: white; }
 .social-circle.wa:hover { background-color: #25D366; color: white; }
 
 /* Image Col */
@@ -314,7 +329,7 @@
 
 @media (max-width: 1200px) {
   .contact-grid {
-    grid-template-columns: 1.4fr 1fr;
+    grid-template-columns: 1.5fr 1fr;
   }
   .img-col {
     display: none;
@@ -333,14 +348,23 @@
     padding: 50px 0;
   }
   .contact-new-form {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
   .contact-form-group.full-width {
     grid-column: span 1;
   }
   .contact-form-submit-row {
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 10px;
+    flex-wrap: nowrap !important;
+  }
+}
+
+@media (max-width: 440px) {
+  .contact-form-submit-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
   }
   .contact-new-submit-btn,
   .contact-trust-pill {
