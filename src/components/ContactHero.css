@@ -1,25 +1,23 @@
+/* ==========================================================================
+   ContactHero Component
+   Pixel-Exact to Mockup (media_1793717874033_2f0d8813.jpg)
+   ========================================================================== */
+
 .contact-hero-section {
   padding: 0;
-  background-color: #ffffff;
-  margin-top: 0px;
+  background-color: transparent;
+  margin-top: 0;
+  width: 100%;
 }
 
-/* Banner handled by ParallaxHero */
-
-.contact-hero-banner .hero-overlay {
+.contact-hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, rgba(74, 44, 23, 1) 0%, rgba(74, 44, 23, 0.95) 30%, rgba(74, 44, 23, 0.7) 60%, rgba(74, 44, 23, 0.4) 100%);
+  background: transparent;
   z-index: 1;
-}
-
-.contact-hero-banner .container {
-  position: relative;
-  z-index: 2;
-  width: 100%;
 }
 
 .contact-hero-layout {
@@ -27,181 +25,160 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  position: relative;
+  z-index: 2;
 }
 
 .contact-hero-content {
-  padding: 60px 0;
-  width: 40%;
+  width: 52%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 0;
 }
 
-.contact-hero-content h1 {
-  color: #ffffff;
-  font-size: 42px;
+/* Eyebrow: GET IN TOUCH ———— */
+.contact-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  color: #DFCAB6;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.eyebrow-accent-line {
+  display: inline-block;
+  width: 38px;
+  height: 2px;
+  background-color: #E6A728;
+  border-radius: 1px;
+}
+
+/* Title: Contact Us */
+.contact-hero-title {
+  color: #FFFFFF;
+  font-size: 50px;
   font-weight: 800;
-  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+  margin: 0 0 12px 0;
+  line-height: 1.15;
 }
 
-.contact-hero-content .text-green {
-  color: var(--color-secondary);
+.contact-hero-title .text-gold {
+  color: #F4BC34 !important;
 }
 
-.contact-hero-content .breadcrumbs {
-  display: flex;
-  align-items: center;
-  margin-bottom: 24px;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.contact-hero-content .breadcrumb-link {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: #ffffff;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.contact-hero-content .breadcrumb-link:hover {
-  color: var(--color-primary-light);
-}
-
-.contact-hero-content .breadcrumb-separator {
-  color: #ffffff;
-  margin: 0 10px;
-  display: flex;
-  align-items: center;
-  opacity: 0.8;
-}
-
-.contact-hero-content .breadcrumb-current {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: #d1d5db;
-}
-
-.contact-hero-content p {
-  color: #ffffff;
+/* Subtitle */
+.contact-hero-subtitle {
+  color: #E2D4C6;
   font-size: 15px;
-  line-height: 1.6;
-  opacity: 0.95;
-  font-weight: 500;
-  max-width: 90%;
+  line-height: 1.55;
+  margin: 0 0 32px 0;
+  max-width: 480px;
+  font-weight: 450;
 }
 
-/* Right Badge Box */
-.contact-hero-badges {
+/* 4 Feature Items Bar at Bottom Left */
+.contact-hero-features-bar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  border: 1px solid var(--color-secondary);
-  border-radius: 12px;
-  padding: 32px;
-  width: 55%;
-  background-color: rgba(74, 44, 23, 0.4);
-  backdrop-filter: blur(4px);
+  gap: 18px;
+  max-width: 520px;
+  width: 100%;
 }
 
-.badge-item {
+.contact-feature-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 12px;
+  flex: 1;
 }
 
-.badge-icon {
-  color: var(--color-secondary);
+.contact-feature-icon-box {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid #F4BC34;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  background: rgba(244, 188, 52, 0.08);
+  transition: transform 0.25s ease, background-color 0.25s ease;
 }
 
-.badge-text {
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.4;
+.contact-feature-card:hover .contact-feature-icon-box {
+  transform: translateY(-2px);
+  background: rgba(244, 188, 52, 0.16);
 }
 
-.badge-divider {
+.contact-feature-label {
+  color: #FFFFFF;
+  font-size: 12.5px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+
+.contact-feature-sep {
   width: 1px;
-  height: 60px;
-  background-color: var(--color-secondary);
+  height: 38px;
+  background-color: rgba(244, 188, 52, 0.35);
+  flex-shrink: 0;
 }
 
-@media (max-width: 1024px) {
-  .contact-hero-layout {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+.contact-hero-spacer {
+  width: 45%;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
   .contact-hero-content {
-    width: 100%;
-    padding: 40px 0 20px;
+    width: 60%;
   }
-  .contact-hero-badges {
-    width: 100%;
-    margin-bottom: 40px;
+  .contact-hero-title {
+    font-size: 42px;
   }
 }
 
-@media (max-width: 768px) {
-  .contact-hero-banner {
-    min-height: 200px;
-  }
-
+@media (max-width: 820px) {
   .contact-hero-content {
-    padding: 20px;
-    box-sizing: border-box;
-  }
-
-  .contact-hero-content h1 {
-    font-size: 28px;
-    margin-bottom: 8px;
-  }
-
-  .contact-hero-content .breadcrumbs {
-    margin-bottom: 12px;
-    font-size: 12px;
-  }
-
-  .contact-hero-content p {
-    font-size: 13px;
-  }
-
-  .contact-hero-badges {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    padding: 16px 8px;
-    margin: 0 0 32px 0;
     width: 100%;
-    box-sizing: border-box;
+    max-width: 100%;
+    padding: 30px 0;
   }
 
-  .badge-item {
-    gap: 8px;
-    padding: 16px 8px;
-  }
-
-  .badge-item:nth-child(1),
-  .badge-item:nth-child(3) {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  }
-
-  .badge-item:nth-child(1),
-  .badge-item:nth-child(5) {
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
-  }
-  
-  .badge-item svg {
-    width: 24px;
-    height: 24px;
-  }
-
-  .badge-text {
-    font-size: 11px;
-  }
-
-  .badge-divider {
+  .contact-hero-spacer {
     display: none;
+  }
+
+  .contact-hero-title {
+    font-size: 36px;
+  }
+
+  .contact-hero-features-bar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .contact-feature-sep {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-hero-title {
+    font-size: 32px;
+  }
+  .contact-feature-label {
+    font-size: 11.5px;
   }
 }

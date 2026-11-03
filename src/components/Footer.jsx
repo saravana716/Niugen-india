@@ -1,5 +1,6 @@
 import React from 'react';
-import logoImage from '../assets/NIU GEN INDIA INFRAS LOGO.png';
+import { Link } from 'react-router-dom';
+import logoImage from '../assets/a_clean_standalone_logo_on_a_white_background_no.png';
 import './Footer.css';
 
 const Footer = () => {
@@ -11,22 +12,28 @@ const Footer = () => {
             {/* Column 1: Brand */}
             <div className="footer-col brand-col">
               <div className="footer-logo">
-                <img src={logoImage} alt="Niu Gen India Infras" className="footer-logo-img" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
+                <Link to="/" className="footer-logo-wrap" title="Niu Gen India Infras Home">
+                  <img 
+                    src={logoImage} 
+                    alt="Niu Gen India Infras" 
+                    className="footer-logo-img" 
+                  />
+                </Link>
               </div>
               <p className="footer-desc">
                 Building stronger foundations and creating better futures through quality, innovation, and trust.
               </p>
               <div className="social-links">
-                <a href="#facebook" className="social-icon">
+                <a href="#facebook" className="social-icon" aria-label="Facebook">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                 </a>
-                <a href="#instagram" className="social-icon">
+                <a href="#instagram" className="social-icon" aria-label="Instagram">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                 </a>
-                <a href="#youtube" className="social-icon">
+                <a href="#youtube" className="social-icon" aria-label="YouTube">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
                 </a>
-                <a href="#linkedin" className="social-icon">
+                <a href="#linkedin" className="social-icon" aria-label="LinkedIn">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                 </a>
               </div>
@@ -36,12 +43,13 @@ const Footer = () => {
             <div className="footer-col">
               <h4 className="footer-heading">QUICK LINKS</h4>
               <ul className="footer-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#plot-availability">Plot Availability</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/about">About Us</Link></li>
+                <li><Link to="/projects">Projects</Link></li>
+                <li><Link to="/plot-availability">Plot Availability</Link></li>
+                <li><Link to="/services">Services</Link></li>
+                <li><Link to="/gallery">Gallery</Link></li>
+                <li><Link to="/contact">Contact Us</Link></li>
               </ul>
             </div>
 
@@ -49,11 +57,13 @@ const Footer = () => {
             <div className="footer-col">
               <h4 className="footer-heading">PROJECTS</h4>
               <ul className="footer-links">
-                <li><a href="#ongoing">Ongoing Projects</a></li>
-                <li><a href="#upcoming">Upcoming Projects</a></li>
-                <li><a href="#villa-plots">Villa Plots</a></li>
-                <li><a href="#residential">Residential Plots</a></li>
-                <li><a href="#commercial">Commercial Plots</a></li>
+                <li><Link to="/projects/land-and-plots">Land &amp; Plots</Link></li>
+                <li><Link to="/projects/residential">Residential Projects</Link></li>
+                <li><Link to="/projects/commercial">Commercial Projects</Link></li>
+                <li><Link to="/projects/construction">Construction</Link></li>
+                <li><Link to="/projects/architects">Architects</Link></li>
+                <li><Link to="/projects/interior-design">Interior Design</Link></li>
+                <li><Link to="/projects/brands">Brands</Link></li>
               </ul>
             </div>
 
@@ -61,11 +71,11 @@ const Footer = () => {
             <div className="footer-col">
               <h4 className="footer-heading">USEFUL LINKS</h4>
               <ul className="footer-links">
-                <li><a href="#legal">Legal Approvals</a></li>
-                <li><a href="#terms">Terms & Conditions</a></li>
-                <li><a href="#privacy">Privacy Policy</a></li>
-                <li><a href="#site-visit">Site Visit</a></li>
-                <li><a href="#brochure">Brochure Download</a></li>
+                <li><Link to="/legal-approvals">Legal Approvals</Link></li>
+                <li><Link to="/terms">Terms &amp; Conditions</Link></li>
+                <li><Link to="/privacy-policy">Privacy Policy</Link></li>
+                <li><Link to="/disclaimer">Disclaimer</Link></li>
+                <li><Link to="/contact">Site Visit Enquiry</Link></li>
               </ul>
             </div>
 
@@ -94,7 +104,7 @@ const Footer = () => {
       <div className="footer-bottom">
         <div className="container">
           <div className="footer-bottom-content">
-            <p>© 2025 Niu Gen India Infras 2.0. All Rights Reserved.</p>
+            <p>© 2026 NIU GEN INDIA INFRAS. All Rights Reserved.</p>
             <p>Designed and Developed by Elevate Digi Technologies.</p>
           </div>
         </div>

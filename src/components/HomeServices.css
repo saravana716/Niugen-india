@@ -1,0 +1,272 @@
+/* ==========================================================================
+   HomeServices Component ("OUR SERVICES")
+   Pixel-Exact to Brand Design
+   ========================================================================== */
+
+.home-services-section {
+  padding: 60px 0 55px;
+  background-color: var(--color-background, #FFF7EC);
+  position: relative;
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Header: Left Title Block & Right View All Services Button
+   -------------------------------------------------------------------------- */
+.home-services-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 34px;
+  gap: 30px;
+}
+
+.home-services-header-left {
+  max-width: 760px;
+}
+
+/* Eyebrow Tag + Horizontal Line */
+.services-eyebrow-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.services-eyebrow {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #D46820;
+}
+
+.services-eyebrow-line {
+  display: inline-block;
+  width: 50px;
+  height: 2px;
+  background-color: #D46820;
+  border-radius: 2px;
+  opacity: 0.9;
+}
+
+/* Main Heading */
+.services-main-title {
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1.18;
+  color: #24130A;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.5px;
+}
+
+.services-title-accent {
+  color: #D46820;
+  font-weight: 800;
+}
+
+.services-subtitle {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: #554A42;
+  margin: 0;
+  max-width: 680px;
+}
+
+/* Top-Right "View All Services →" Pill Button */
+.home-services-header-right {
+  flex-shrink: 0;
+  margin-bottom: 6px;
+}
+
+.services-view-all-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #381A0B;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 26px;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(56, 26, 11, 0.16);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.services-view-all-btn .btn-arrow {
+  transition: transform 0.2s ease;
+  font-size: 15px;
+}
+
+.services-view-all-btn:hover {
+  background-color: #552712;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(56, 26, 11, 0.25);
+}
+
+.services-view-all-btn:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* --------------------------------------------------------------------------
+   8 Services Cards Grid (4 Columns × 2 Rows)
+   -------------------------------------------------------------------------- */
+.services-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  width: 100%;
+}
+
+/* Individual Card */
+.service-solution-card {
+  background: #FCF8F2;
+  border: 1px solid #ECE1D3;
+  border-radius: 16px;
+  padding: 22px 20px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(60, 30, 15, 0.03);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  min-height: 185px;
+}
+
+.service-solution-card:hover {
+  transform: translateY(-4px);
+  background: #FFFFFF;
+  border-color: rgba(212, 104, 32, 0.4);
+  box-shadow: 0 10px 26px rgba(60, 30, 15, 0.09);
+}
+
+/* Card Top: Icon on Left, Title + Description on Right */
+.service-card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+/* Icon Box */
+.service-card-icon-box {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #622D12 0%, #381A0B 100%);
+  border: 1px solid rgba(212, 104, 32, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 3px 8px rgba(56, 26, 11, 0.18);
+  transition: all 0.25s ease;
+}
+
+.service-solution-card:hover .service-card-icon-box {
+  transform: scale(1.05);
+  box-shadow: 0 6px 14px rgba(212, 104, 32, 0.25);
+}
+
+/* Text Block Beside Icon */
+.service-card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.service-card-title {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: #24130A;
+  margin: 0 0 4px 0;
+  line-height: 1.25;
+}
+
+.service-card-desc {
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: #5C5047;
+  margin: 0;
+}
+
+/* Card Bottom: Full-Width Soft Amber "Learn More →" Button */
+.service-card-bottom {
+  width: 100%;
+}
+
+.service-learn-more-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background-color: #FCECD5;
+  color: #381A0B;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 9px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.22s ease;
+}
+
+.service-learn-more-btn .btn-arrow {
+  transition: transform 0.2s ease;
+  font-size: 14px;
+}
+
+.service-solution-card:hover .service-learn-more-btn {
+  background-color: #F8DFC0;
+  color: #24130A;
+}
+
+.service-learn-more-btn:hover {
+  background-color: #F5D3A6 !important;
+}
+
+.service-learn-more-btn:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .services-main-title {
+    font-size: 32px;
+  }
+
+  .services-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-services-section {
+    padding: 45px 0 40px;
+  }
+
+  .home-services-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 26px;
+  }
+
+  .services-main-title {
+    font-size: 27px;
+  }
+
+  .services-subtitle {
+    font-size: 13.5px;
+  }
+
+  .services-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+

@@ -1,82 +1,79 @@
 .our-promise-section {
-  padding: 20px 0 20px 0;
-  background-color: #ffffff;
+  padding: 30px 0 25px 0;
+  background-color: var(--color-background, #FFF7EC);
+}
+
+.our-promise-section .container {
+  width: 90% !important;
+  max-width: 1720px;
+  margin: 0 auto;
 }
 
 .promise-banner {
-  background-color: #f6f8fb;
-  /* Matches the very light bluish grey from mockup */
-  border-radius: 16px;
+  background: #FBF4EC url('../assets/ourpromise.jpeg') no-repeat left center / cover;
+  border-radius: 20px;
   display: flex;
+  position: relative;
   overflow: hidden;
-  position: relative;
-  min-height: 220px;
+  box-shadow: 0 10px 30px rgba(74, 44, 23, 0.08);
+  border: 1px solid rgba(212, 160, 23, 0.22);
+  min-height: 250px;
 }
 
-.promise-image-wrapper {
-  flex: 0 0 25%;
-  position: relative;
-}
-
-.promise-image-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.promise-image-wrapper::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: -1px;
-  width: 250px;
-  height: 100%;
-  background: linear-gradient(to left, rgba(246, 248, 251, 1) 0%, rgba(246, 248, 251, 0.8) 30%, rgba(246, 248, 251, 0) 100%);
-  z-index: 2;
+.promise-visual-space {
+  flex: 0 0 30%;
+  min-width: 220px;
+  max-width: 440px;
+  pointer-events: none;
 }
 
 .promise-content {
   flex: 1;
   display: flex;
   align-items: center;
-  padding: 32px 32px 32px 10px;
-  background-color: #f6f8fb;
-  z-index: 3;
+  padding: 32px 36px 32px 12px;
+  background: transparent;
+  gap: 20px;
+  z-index: 2;
 }
 
 .promise-text-area {
-  flex: 0 0 28%;
-  padding-right: 32px;
+  flex: 0 0 32%;
+  min-width: 200px;
+  padding-right: 20px;
 }
 
 .promise-text-area h2 {
-  color: var(--color-primary);
-  /* #1c1366 */
+  color: #34170A;
   font-size: 28px;
   font-weight: 800;
-  margin-bottom: 6px;
+  line-height: 1.2;
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
 }
 
 .promise-text-area .divider-line {
-  width: 32px;
+  width: 36px;
   height: 3px;
-  background-color: var(--color-primary-light);
+  background: linear-gradient(90deg, #D4A017, #C86623);
+  border-radius: 2px;
   margin-bottom: 12px;
 }
 
 .promise-text-area p {
-  color: #4b5563;
-  font-size: 14px;
+  color: #5A4234;
+  font-size: 13.5px;
   line-height: 1.6;
   font-weight: 500;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .promise-text-area .team-sign {
-  color: var(--color-primary-light);
-  font-weight: 600;
-  font-size: 14px;
+  display: inline-block;
+  color: #C86623;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.01em;
 }
 
 .promise-stats-area {
@@ -84,6 +81,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
 }
 
 .promise-stat {
@@ -93,6 +91,7 @@
   align-items: center;
   text-align: center;
   position: relative;
+  padding: 0 8px;
 }
 
 .promise-stat:not(:last-child)::after {
@@ -102,55 +101,78 @@
   top: 15%;
   height: 70%;
   width: 1px;
-  background-color: rgba(0, 0, 0, 0.08);
-  /* Faint vertical divider line */
+  background-color: rgba(212, 160, 23, 0.28);
 }
 
 .promise-stat .stat-icon {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .promise-stat h3 {
-  color: var(--color-primary);
-  font-size: 36px;
+  color: #34170A;
+  font-size: 34px;
   font-weight: 800;
+  line-height: 1.1;
   margin-bottom: 4px;
 }
 
 .promise-stat span {
-  color: #4b5563;
-  font-size: 14px;
+  color: #5A4234;
+  font-size: 13px;
   font-weight: 600;
-  line-height: 1.4;
+  line-height: 1.35;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
+  .promise-visual-space {
+    flex: 0 0 28%;
+    min-width: 180px;
+  }
+
+  .promise-text-area {
+    flex: 0 0 34%;
+  }
+
+  .promise-stat h3 {
+    font-size: 28px;
+  }
+
+  .promise-stat span {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 992px) {
   .promise-banner {
     flex-direction: column;
+    background: #FBF4EC;
   }
 
-  .promise-image-wrapper {
-    height: 250px;
-  }
-
-  .promise-image-wrapper::after {
-    background: linear-gradient(to top, rgba(246, 248, 251, 1) 0%, rgba(246, 248, 251, 0) 100%);
+  .promise-visual-space {
+    display: block;
     width: 100%;
-    height: 100px;
-    bottom: -1px;
-    top: auto;
-    left: 0;
+    height: 220px;
+    min-width: 100%;
+    max-width: 100%;
+    background: url('../assets/ourpromise.jpeg') no-repeat left center / cover;
+    border-bottom: 2px solid rgba(212, 160, 23, 0.25);
   }
 
   .promise-content {
     flex-direction: column;
-    padding: 32px;
+    padding: 28px 24px 32px 24px;
+    text-align: center;
+    gap: 28px;
   }
 
   .promise-text-area {
-    margin-bottom: 40px;
-    text-align: center;
+    flex: unset;
+    width: 100%;
     padding-right: 0;
+    text-align: center;
   }
 
   .promise-text-area .divider-line {
@@ -159,56 +181,39 @@
 
   .promise-stats-area {
     width: 100%;
-    flex-wrap: wrap;
-    gap: 32px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .promise-visual-space {
+    height: 180px;
   }
 
-  .promise-stat {
-    flex: 0 0 45%;
+  .promise-stats-area {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 12px;
   }
 
   .promise-stat:not(:last-child)::after {
     display: none;
   }
-}
-
-@media (max-width: 768px) {
-  .promise-stats-area {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px 16px;
-  }
-  
-  .promise-stat {
-    flex: unset;
-    width: 100%;
-  }
 
   .promise-stat h3 {
-    font-size: 26px;
+    font-size: 24px;
   }
-  
+
   .promise-stat span {
     font-size: 12px;
   }
-  
-  .promise-stat .stat-icon svg {
-    width: 30px;
-    height: 30px;
-  }
-}
 
-@media (max-width: 480px) {
-  .promise-stat h3 {
-    font-size: 22px;
+  .promise-text-area h2 {
+    font-size: 24px;
   }
-  
-  .promise-stat span {
-    font-size: 11px;
-  }
-  
-  .promise-stat .stat-icon svg {
-    width: 26px;
-    height: 26px;
+
+  .promise-text-area p {
+    font-size: 13px;
   }
 }

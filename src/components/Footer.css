@@ -33,6 +33,28 @@
   margin-bottom: 16px;
 }
 
+.footer-logo-wrap {
+  display: inline-block;
+  background-color: #FFFFFF;
+  padding: 7px 16px;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-decoration: none;
+}
+
+.footer-logo-wrap:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+}
+
+.footer-logo-img {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
 .footer-desc {
   color: #d1d5db;
   font-size: 13px;

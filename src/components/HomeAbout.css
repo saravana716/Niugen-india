@@ -1,0 +1,421 @@
+/* ==========================================================================
+   Home About Us Section - Pixel-Exact to Reference Mockup
+   ========================================================================== */
+
+.home-about-section {
+  padding: 55px 0 45px;
+  background-color: #FAF4EC;
+  color: var(--color-text-dark, #2B2B2B);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 3-Column Grid Layout matching the reference proportions */
+.home-about-grid {
+  display: grid;
+  grid-template-columns: 1.18fr 0.96fr 1fr;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 34px;
+}
+
+/* --------------------------------------------------------------------------
+   Left Column: About Us Intro
+   -------------------------------------------------------------------------- */
+.home-about-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Tag / Eyebrow with horizontal line */
+.home-about-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.tag-text {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #381A0B;
+}
+
+.tag-line {
+  display: inline-block;
+  width: 54px;
+  height: 2px;
+  background-color: #552712;
+  border-radius: 2px;
+  opacity: 0.85;
+}
+
+/* Main Heading */
+.home-about-heading {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #24130A;
+  margin-bottom: 18px;
+  letter-spacing: -0.5px;
+}
+
+.heading-accent {
+  color: #924D20;
+  font-weight: 800;
+  display: inline-block;
+}
+
+/* Description paragraph */
+.home-about-description {
+  font-size: 14px;
+  line-height: 1.62;
+  color: #4C413A;
+  margin-bottom: 24px;
+  font-weight: 400;
+}
+
+.home-about-description strong {
+  font-weight: 700;
+  color: #24130A;
+}
+
+/* CTA Button - Clean slight border radius matching the mockup (NOT full pill) */
+.home-about-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #4A2411;
+  color: #FFFFFF !important;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 11px 24px;
+  border-radius: 6px; /* Exactly matched to mockup - slight rounded corners, not pill */
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(74, 36, 17, 0.22);
+  transition: all 0.25s ease;
+}
+
+.home-about-cta:hover {
+  background-color: #633219;
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(74, 36, 17, 0.3);
+}
+
+.cta-arrow {
+  font-size: 16px;
+  transition: transform 0.25s ease;
+  line-height: 1;
+}
+
+.home-about-cta:hover .cta-arrow {
+  transform: translateX(4px);
+}
+
+/* --------------------------------------------------------------------------
+   Center Column: Clean Villa Showcase with Architectural Frame
+   -------------------------------------------------------------------------- */
+.home-about-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.showcase-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.showcase-img {
+  width: 100%;
+  height: auto;
+  max-height: 350px;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 24px rgba(60, 30, 15, 0.1));
+  transition: transform 0.35s ease;
+}
+
+.showcase-wrapper:hover .showcase-img {
+  transform: scale(1.02);
+}
+
+/* --------------------------------------------------------------------------
+   Right Column: Vision, Mission, Values Feature Cards
+   -------------------------------------------------------------------------- */
+.home-about-right {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.feature-card {
+  display: flex;
+  align-items: center;
+  background: #FCF8F3;
+  border: 1px solid #ECE1D3;
+  border-radius: 14px;
+  padding: 12px 16px;
+  box-shadow: 0 2px 5px rgba(60, 30, 15, 0.03);
+  transition: all 0.25s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-2px);
+  background: #FFFFFF;
+  border-color: rgba(146, 77, 32, 0.35);
+  box-shadow: 0 6px 16px rgba(60, 30, 15, 0.08);
+}
+
+/* Icon Box on Left */
+.feature-icon-box {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 10px;
+  background-color: #F5EAE0;
+  border: 1px solid rgba(146, 77, 32, 0.15);
+  color: #683515;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.feature-card:hover .feature-icon-box {
+  background-color: #683515;
+  color: #FFFFFF;
+  border-color: #683515;
+}
+
+/* Vertical divider inside each card */
+.feature-divider {
+  width: 1px;
+  height: 40px;
+  background-color: #E2D3C4;
+  margin: 0 14px;
+  flex-shrink: 0;
+}
+
+/* Content */
+.feature-content {
+  flex: 1;
+}
+
+.feature-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2D160A;
+  margin: 0 0 2px 0;
+  line-height: 1.25;
+}
+
+.feature-text {
+  font-size: 12.5px;
+  line-height: 1.42;
+  color: #554A42;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Bottom Banner: 4 Stats Bar
+   -------------------------------------------------------------------------- */
+.home-about-stats-banner {
+  background-color: #381A0B;
+  border-radius: 16px;
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 10px 26px rgba(56, 26, 11, 0.22);
+}
+
+.stat-banner-item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 0 10px;
+}
+
+.stat-banner-icon {
+  color: #DFBF9F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.stat-banner-item:hover .stat-banner-icon {
+  transform: scale(1.08);
+}
+
+.stat-banner-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-banner-number {
+  font-size: 30px;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.stat-banner-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #E8D6C4;
+  margin: 4px 0 0 0;
+  white-space: nowrap;
+}
+
+.stat-banner-divider {
+  width: 1px;
+  height: 40px;
+  background-color: rgba(228, 209, 189, 0.28);
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+
+/* Large Tablets & Laptops (max-width: 1100px) */
+@media (max-width: 1100px) {
+  .home-about-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+
+  .home-about-left {
+    grid-column: span 2;
+  }
+
+  .home-about-center {
+    grid-column: span 1;
+  }
+
+  .home-about-right {
+    grid-column: span 1;
+  }
+
+  .stat-banner-number {
+    font-size: 26px;
+  }
+
+  .stat-banner-label {
+    font-size: 12px;
+  }
+}
+
+/* Tablets (max-width: 860px) */
+@media (max-width: 860px) {
+  .home-about-section {
+    padding: 45px 0 32px;
+  }
+
+  .home-about-heading {
+    font-size: 34px;
+  }
+
+  .home-about-stats-banner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 22px 18px;
+  }
+
+  .stat-banner-divider {
+    display: none;
+  }
+
+  .stat-banner-item {
+    justify-content: flex-start;
+    padding: 0 8px;
+  }
+}
+
+/* Mobile Devices (max-width: 640px) */
+@media (max-width: 640px) {
+  .home-about-section {
+    padding: 35px 0 25px;
+  }
+
+  .home-about-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .home-about-left {
+    grid-column: span 1;
+  }
+
+  .home-about-heading {
+    font-size: 28px;
+  }
+
+  .home-about-description {
+    font-size: 13.5px;
+  }
+
+  .home-about-center {
+    grid-column: span 1;
+  }
+
+  .showcase-wrapper {
+    max-width: 320px;
+  }
+
+  .home-about-right {
+    grid-column: span 1;
+  }
+
+  .feature-card {
+    padding: 12px 14px;
+  }
+
+  .feature-divider {
+    margin: 0 12px;
+  }
+
+  .home-about-stats-banner {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 8px;
+    padding: 16px 10px;
+    border-radius: 14px;
+  }
+
+  .stat-banner-item {
+    gap: 10px;
+    padding: 0 4px;
+  }
+
+  .stat-banner-icon svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .stat-banner-number {
+    font-size: 22px;
+  }
+
+  .stat-banner-label {
+    font-size: 11px;
+    white-space: normal;
+  }
+}

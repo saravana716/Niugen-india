@@ -1,52 +1,65 @@
+/* ==========================================================================
+   Horizontal Scroll Gallery ("Featured Showcase")
+   Fixed Spacing, Gaps, and Proportions
+   ========================================================================== */
+
 .horizontal-gallery-section {
   position: relative;
   height: 100vh;
+  min-height: 600px;
   width: 100%;
   overflow: hidden;
-  background-color: var(--color-bg);
+  background-color: var(--color-background, #FFF7EC);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-top: 24px; /* Reduced top spacing to remove excessive white space */
 }
 
+/* Header in normal flow matching 90% website width */
 .horizontal-gallery-header {
-  position: absolute;
-  top: 10%;
-  left: 5%;
+  width: 90%;
+  margin: 0 auto 34px auto; /* 34px clear gap between subtitle text and slider cards */
+  position: relative;
   z-index: 10;
 }
 
 .horizontal-gallery-header .title {
-  font-size: 48px;
-  color: var(--color-text-dark);
-  margin-bottom: 8px;
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--color-primary, #381A0B);
+  margin-bottom: 6px;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
 }
 
 .horizontal-gallery-header .subtitle {
-  font-size: 18px;
-  color: var(--color-primary);
+  font-size: 16px;
+  color: #665C54;
   font-weight: 500;
+  line-height: 1.4;
 }
 
+/* Slider Track */
 .horizontal-gallery-track {
   display: flex;
   flex-wrap: nowrap;
-  gap: 40px;
-  padding: 0 10vw; /* Initial offset so it's not glued to the edge */
+  gap: 32px;
+  padding: 0 5vw; /* Aligns first card with 5% margin of 90% container */
   width: max-content;
   align-items: center;
-  height: 60vh;
-  margin-top: 5vh;
+  height: auto;
 }
 
+/* Individual Gallery Card */
 .horizontal-gallery-item {
   position: relative;
-  width: 600px;
-  height: 450px;
+  width: 520px;
+  height: 380px;
   flex-shrink: 0;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  box-shadow: 0 14px 35px rgba(56, 26, 11, 0.14);
   transform-origin: center;
 }
 
@@ -65,7 +78,7 @@
 }
 
 .horizontal-gallery-item:hover .hg-image-container img {
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
 
 .hg-overlay {
@@ -74,52 +87,77 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0) 100%);
-  opacity: 0.8;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0) 100%);
+  opacity: 0.85;
 }
 
 .hg-info {
   position: absolute;
-  bottom: 30px;
-  left: 30px;
+  bottom: 28px;
+  left: 28px;
   color: white;
   z-index: 2;
 }
 
 .hg-info h3 {
-  font-size: 32px;
-  margin-bottom: 5px;
+  font-size: 28px;
+  margin-bottom: 4px;
   font-weight: 700;
+  color: #FFFFFF;
 }
 
 .hg-info span {
-  font-size: 16px;
-  color: var(--color-primary-light);
+  font-size: 14px;
+  color: #FAC460;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-/* Responsiveness */
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+
 @media (max-width: 1024px) {
   .horizontal-gallery-item {
-    width: 450px;
-    height: 350px;
+    width: 420px;
+    height: 330px;
   }
+
+  .horizontal-gallery-header {
+    margin-bottom: 24px;
+  }
+
   .horizontal-gallery-header .title {
-    font-size: 36px;
+    font-size: 34px;
   }
 }
 
 @media (max-width: 768px) {
-  .horizontal-gallery-item {
-    width: 320px;
-    height: 450px;
+  .horizontal-gallery-section {
+    padding-top: 18px;
   }
-  .horizontal-gallery-track {
-    gap: 20px;
-  }
+
   .horizontal-gallery-header {
-    top: 5%;
+    width: 92%;
+    margin-bottom: 20px;
+  }
+
+  .horizontal-gallery-header .title {
+    font-size: 28px;
+  }
+
+  .horizontal-gallery-header .subtitle {
+    font-size: 14px;
+  }
+
+  .horizontal-gallery-item {
+    width: 310px;
+    height: 380px;
+  }
+
+  .horizontal-gallery-track {
+    gap: 18px;
+    padding: 0 4vw;
   }
 }

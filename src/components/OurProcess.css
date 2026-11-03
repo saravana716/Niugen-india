@@ -1,155 +1,310 @@
-.our-process-section {
-  padding: 40px 0;
-  background-color: #f7f9fc;
+/* ==========================================================================
+   About Page "Our Process" Component
+   Pixel-Exact to Brand Design (100% Match to Mockup)
+   ========================================================================== */
+
+.about-our-process-section {
+  position: relative;
+  background-color: #FFFDF9;
+  padding: 55px 0 85px; /* Generous bottom padding so cards never overlap bottom wave */
+  overflow: hidden;
+  width: 100%;
 }
 
-.process-container {
-  background-color: #ffffff;
-  border: 1px solid #eaeaea;
-  border-radius: 16px;
-  padding: 48px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02);
+/* --------------------------------------------------------------------------
+   Mockup-Exact Background Artwork
+   -------------------------------------------------------------------------- */
+
+/* Top-Left Photographic Foliage */
+.process-leaves-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  pointer-events: none;
+  z-index: 1;
 }
 
-.process-title {
+/* Top-Right Modern Luxury Villa & Sky Arc */
+.process-villa-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 290px;
+  height: 110px;
+  object-fit: cover;
+  object-position: right top;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Faint Skyscraper Silhouettes */
+.process-building-left {
+  position: absolute;
+  top: 115px;
+  left: 14px;
+  width: 30px;
+  height: auto;
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.process-building-right {
+  position: absolute;
+  top: 115px;
+  right: 14px;
+  width: 32px;
+  height: auto;
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Golden Satin Ribbon Wave across Bottom */
+.process-wave-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 42px;
+  object-fit: fill;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Container & Header Block
+   -------------------------------------------------------------------------- */
+.about-process-container {
+  position: relative;
+  z-index: 2;
+}
+
+.about-process-header {
   text-align: center;
-  color: var(--color-primary);
-  font-size: 26px;
+  margin-bottom: 46px;
+}
+
+.about-process-title-row {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 4px;
+}
+
+.process-title-accent-line {
+  display: inline-block;
+  width: 48px;
+  height: 2px;
+  background-color: #DCA052;
+  border-radius: 2px;
+}
+
+.about-process-main-title {
+  font-size: 38px;
   font-weight: 800;
-  margin-bottom: 50px;
+  color: #381A0B;
+  letter-spacing: -0.5px;
+  margin: 0;
+  line-height: 1.15;
 }
 
-.process-title span {
-  color: var(--color-primary-light);
+.about-process-subtitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: #4A3528;
+  margin: 0;
 }
 
-.process-flow {
+/* --------------------------------------------------------------------------
+   6-Step Connected Flow Track
+   -------------------------------------------------------------------------- */
+.about-process-flow-track {
   display: flex;
-  overflow-x: auto;
-  flex-wrap: nowrap;
-  gap: 20px;
-  padding-bottom: 24px;
-  /* Space for scrollbar */
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-primary-light) #f0f0f0;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
 }
 
-.process-flow::-webkit-scrollbar {
-  height: 8px;
-}
-
-.process-flow::-webkit-scrollbar-track {
-  background: #f0f0f0;
-  border-radius: 4px;
-}
-
-.process-flow::-webkit-scrollbar-thumb {
-  background-color: var(--color-primary-light);
-  border-radius: 4px;
-}
-
-.process-step {
-  flex: 0 0 250px;
-  /* Fixed width for each step to ensure scrolling */
+/* Individual Rounded Step Card */
+.about-process-card {
+  flex: 1;
+  min-width: 135px;
+  max-width: 170px;
+  min-height: 242px;
+  background: #FFFFFF;
+  border: 1.5px solid #EFE4D6;
+  border-radius: 20px;
+  padding: 26px 12px 18px 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   position: relative;
-  padding: 0 16px;
+  box-shadow: 0 8px 24px rgba(60, 30, 15, 0.06);
+  transition: all 0.28s ease;
+  margin-top: 20px; /* Clearance for floating badge */
+  overflow: visible !important; /* CRITICAL: Prevents top badge clipping */
 }
 
-.process-icon-wrapper {
-  position: relative;
-  margin-bottom: 24px;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 48px;
+.about-process-card:hover {
+  transform: translateY(-4px);
+  border-color: #E2B67C;
+  box-shadow: 0 12px 28px rgba(60, 30, 15, 0.12);
 }
 
-.step-number {
-  width: 48px;
-  height: 48px;
-  background-color: var(--color-primary-light);
-  color: #ffffff;
+/* Golden-Amber Corner Swoop (Bottom-Right Crescent) */
+.process-card-corner-swoop {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 38px;
+  height: 38px;
+  background: radial-gradient(circle at 100% 100%, #F5A623 0%, #E08C18 68%, transparent 70%);
+  border-bottom-right-radius: 19px;
+  pointer-events: none;
+}
+
+/* Floating Number Circle Badge on Top - 100% Visible & Centered */
+.process-card-badge {
+  position: absolute;
+  top: -19px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
+  background-color: #4A220E;
+  color: #FFFFFF;
+  font-size: 13.5px;
+  font-weight: 800;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 800;
-  font-size: 20px;
-  z-index: 3;
+  box-shadow: 0 4px 8px rgba(74, 34, 14, 0.28);
+  border: 3px solid #FFFDF9;
+  letter-spacing: 0.5px;
+  z-index: 5;
 }
 
-.process-arrow {
-  position: absolute;
-  top: 24px;
-  left: calc(50% + 35px);
-  width: calc(100% - 70px + 20px);
-  /* Account for gap */
-  height: 2px;
-  border-top: 2px dashed var(--color-primary-light);
-  opacity: 0.6;
-  z-index: 1;
-}
-
-.process-arrow::after {
-  content: '';
-  position: absolute;
-  right: -2px;
-  top: -5.5px;
-  border: solid var(--color-primary-light);
-  border-width: 0 2px 2px 0;
-  display: inline-block;
-  padding: 4px;
-  transform: rotate(-45deg);
-}
-
-/* Hide arrow on the very last item */
-.process-step:last-child .process-arrow {
-  display: none;
-}
-
-.process-step h4 {
-  color: var(--color-primary);
-  font-size: 20px;
-  font-weight: 800;
+/* Outline Icon */
+.process-card-icon {
+  margin-top: 4px;
   margin-bottom: 12px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease;
 }
 
-.process-step p {
-  color: #4b5563;
-  font-size: 14px;
-  line-height: 1.5;
-  font-weight: 500;
+.about-process-card:hover .process-card-icon {
+  transform: scale(1.08);
+}
+
+/* Dark Chocolate Pill Button */
+.process-card-pill {
+  background-color: #4A220E;
+  color: #FFFFFF;
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 7px 22px;
+  border-radius: 50px;
+  margin-bottom: 10px;
+  box-shadow: 0 3px 8px rgba(74, 34, 14, 0.18);
+  white-space: nowrap;
+}
+
+/* Description Text */
+.process-card-desc {
+  font-size: 11.5px;
+  line-height: 1.4;
+  color: #55483F;
+  margin: 0;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Connector Chevron Badge (» in golden circle)
+   -------------------------------------------------------------------------- */
+.about-process-connector {
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #F8C868 0%, #D88E28 100%);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(216, 142, 40, 0.35);
+  flex-shrink: 0;
+}
+
+.about-process-connector svg {
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1200px) {
+  .about-process-flow-track {
+    overflow-x: auto;
+    padding: 24px 8px 16px;
+    justify-content: flex-start;
+    gap: 12px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #D88E28 #FFFDF9;
+  }
+
+  .about-process-card {
+    flex: 0 0 160px;
+    min-width: 160px;
+  }
+
+  .process-villa-bg {
+    width: 220px;
+    height: 90px;
+  }
 }
 
 @media (max-width: 768px) {
-  .process-step {
-    flex: 0 0 220px;
+  .about-our-process-section {
+    padding: 40px 0 60px;
   }
 
-  .process-container {
-    padding: 32px 20px;
+  .about-process-header {
+    margin-bottom: 30px;
   }
 
-  .process-title {
-    font-size: 22px;
-    margin-bottom: 32px;
+  .about-process-main-title {
+    font-size: 28px;
   }
 
-  .process-icon-wrapper {
-    margin-bottom: 16px;
+  .about-process-subtitle {
+    font-size: 14px;
   }
 
-  .process-step h4 {
-    font-size: 18px;
-    margin-bottom: 8px;
+  .process-villa-bg,
+  .process-building-left,
+  .process-building-right {
+    display: none;
   }
 
-  .process-step p {
-    font-size: 13px;
+  .about-process-card {
+    flex: 0 0 150px;
+    min-width: 150px;
   }
 }

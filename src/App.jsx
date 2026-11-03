@@ -17,8 +17,13 @@ import Brands from './pages/Brands';
 import PlotAvailabilityPage from './pages/PlotAvailabilityPage';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
+import LegalApprovals from './pages/LegalApprovals';
+import TermsConditions from './pages/TermsConditions';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import Disclaimer from './pages/Disclaimer';
 import SplashScreen from './components/SplashScreen';
 import ProjectDetails from './pages/ProjectDetails';
+import ScrollToTop from './components/ScrollToTop';
 import Lenis from 'lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -47,6 +52,12 @@ const AnimatedRoutes = () => {
         <Route path="/plot-availability" element={<PlotAvailabilityPage />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
+        {/* Official Legal & Compliance Routes */}
+        <Route path="/legal-approvals" element={<LegalApprovals />} />
+        <Route path="/terms" element={<TermsConditions />} />
+        <Route path="/terms-and-conditions" element={<TermsConditions />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/disclaimer" element={<Disclaimer />} />
       </Routes>
     </AnimatePresence>
   );
@@ -57,7 +68,7 @@ function App() {
 
   useEffect(() => {
     if (isLoading) {
-      // Hide splash screen after 9.5 seconds to match the 9.0s loading bar animation
+      // Hide splash screen after 1.0 seconds
       const timer = setTimeout(() => {
         setIsLoading(false);
       }, 1000);
@@ -69,7 +80,7 @@ function App() {
     // Initialize Lenis
     const lenis = new Lenis({
       duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       direction: 'vertical',
       gestureDirection: 'vertical',
       smooth: true,
@@ -77,26 +88,31 @@ function App() {
       smoothTouch: false,
       touchMultiplier: 2,
       infinite: false,
-    })
+    });
+
+    // Make globally accessible for ScrollToTop
+    window.lenis = lenis;
 
     // Update ScrollTrigger on lenis scroll
-    lenis.on('scroll', ScrollTrigger.update)
+    lenis.on('scroll', ScrollTrigger.update);
 
     // Sync GSAP ticker with Lenis
     gsap.ticker.add((time) => {
-      lenis.raf(time * 1000)
-    })
+      lenis.raf(time * 1000);
+    });
 
-    gsap.ticker.lagSmoothing(0)
+    gsap.ticker.lagSmoothing(0);
 
     return () => {
+      window.lenis = null;
       lenis.destroy();
       gsap.ticker.remove(lenis.raf);
-    }
+    };
   }, []);
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="app-wrapper">
         <AnimatePresence mode="wait">
           {isLoading ? (

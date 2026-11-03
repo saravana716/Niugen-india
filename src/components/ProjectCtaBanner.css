@@ -1,0 +1,236 @@
+/* ==========================================================================
+   Project CTA Banner ("Have a Project in Mind?")
+   Pixel-Exact to Mockup Design - Elevated Height & Proportions
+   ========================================================================== */
+
+.project-cta-section {
+  padding: 10px 0 55px; /* Minimal top padding to remove excessive empty space */
+  background-color: var(--color-background, #FFF7EC);
+}
+
+.project-cta-banner {
+  background-color: #381A0B;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 460px 1fr auto;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 16px 40px rgba(56, 26, 11, 0.25);
+  min-height: 250px; /* Elevated height for grand, prominent luxury aesthetic */
+}
+
+/* Far Right Skyline Line-Art Watermark */
+.project-cta-watermark {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 180px;
+  height: 210px;
+  opacity: 0.16;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.project-cta-watermark svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Left Villa Image Showcase */
+.project-cta-image-wrapper {
+  height: 100%;
+  min-height: 250px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.project-cta-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: left center;
+  display: block;
+}
+
+/* Center Content Block */
+.project-cta-content {
+  padding: 32px 36px;
+  position: relative;
+  z-index: 2;
+}
+
+.project-cta-title {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.15;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.cta-accent {
+  color: #FAC460;
+  font-family: inherit;
+}
+
+.project-cta-subtitle {
+  font-size: 21px;
+  font-weight: 700;
+  color: #FAC460;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.2px;
+}
+
+.project-cta-description {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #E5D4C3;
+  margin: 0;
+}
+
+/* Right Action Button */
+.project-cta-action {
+  padding: 32px 48px 32px 20px;
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.project-cta-btn {
+  background-color: #FAC460;
+  color: #241208 !important;
+  font-size: 15.5px;
+  font-weight: 700;
+  padding: 15px 32px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(250, 196, 96, 0.35);
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.project-cta-btn:hover {
+  background-color: #F0A730;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(240, 167, 48, 0.45);
+}
+
+.project-cta-btn svg {
+  transition: transform 0.25s ease;
+}
+
+.project-cta-btn:hover svg {
+  transform: translateX(4px);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+
+/* Large Tablets & Medium Laptops (max-width: 1200px) */
+@media (max-width: 1200px) {
+  .project-cta-banner {
+    grid-template-columns: 380px 1fr auto;
+    min-height: 230px;
+  }
+
+  .project-cta-image-wrapper {
+    min-height: 230px;
+  }
+
+  .project-cta-title {
+    font-size: 36px;
+  }
+
+  .project-cta-subtitle {
+    font-size: 19px;
+  }
+
+  .project-cta-content {
+    padding: 26px 24px;
+  }
+
+  .project-cta-action {
+    padding-right: 32px;
+  }
+}
+
+/* Tablets (max-width: 960px) */
+@media (max-width: 960px) {
+  .project-cta-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: auto;
+  }
+
+  .project-cta-image-wrapper {
+    width: 100%;
+    height: 220px;
+    min-height: 220px;
+  }
+
+  .project-cta-content {
+    padding: 26px 28px 14px;
+  }
+
+  .project-cta-title {
+    font-size: 32px;
+  }
+
+  .project-cta-subtitle {
+    font-size: 18px;
+  }
+
+  .project-cta-action {
+    padding: 0 28px 28px;
+    align-self: flex-start;
+  }
+}
+
+/* Mobile Devices (max-width: 640px) */
+@media (max-width: 640px) {
+  .project-cta-section {
+    padding: 10px 0 45px;
+  }
+
+  .project-cta-banner {
+    border-radius: 16px;
+  }
+
+  .project-cta-image-wrapper {
+    height: 170px;
+    min-height: 170px;
+  }
+
+  .project-cta-title {
+    font-size: 27px;
+  }
+
+  .project-cta-subtitle {
+    font-size: 16px;
+  }
+
+  .project-cta-description {
+    font-size: 13.5px;
+  }
+
+  .project-cta-action {
+    width: 100%;
+    padding: 0 20px 24px;
+  }
+
+  .project-cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -4,6 +4,7 @@ import PageTransition from '../components/PageTransition';
 import ScrollReveal from '../components/ScrollReveal';
 import ParallaxHero from '../components/ParallaxHero';
 import TextReveal from '../components/TextReveal';
+import brandBanner from '../assets/banners/brandbanner.jpeg';
 import './Brands.css';
 
 const brandsList = [
@@ -25,7 +26,7 @@ const Brands = () => {
       <div className="brands-page">
         {/* HERO SECTION */}
         <ParallaxHero 
-          bgImage="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop"
+          bgImage={brandBanner}
           overlayClass="brands-hero-overlay"
         >
           <div className="container brands-hero-content">

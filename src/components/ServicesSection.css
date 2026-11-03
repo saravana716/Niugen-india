@@ -1,5 +1,5 @@
 .services-section-wrapper {
-  background-color: #f7f9fc;
+  background-color: #FAF7F2;
   padding-bottom: 80px;
 }
 
@@ -7,7 +7,7 @@
   position: relative;
   overflow: hidden;
   background-color: #ffffff;
-  padding: 100px 0 180px 0; /* Extra bottom padding to let the grid pull up over it */
+  padding: 100px 0 170px 0;
 }
 
 .services-hero-content {
@@ -23,7 +23,7 @@
 }
 
 .services-hero-text .subtitle {
-  color: var(--color-primary-light);
+  color: #FAC460;
   font-weight: 800;
   font-size: 14px;
   letter-spacing: 0.5px;
@@ -32,7 +32,7 @@
 }
 
 .services-hero-text h2 {
-  color: var(--color-text-dark);
+  color: #FFFFFF;
   font-size: 42px;
   font-weight: 800;
   line-height: 1.2;
@@ -40,11 +40,11 @@
 }
 
 .services-hero-text h2 span {
-  color: var(--color-primary-light);
+  color: #FAC460;
 }
 
 .services-hero-text p {
-  color: #4b5563;
+  color: #E8DDD3;
   font-size: 16px;
   line-height: 1.6;
   font-weight: 500;
@@ -55,7 +55,8 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 55%;
+  width: 100%;
+  left: 0;
   height: 100%;
   z-index: 1;
 }
@@ -67,96 +68,267 @@
   object-position: center;
 }
 
-.services-hero-image::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -1px;
-  width: 350px;
-  height: 100%;
-  background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.8) 40%, rgba(255, 255, 255, 0) 100%);
-  z-index: 2;
-}
-
 .services-grid-area {
   position: relative;
-  margin-top: -120px;
+  margin-top: -110px;
   z-index: 10;
 }
 
-.services-grid {
+/* --------------------------------------------------------------------------
+   Full-Width Services 3x2 Grid (Enlarged Card Height & Font Sizes)
+   -------------------------------------------------------------------------- */
+.services-new-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 22px;
+  margin-bottom: 22px;
 }
 
-.service-card {
-  background-color: #ffffff;
-  border-radius: 16px;
-  padding: 40px 32px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid #eaeaea;
+.service-card-item {
+  background-color: #FFFFFF;
+  border-radius: 18px;
+  border: 1.5px solid #F0E3D3;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+  text-decoration: none;
+  height: 106px;
+  box-shadow: 0 4px 18px rgba(70, 35, 15, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  position: relative;
+  cursor: pointer;
 }
 
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-  border-color: #d1d5db;
+.service-card-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(234, 168, 36, 0.18);
+  border-color: #EAA824;
 }
 
-.service-icon {
-  margin-bottom: 24px;
+.service-card-thumb-wrap {
+  width: 195px;
+  min-width: 195px;
+  height: 100%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
 }
 
-.service-card h3 {
-  color: var(--color-primary);
-  font-size: 22px;
+.service-card-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+  display: block;
+}
+
+.service-card-body {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 16px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.service-card-icon-wrap {
+  margin-bottom: 3px;
+  display: flex;
+  align-items: center;
+}
+
+.service-card-title {
+  color: #34170A;
+  font-size: 19px;
   font-weight: 800;
-  margin-bottom: 12px;
+  margin: 0 0 3px 0;
+  line-height: 1.2;
 }
 
-.service-card p {
-  color: #4b5563;
+.service-card-desc {
+  color: #55483F;
+  font-size: 13px;
+  line-height: 1.4;
+  margin: 0;
+  padding-right: 34px;
+  font-weight: 500;
+}
+
+.service-card-arrow {
+  position: absolute;
+  right: 14px;
+  bottom: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.8px solid #EAA824;
+  color: #EAA824;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  background-color: transparent;
+}
+
+.service-card-item:hover .service-card-arrow {
+  background-color: #EAA824;
+  color: #FFFFFF;
+  transform: scale(1.06);
+}
+
+/* --------------------------------------------------------------------------
+   Full-Width Brands Banner Card (Enlarged Height & Font Sizes)
+   -------------------------------------------------------------------------- */
+.services-brands-banner-card {
+  background-color: #FFFFFF;
+  border-radius: 18px;
+  border: 1.5px solid #F5C66E;
+  display: flex;
+  align-items: center;
+  padding: 0 28px 0 0;
+  gap: 22px;
+  text-decoration: none;
+  height: 100px;
+  box-shadow: 0 4px 20px rgba(245, 198, 110, 0.16);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.services-brands-banner-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(245, 198, 110, 0.26);
+  border-color: #EAA824;
+}
+
+.brands-card-thumb-wrap {
+  width: 295px;
+  min-width: 295px;
+  height: 100%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+.brands-card-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+  display: block;
+}
+
+.brands-card-heading-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.brands-star-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brands-card-title {
+  color: #34170A;
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.brands-card-divider {
+  width: 1.5px;
+  height: 48px;
+  background-color: #DEC8B2;
+  flex-shrink: 0;
+  margin: 0 6px;
+}
+
+.brands-card-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.brands-card-content p {
+  color: #35261D;
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.5;
   font-weight: 500;
   margin: 0;
 }
 
-@media (max-width: 1024px) {
-  .services-grid {
+.brands-banner-arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid #EAA824;
+  color: #EAA824;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+  background-color: transparent;
+}
+
+.services-brands-banner-card:hover .brands-banner-arrow {
+  background-color: #EAA824;
+  color: #FFFFFF;
+  transform: translateX(4px);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Design
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .services-new-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+@media (max-width: 900px) {
+  .services-brands-banner-card {
+    height: auto;
+    flex-wrap: wrap;
+    padding: 16px;
+    gap: 16px;
+  }
+  .brands-card-thumb-wrap {
+    width: 100%;
+    height: 120px;
+    border-radius: 12px;
+  }
+  .brands-card-divider {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
-  .services-grid {
+  .services-new-grid {
     grid-template-columns: 1fr;
   }
   
+  .service-card-item {
+    height: auto;
+    min-height: 95px;
+  }
+
+  .service-card-thumb-wrap {
+    width: 150px;
+    min-width: 150px;
+  }
+  
   .services-hero {
-    min-height: 650px;
+    min-height: 600px;
     padding-top: 20px;
     padding-bottom: 0;
     display: flex;
     flex-direction: column;
-  }
-
-  .services-hero-image {
-    display: block;
-    position: absolute;
-    top: auto;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-  }
-
-  .services-hero-image::after {
-    width: 100%;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.95) 45%, rgba(255, 255, 255, 0) 100%);
-    left: 0;
   }
 
   .services-hero-content {
@@ -170,13 +342,7 @@
   }
 
   .services-hero-text h2 {
-    font-size: 38px;
-    line-height: 1.1;
-  }
-  
-  .services-hero-text p {
-    font-size: 14px;
-    max-width: 85%;
+    font-size: 34px;
   }
 
   .services-grid-area {

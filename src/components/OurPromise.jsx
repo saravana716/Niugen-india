@@ -7,19 +7,18 @@ const OurPromise = () => {
       <div className="container">
         <div className="promise-banner">
           
-          <div className="promise-image-wrapper">
-            <img 
-              src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000" 
-              alt="Gated Community Entrance" 
-            />
-          </div>
+          {/* Visual spacer on desktop reserving the left section for the villa artwork */}
+          <div className="promise-visual-space" aria-hidden="true"></div>
 
           <div className="promise-content">
             
             <div className="promise-text-area">
               <h2>Our Promise</h2>
               <div className="divider-line"></div>
-              <p>We don't just build plots and projects, we build communities, relationships and a better future for generations to come.</p>
+              <p>
+                We don't just build plots and projects, we build communities,
+                relationships and a better future for generations to come.
+              </p>
               <span className="team-sign">- Niu Gen India Infras Team</span>
             </div>
 
@@ -27,17 +26,17 @@ const OurPromise = () => {
               
               <div className="promise-stat">
                 <div className="stat-icon">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-light)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#C86623" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                     <line x1="16" y1="2" x2="16" y2="6"></line>
                     <line x1="8" y1="2" x2="8" y2="6"></line>
                     <line x1="3" y1="10" x2="21" y2="10"></line>
-                    <circle cx="8" cy="14" r="1" fill="var(--color-primary-light)"></circle>
-                    <circle cx="12" cy="14" r="1" fill="var(--color-primary-light)"></circle>
-                    <circle cx="16" cy="14" r="1" fill="var(--color-primary-light)"></circle>
-                    <circle cx="8" cy="18" r="1" fill="var(--color-primary-light)"></circle>
-                    <circle cx="12" cy="18" r="1" fill="var(--color-primary-light)"></circle>
-                    <circle cx="16" cy="18" r="1" fill="var(--color-primary-light)"></circle>
+                    <circle cx="8" cy="14" r="1" fill="#C86623"></circle>
+                    <circle cx="12" cy="14" r="1" fill="#C86623"></circle>
+                    <circle cx="16" cy="14" r="1" fill="#C86623"></circle>
+                    <circle cx="8" cy="18" r="1" fill="#C86623"></circle>
+                    <circle cx="12" cy="18" r="1" fill="#C86623"></circle>
+                    <circle cx="16" cy="18" r="1" fill="#C86623"></circle>
                   </svg>
                 </div>
                 <h3>10+</h3>
@@ -46,7 +45,7 @@ const OurPromise = () => {
 
               <div className="promise-stat">
                 <div className="stat-icon">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-light)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#C86623" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4"></path>
                     <polyline points="14 2 14 8 20 8"></polyline>
                     <path d="M2 15h10"></path>
@@ -59,7 +58,7 @@ const OurPromise = () => {
 
               <div className="promise-stat">
                 <div className="stat-icon">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-light)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#C86623" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                     <circle cx="9" cy="7" r="4"></circle>
                     <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
@@ -73,7 +72,7 @@ const OurPromise = () => {
 
               <div className="promise-stat">
                 <div className="stat-icon">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-light)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#C86623" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M15 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                     <circle cx="8.5" cy="8" r="4"></circle>
                     <polygon points="19 7 20.5 10 24 10 21.2 12 22.3 15 19.5 13.2 16.7 15 17.8 12 15 10 18.5 10" strokeLinejoin="round"></polygon>

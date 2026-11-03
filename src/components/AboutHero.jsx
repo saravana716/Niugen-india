@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import TextReveal from './TextReveal';
+import aboutBanner from '../assets/banners/aboutbanner.jpeg';
 import './AboutHero.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -49,7 +50,7 @@ const AboutHero = () => {
         <div className="about-hero-image" style={{ overflow: 'hidden' }}>
           <img
             ref={imgRef}
-            src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=2000"
+            src={aboutBanner}
             alt="Modern Villa at Sunset"
             style={{ 
               width: '100%',
