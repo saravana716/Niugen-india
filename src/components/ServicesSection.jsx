@@ -140,10 +140,17 @@ const ServicesSection = () => {
             <div className="services-hero-text">
               <TextReveal elementType="span" className="subtitle" text="OUR SERVICES" />
               <h2>
-                <TextReveal text="Comprehensive Solutions" delay={0.2} /><br/>
-                <TextReveal text="for" delay={0.4} /> <TextReveal elementType="span" text="Modern Living." delay={0.4} />
+                <TextReveal text="Comprehensive Real Estate" delay={0.2} /><br/>
+                <TextReveal text="Services for" delay={0.4} /> <TextReveal elementType="span" text="Every Need." delay={0.4} />
               </h2>
-              <TextReveal elementType="p" text="From premium villa plots to thoughtfully planned residential projects, we offer end-to-end real estate solutions tailored to your needs." delay={0.6} />
+              <TextReveal elementType="p" text="From land & plots to residential, commercial, construction and interiors — we offer end-to-end real estate solutions." delay={0.6} />
+              
+              <div className="services-hero-cta-wrapper">
+                <Link to="/contact" className="services-hero-cta-btn">
+                  <span>Get In Touch</span>
+                  <span className="cta-btn-arrow" aria-hidden="true">→</span>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -163,7 +170,7 @@ const ServicesSection = () => {
         </div>
       </div>
 
-      {/* SERVICES CARDS SECTION - FULL WIDTH CONTAINER */}
+      {/* SERVICES CARDS SECTION */}
       <div className="services-grid-area">
         <div className="container">
           
@@ -185,14 +192,16 @@ const ServicesSection = () => {
                 </div>
                 
                 <div className="service-card-body">
-                  <div className="service-card-icon-wrap" aria-hidden="true">
-                    {service.icon}
+                  <div className="service-card-header">
+                    <div className="service-card-icon-wrap" aria-hidden="true">
+                      {service.icon}
+                    </div>
+                    <h3 className="service-card-title">{service.title}</h3>
                   </div>
-                  <h3 className="service-card-title">{service.title}</h3>
                   <p className="service-card-desc">{service.description}</p>
                   
                   <div className="service-card-arrow" aria-hidden="true">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="9 18 15 12 9 6"></polyline>
                     </svg>
                   </div>

@@ -11,7 +11,6 @@ import ProjectCtaBanner from '../components/ProjectCtaBanner';
 import FAQ from '../components/FAQ';
 import PageTransition from '../components/PageTransition';
 import ScrollReveal from '../components/ScrollReveal';
-import HorizontalScrollGallery from '../components/HorizontalScrollGallery';
 
 const Home = () => {
   return (
@@ -22,7 +21,6 @@ const Home = () => {
         <ScrollReveal direction="up"><HomeAbout /></ScrollReveal>
         <ScrollReveal direction="up"><HomeServices /></ScrollReveal>
         <ScrollReveal direction="left"><PremiumProjects /></ScrollReveal>
-        <HorizontalScrollGallery />
         <ScrollReveal direction="up"><ProcessWhyChoose /></ScrollReveal>
         <ScrollReveal direction="left"><OurPromise /></ScrollReveal>
         <ScrollReveal direction="up"><Testimonials /></ScrollReveal>
