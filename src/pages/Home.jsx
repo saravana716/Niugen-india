@@ -5,7 +5,7 @@ import HomeAbout from '../components/HomeAbout';
 import HomeServices from '../components/HomeServices';
 import PremiumProjects from '../components/PremiumProjects';
 import ProcessWhyChoose from '../components/ProcessWhyChoose';
-import PlotAvailability from '../components/PlotAvailability';
+import OurPromise from '../components/OurPromise';
 import Testimonials from '../components/Testimonials';
 import ProjectCtaBanner from '../components/ProjectCtaBanner';
 import FAQ from '../components/FAQ';
@@ -24,7 +24,7 @@ const Home = () => {
         <ScrollReveal direction="left"><PremiumProjects /></ScrollReveal>
         <HorizontalScrollGallery />
         <ScrollReveal direction="up"><ProcessWhyChoose /></ScrollReveal>
-        <ScrollReveal direction="left"><PlotAvailability /></ScrollReveal>
+        <ScrollReveal direction="left"><OurPromise /></ScrollReveal>
         <ScrollReveal direction="up"><Testimonials /></ScrollReveal>
         <ScrollReveal direction="up"><ProjectCtaBanner /></ScrollReveal>
         <ScrollReveal direction="right"><FAQ /></ScrollReveal>

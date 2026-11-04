@@ -5,15 +5,15 @@
 
 .horizontal-gallery-section {
   position: relative;
-  height: 100vh;
-  min-height: 600px;
+  min-height: auto;
   width: 100%;
   overflow: hidden;
   background-color: var(--color-background, #FFF7EC);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding-top: 24px; /* Reduced top spacing to remove excessive white space */
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 
 /* Header in normal flow matching 90% website width */
@@ -161,3 +161,5 @@
     padding: 0 4vw;
   }
 }
+
+

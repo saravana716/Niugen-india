@@ -9,211 +9,31 @@
   margin: 0 auto;
 }
 
-.promise-banner {
-  background: #FBF4EC url('../assets/ourpromise.jpeg') no-repeat left center / cover;
+.promise-banner-image-only {
+  width: 100%;
+  display: block;
   border-radius: 20px;
-  display: flex;
-  position: relative;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(74, 44, 23, 0.08);
   border: 1px solid rgba(212, 160, 23, 0.22);
-  min-height: 250px;
+  line-height: 0;
 }
 
-.promise-visual-space {
-  flex: 0 0 30%;
-  min-width: 220px;
-  max-width: 440px;
-  pointer-events: none;
+.promise-full-banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 20px;
 }
 
-.promise-content {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  padding: 32px 36px 32px 12px;
-  background: transparent;
-  gap: 20px;
-  z-index: 2;
-}
-
-.promise-text-area {
-  flex: 0 0 32%;
-  min-width: 200px;
-  padding-right: 20px;
-}
-
-.promise-text-area h2 {
-  color: #34170A;
-  font-size: 28px;
-  font-weight: 800;
-  line-height: 1.2;
-  margin-bottom: 8px;
-  letter-spacing: -0.01em;
-}
-
-.promise-text-area .divider-line {
-  width: 36px;
-  height: 3px;
-  background: linear-gradient(90deg, #D4A017, #C86623);
-  border-radius: 2px;
-  margin-bottom: 12px;
-}
-
-.promise-text-area p {
-  color: #5A4234;
-  font-size: 13.5px;
-  line-height: 1.6;
-  font-weight: 500;
-  margin-bottom: 14px;
-}
-
-.promise-text-area .team-sign {
-  display: inline-block;
-  color: #C86623;
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.01em;
-}
-
-.promise-stats-area {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.promise-stat {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  position: relative;
-  padding: 0 8px;
-}
-
-.promise-stat:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 15%;
-  height: 70%;
-  width: 1px;
-  background-color: rgba(212, 160, 23, 0.28);
-}
-
-.promise-stat .stat-icon {
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.promise-stat h3 {
-  color: #34170A;
-  font-size: 34px;
-  font-weight: 800;
-  line-height: 1.1;
-  margin-bottom: 4px;
-}
-
-.promise-stat span {
-  color: #5A4234;
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 1.35;
-}
-
-@media (max-width: 1200px) {
-  .promise-visual-space {
-    flex: 0 0 28%;
-    min-width: 180px;
+@media (max-width: 768px) {
+  .our-promise-section {
+    padding: 20px 0;
   }
 
-  .promise-text-area {
-    flex: 0 0 34%;
-  }
-
-  .promise-stat h3 {
-    font-size: 28px;
-  }
-
-  .promise-stat span {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 992px) {
-  .promise-banner {
-    flex-direction: column;
-    background: #FBF4EC;
-  }
-
-  .promise-visual-space {
-    display: block;
-    width: 100%;
-    height: 220px;
-    min-width: 100%;
-    max-width: 100%;
-    background: url('../assets/ourpromise.jpeg') no-repeat left center / cover;
-    border-bottom: 2px solid rgba(212, 160, 23, 0.25);
-  }
-
-  .promise-content {
-    flex-direction: column;
-    padding: 28px 24px 32px 24px;
-    text-align: center;
-    gap: 28px;
-  }
-
-  .promise-text-area {
-    flex: unset;
-    width: 100%;
-    padding-right: 0;
-    text-align: center;
-  }
-
-  .promise-text-area .divider-line {
-    margin: 12px auto;
-  }
-
-  .promise-stats-area {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-  }
-}
-
-@media (max-width: 640px) {
-  .promise-visual-space {
-    height: 180px;
-  }
-
-  .promise-stats-area {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px 12px;
-  }
-
-  .promise-stat:not(:last-child)::after {
-    display: none;
-  }
-
-  .promise-stat h3 {
-    font-size: 24px;
-  }
-
-  .promise-stat span {
-    font-size: 12px;
-  }
-
-  .promise-text-area h2 {
-    font-size: 24px;
-  }
-
-  .promise-text-area p {
-    font-size: 13px;
+  .promise-banner-image-only,
+  .promise-full-banner-img {
+    border-radius: 12px;
   }
 }

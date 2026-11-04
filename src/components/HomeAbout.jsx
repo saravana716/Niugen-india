@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useInView, useMotionValue, useTransform, animate } from 'framer-motion';
-import showcaseImg from '../assets/home-about-showcase-clean.png';
+import showcaseImg from '../assets/newlogo.jpeg';
 import './HomeAbout.css';
 
 const StatCounter = ({ from = 0, to, duration = 2 }) => {
