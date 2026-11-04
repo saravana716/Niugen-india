@@ -1,241 +1,318 @@
-.premium-projects {
-  padding: 40px 0 10px 0;
-  background-color: var(--color-background);
+/* ==========================================================================
+   Featured Projects Swiper / Carousel (Home Page)
+   Pixel-Matched to Reference Design
+   ========================================================================== */
+
+.featured-projects-section {
+  padding: 40px 0 35px;
+  background-color: var(--color-background, #FFF7EC);
 }
 
-.premium-projects .section-header {
+.featured-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: 26px;
+  gap: 20px;
 }
 
-.premium-projects .subtitle {
-  color: var(--color-text-dark);
-  font-weight: 700;
-  font-size: var(--font-size-sm);
-  text-transform: uppercase;
-  display: block;
-  margin-bottom: var(--spacing-xs);
-  letter-spacing: 0.5px;
-}
-
-.premium-projects .title {
-  color: var(--color-primary);
-  font-size: var(--font-size-2xl);
-  font-weight: 800;
-}
-
-.premium-projects .view-all-link {
-  color: var(--color-primary);
-  font-weight: 700;
-  font-size: var(--font-size-sm);
+.eyebrow-tag {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.eyebrow-line {
+  display: inline-block;
+  width: 24px;
+  height: 2.5px;
+  background-color: #E66A23;
+  border-radius: 2px;
+}
+
+.eyebrow-title {
+  color: #D36E2D;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
 }
 
-.premium-projects .view-all-link:hover {
-  color: var(--color-secondary);
+.main-heading {
+  color: #2F170C;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  margin: 0;
+  line-height: 1.2;
 }
 
-.premium-projects .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--spacing-lg);
+.view-all-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 20px;
+  background: #FCF7F1;
+  color: #381A0B !important;
+  font-size: 14px;
+  font-weight: 700;
+  border: 1.5px solid #2F170C;
+  border-radius: 24px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.25s ease;
 }
 
-.project-card {
-  background: var(--color-background);
-  border-radius: 8px;
+.view-all-btn:hover {
+  background: #381A0B;
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(56, 26, 11, 0.2);
+}
+
+.btn-arrow {
+  font-size: 16px;
+  transition: transform 0.2s ease;
+}
+
+.view-all-btn:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   Carousel Track Container
+   ========================================================================== */
+.projects-carousel-container {
+  position: relative;
+  width: 100%;
+}
+
+.projects-track {
+  display: flex;
+  gap: 22px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 10px 4px 24px 4px;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.projects-track::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Floating Navigation Buttons */
+.slider-nav-btn {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(30, 30, 30, 0.72);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  backdrop-filter: blur(4px);
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.slider-nav-btn:hover:not(.disabled) {
+  background: rgba(15, 15, 15, 0.95);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.slider-nav-btn.prev-btn {
+  left: -14px;
+}
+
+.slider-nav-btn.next-btn {
+  right: -14px;
+}
+
+.slider-nav-btn.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   Project Card - Exact to Screenshot 3
+   ========================================================================== */
+.featured-project-card {
+  flex: 0 0 290px;
+  max-width: 290px;
+  background: #FCF8F3;
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  border: 1px solid var(--color-border);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 20px rgba(60, 30, 15, 0.06);
+  border: 1px solid #EFE4D6;
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 15px 35px rgba(74, 44, 23, 0.15);
+.featured-project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(60, 30, 15, 0.12);
 }
 
-.card-image {
+/* Thumbnail wrapper */
+.card-thumb-wrap {
   position: relative;
-  height: 160px;
   width: 100%;
+  height: 180px;
   overflow: hidden;
+  background: #E8DFD3;
 }
 
-.card-image img {
+.card-thumb-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.45s ease;
 }
 
-.project-card:hover .card-image img {
-  transform: scale(1.1);
+.featured-project-card:hover .card-thumb-img {
+  transform: scale(1.05);
 }
 
-.status-badge {
+.project-category-pill {
   position: absolute;
-  top: 8px;
-  left: 8px;
-  padding: 4px 8px;
-  border-radius: 4px;
-  color: white;
-  font-size: 10px;
+  top: 12px;
+  left: 12px;
+  background: #C85817;
+  color: #FFFFFF;
+  font-size: 11px;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  padding: 5px 12px;
+  border-radius: 14px;
+  letter-spacing: 0.2px;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
-.status-green {
-  background-color: var(--color-primary-light);
-}
-
-.status-purple {
-  background-color: var(--color-primary);
-}
-
-.status-purple-dark {
-  background-color: var(--color-text-light);
-}
-
-.card-content {
-  padding: 16px;
+/* Card Body */
+.card-info-wrap {
+  padding: 16px 18px 18px 18px;
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
-.project-title {
-  color: var(--color-primary);
-  font-size: 16px;
+.brand-tag {
+  color: #7232B2;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
   margin-bottom: 4px;
-  font-weight: 700;
 }
 
-.project-location {
+.project-card-title {
+  color: #147A3B;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+  margin: 0 0 10px 0;
+  line-height: 1.25;
+}
+
+/* Color variations to match screenshot: Green Valley (green title), Dream Villas (wine title), Urban Springs (emerald title), Business Park (green title) */
+.featured-project-card:nth-child(2) .project-card-title {
+  color: #8C2224;
+}
+
+.featured-project-card:nth-child(3) .project-card-title {
+  color: #0E6838;
+}
+
+.featured-project-card:nth-child(4) .project-card-title {
+  color: #0A7337;
+}
+
+.featured-project-card:nth-child(5) .project-card-title {
+  color: #1A7036;
+}
+
+.featured-project-card:nth-child(6) .project-card-title {
+  color: #242424;
+}
+
+.location-row {
   display: flex;
   align-items: center;
-  gap: 4px;
-  color: var(--color-text-light);
-  font-size: 12px;
-  margin-bottom: 12px;
-}
-
-.project-details {
-  display: flex;
-  justify-content: space-between;
+  gap: 7px;
+  color: #4A3A31;
+  font-size: 13px;
+  font-weight: 600;
   margin-bottom: 16px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid #f0f0f0;
 }
 
-.detail-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--color-text-dark);
-  font-size: 12px;
-  font-weight: 500;
-  min-width: 0; /* Important for flex children to allow text truncation */
-}
-
-.detail-item span {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  cursor: pointer;
-}
-
-.detail-item svg {
-  color: var(--color-text-light);
+.location-row svg {
   flex-shrink: 0;
 }
 
-.project-footer {
+/* View Project Button pill */
+.view-project-action {
   margin-top: auto;
-}
-
-.price-info {
-  margin-bottom: 12px;
-}
-
-.price {
-  color: var(--color-text-dark);
-  font-size: 16px;
-  font-weight: 800;
-  line-height: 1.2;
-}
-
-.price-label {
-  color: var(--color-text-light);
-  font-size: 11px;
-  margin-top: 2px;
-}
-
-.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   width: 100%;
-  padding: 8px;
-  background: transparent;
-  border: 1px solid var(--color-border);
-  color: var(--color-text-dark);
-  border-radius: 4px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s;
-  text-transform: uppercase;
-  font-size: 12px;
+  padding: 9px 16px;
+  background: #652C14;
+  color: #FFFFFF !important;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 3px 10px rgba(101, 44, 20, 0.25);
 }
 
-.btn-outline:hover {
-  background: var(--color-primary);
-  color: white;
-  border-color: var(--color-primary);
+.view-project-action:hover {
+  background: #4A1E0C;
+  color: #FFFFFF !important;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 14px rgba(101, 44, 20, 0.35);
 }
 
-@media (max-width: 1200px) {
-  .premium-projects .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
+.action-arrow {
+  font-size: 15px;
+  transition: transform 0.2s ease;
+}
+
+.view-project-action:hover .action-arrow {
+  transform: translateX(3px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .featured-project-card {
+    flex: 0 0 270px;
+    max-width: 270px;
   }
 }
 
 @media (max-width: 768px) {
-  .premium-projects {
-    padding: 40px 0;
-  }
-
-  .premium-projects .projects-grid {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: var(--spacing-md);
-    padding-bottom: var(--spacing-lg);
-    -webkit-overflow-scrolling: touch;
-    /* Hide scrollbar for a cleaner look */
-    scrollbar-width: none;
-  }
-  
-  .premium-projects .projects-grid::-webkit-scrollbar {
-    display: none;
-  }
-
-  .project-card {
-    min-width: 100%;
-    width: 100%;
-    flex: 0 0 100%;
-    scroll-snap-align: start;
-    box-sizing: border-box;
-  }
-
-  .premium-projects .section-header {
+  .featured-header {
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--spacing-md);
+  }
+
+  .slider-nav-btn {
+    display: none; /* Touch swipe on mobile */
+  }
+
+  .featured-project-card {
+    flex: 0 0 260px;
+    max-width: 260px;
   }
 }

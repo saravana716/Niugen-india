@@ -1,247 +1,390 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import './ProjectsList.css';
+
+const filterTabs = [
+  { id: 'all', label: 'All Projects', icon: null },
+  {
+    id: 'plots',
+    label: 'Plots & Layouts',
+    icon: (
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+        <circle cx="12" cy="10" r="3"></circle>
+      </svg>
+    )
+  },
+  {
+    id: 'villa',
+    label: 'Villa Projects',
+    icon: (
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+      </svg>
+    )
+  },
+  {
+    id: 'gated',
+    label: 'Gated Communities',
+    icon: (
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+        <line x1="9" y1="3" x2="9" y2="21"></line>
+      </svg>
+    )
+  },
+  {
+    id: 'commercial',
+    label: 'Commercial',
+    icon: (
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+        <line x1="9" y1="22" x2="9" y2="12"></line>
+      </svg>
+    )
+  },
+  {
+    id: 'ongoing',
+    label: 'Ongoing Projects',
+    icon: (
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M2 18h20"></path>
+        <path d="M12 6v12"></path>
+      </svg>
+    )
+  },
+  {
+    id: 'completed',
+    label: 'Completed Projects',
+    icon: (
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    )
+  }
+];
 
 const projectsData = [
   {
     id: 1,
-    title: "Greenfield City",
-    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800",
-    badge: "ONGOING",
-    badgeColor: "var(--color-primary)",
-    location: "Kovilpatti",
-    type: "Villa Plots",
-    size: "1200 - 2400 Sq.ft",
-    desc: "A well-planned villa plot project with modern amenities and excellent connectivity.",
-    unitsLabel: "Plots",
-    units: "120+",
-    price: "₹ 7.99 Lakhs*",
-    status: "Ongoing"
+    badge: 'Premium Plots',
+    brand: 'NIU GEN',
+    title: 'Green Valley',
+    titleColor: '#147A3B',
+    location: 'Chennai, Tamil Nadu',
+    category: ['plots', 'gated'],
+    image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=700&q=80',
+    features: [
+      {
+        icon: (
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#D36E2D" strokeWidth="2">
+            <rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+        ),
+        text: 'Residential Plots'
+      },
+      {
+        icon: (
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#D36E2D" strokeWidth="2">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          </svg>
+        ),
+        text: 'Gated Community'
+      },
+      {
+        icon: (
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#D36E2D" strokeWidth="2">
+            <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline>
+          </svg>
+        ),
+        text: 'Great Connectivity'
+      }
+    ]
   },
   {
     id: 2,
-    title: "Royal Meadows",
-    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=800",
-    badge: "NEW LAUNCH",
-    badgeColor: "var(--color-primary)",
-    location: "Kovilpatti",
-    type: "Villa Plots",
-    size: "1000 - 2400 Sq.ft",
-    desc: "Spacious villa plots in a serene environment, perfect for your dream home.",
-    unitsLabel: "Plots",
-    units: "85+",
-    price: "₹ 5.99 Lakhs*",
-    status: "New Launch"
+    badge: 'Villa Community',
+    brand: 'NIU GEN',
+    title: 'Dream Villas',
+    titleColor: '#8C2224',
+    location: 'Coimbatore, Tamil Nadu',
+    category: ['villa', 'gated'],
+    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&q=80',
+    features: [
+      {
+        icon: (
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#D36E2D" strokeWidth="2">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          </svg>
+        ),
+        text: 'Premium Villas'
+      },
+      {
+        icon: (
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#D36E2D" strokeWidth="2">
+            <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+          </svg>
+        ),
+        text: 'Clubhouse & Amenities'
+      },
+      {
+        icon: (
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#D36E2D" strokeWidth="2">
+            <circle cx="12" cy="12" r="10"></circle>
+          </svg>
+        ),
+        text: 'Landscaped Community'
+      }
+    ]
   },
   {
     id: 3,
-    title: "Sunrise Avenue",
-    image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=800",
-    badge: "ONGOING",
-    badgeColor: "var(--color-primary)",
-    location: "Kovilpatti",
-    type: "Residential Plots",
-    size: "600 - 2400 Sq.ft",
-    desc: "Residential plots with complete infrastructure and modern amenities.",
-    unitsLabel: "Plots",
-    units: "150+",
-    price: "₹ 6.49 Lakhs*",
-    status: "Ongoing"
+    badge: 'Integrated Township',
+    brand: 'NIU GEN',
+    title: 'Urban Springs',
+    titleColor: '#0E6838',
+    location: 'Trichy, Tamil Nadu',
+    category: ['plots', 'villa', 'ongoing'],
+    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=700&q=80',
+    features: [
+      {
+        icon: (
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#D36E2D" strokeWidth="2">
+            <rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect>
+          </svg>
+        ),
+        text: 'Plots & Villas'
+      },
+      {
+        icon: (
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#D36E2D" strokeWidth="2">
+            <circle cx="12" cy="12" r="10"></circle>
+          </svg>
+        ),
+        text: 'Parks & Open Spaces'
+      },
+      {
+        icon: (
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#D36E2D" strokeWidth="2">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+          </svg>
+        ),
+        text: 'Well-Planned Infrastructure'
+      }
+    ]
   },
   {
     id: 4,
-    title: "Serenity Villas",
-    image: "https://images.unsplash.com/photo-1600607687920-4e2a09be15c7?auto=format&fit=crop&q=80&w=800",
-    badge: "UPCOMING",
-    badgeColor: "var(--color-primary)",
-    location: "Kovilpatti",
-    type: "Luxury Villas",
-    size: "1500 - 3000 Sq.ft",
-    desc: "Premium luxury villas designed for a modern and comfortable lifestyle.",
-    unitsLabel: "Villas",
-    units: "40+",
-    price: "₹ 35.99 Lakhs*",
-    status: "Upcoming"
+    badge: 'Villa Community',
+    brand: 'NIU GEN',
+    title: 'Garden Villas',
+    titleColor: '#1A7036',
+    location: 'Madurai, Tamil Nadu',
+    category: ['villa', 'gated', 'completed'],
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=80',
+    features: [
+      {
+        icon: (
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#D36E2D" strokeWidth="2">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          </svg>
+        ),
+        text: 'Luxury Villas'
+      },
+      {
+        icon: (
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#D36E2D" strokeWidth="2">
+            <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+          </svg>
+        ),
+        text: 'Modern Amenities'
+      },
+      {
+        icon: (
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#D36E2D" strokeWidth="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        ),
+        text: 'Secure & Serene Living'
+      }
+    ]
+  },
+  {
+    id: 5,
+    badge: 'Commercial',
+    brand: 'NIU GEN',
+    title: 'Business Park',
+    titleColor: '#0A7337',
+    location: 'Chennai, Tamil Nadu',
+    category: ['commercial', 'ongoing'],
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=700&q=80',
+    features: [
+      {
+        icon: (
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#D36E2D" strokeWidth="2">
+            <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+          </svg>
+        ),
+        text: 'Commercial Spaces'
+      },
+      {
+        icon: (
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#D36E2D" strokeWidth="2">
+            <circle cx="12" cy="12" r="10"></circle>
+          </svg>
+        ),
+        text: 'Prime Location'
+      },
+      {
+        icon: (
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#D36E2D" strokeWidth="2">
+            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+          </svg>
+        ),
+        text: 'High Investment Value'
+      }
+    ]
+  },
+  {
+    id: 6,
+    badge: 'Ongoing Project',
+    brand: 'NIU GEN',
+    title: 'City Heights',
+    titleColor: '#242424',
+    location: 'Salem, Tamil Nadu',
+    category: ['ongoing'],
+    image: 'https://images.unsplash.com/photo-1541888081622-1262d1c68e14?w=700&q=80',
+    features: [
+      {
+        icon: (
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#D36E2D" strokeWidth="2">
+            <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+          </svg>
+        ),
+        text: 'Residential Development'
+      },
+      {
+        icon: (
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#D36E2D" strokeWidth="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        ),
+        text: 'Quality Construction'
+      },
+      {
+        icon: (
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#D36E2D" strokeWidth="2">
+            <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline>
+          </svg>
+        ),
+        text: 'On-Time Delivery'
+      }
+    ]
   }
 ];
 
 const ProjectsList = () => {
-  const [activeTab, setActiveTab] = useState('All Projects');
-  const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
-  const tabs = ['All Projects', 'Ongoing', 'New Launch', 'Upcoming', 'Completed'];
+  const [activeTab, setActiveTab] = useState('all');
+
+  const filteredProjects = activeTab === 'all'
+    ? projectsData
+    : projectsData.filter((p) => p.category.includes(activeTab));
 
   return (
-    <section className="projects-list-section">
+    <section className="projects-grid-section">
       <div className="container">
-        
-        {/* Filter Tabs & Modal Container */}
-        <div className="projects-filter-container">
-          
-          {/* Desktop Filters */}
-          <div className="projects-filter desktop-only">
-            {tabs.map(tab => (
-              <button 
-                key={tab} 
-                className={`filter-tab ${activeTab === tab ? 'active' : ''}`}
-                onClick={() => setActiveTab(tab)}
-              >
-                {tab}
-              </button>
-            ))}
-          </div>
-
-          {/* Mobile Filter Button */}
-          <button className="mobile-filter-btn mobile-only" onClick={() => setIsFilterModalOpen(true)}>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
-            Filter: {activeTab}
-          </button>
+        {/* Top Filter Buttons Pill Bar */}
+        <div className="projects-filter-bar">
+          {filterTabs.map((tab) => (
+            <button
+              key={tab.id}
+              className={`filter-pill-btn ${activeTab === tab.id ? 'active' : ''}`}
+              onClick={() => setActiveTab(tab.id)}
+            >
+              {tab.icon && <span className="tab-icon">{tab.icon}</span>}
+              <span>{tab.label}</span>
+            </button>
+          ))}
         </div>
 
-        {/* Projects List */}
-        <motion.div 
-          className="projects-list"
-          variants={{
-            hidden: { opacity: 0 },
-            show: {
-              opacity: 1,
-              transition: { staggerChildren: 0.15 }
-            }
-          }}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.1 }}
-        >
-          {projectsData.map(project => (
-            <motion.div 
-              className="project-list-card" 
-              key={project.id}
-              variants={{
-                hidden: { opacity: 0, x: -30 },
-                show: { opacity: 1, x: 0, transition: { duration: 0.5, ease: "easeOut" } }
-              }}
-            >
-              
-              <div className="project-card-image">
-                <div className="project-badge" style={{ backgroundColor: project.badgeColor }}>
-                  {project.badge}
+        {/* 3-Column Grid of 50/50 Cards */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab}
+            className="projects-showcase-grid"
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
+          >
+            {filteredProjects.map((project) => (
+              <div key={project.id} className="project-split-card">
+                {/* Left 50%: Thumbnail Image */}
+                <div className="split-card-media">
+                  <span className="split-category-pill">{project.badge}</span>
+                  <img
+                    src={project.image}
+                    alt={`${project.brand} ${project.title}`}
+                    className="split-img"
+                    loading="lazy"
+                  />
                 </div>
-                <img src={project.image} alt={project.title} />
+
+                {/* Right 50%: Details Content */}
+                <div className="split-card-body">
+                  <span className="split-brand-tag">{project.brand}</span>
+                  <h3 className="split-title" style={{ color: project.titleColor }}>
+                    {project.title}
+                  </h3>
+
+                  <div className="split-location">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#D36E2D" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>{project.location}</span>
+                  </div>
+
+                  {/* 3 bullet feature rows */}
+                  <div className="split-features">
+                    {project.features.map((feat, idx) => (
+                      <div key={idx} className="feature-bullet">
+                        <span className="feature-icon">{feat.icon}</span>
+                        <span className="feature-text">{feat.text}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <Link to="/contact" className="split-view-btn">
+                    <span>View Project</span>
+                    <span className="btn-arrow">→</span>
+                  </Link>
+                </div>
               </div>
+            ))}
+          </motion.div>
+        </AnimatePresence>
 
-              <div className="project-card-content">
-                <h3>{project.title}</h3>
-                
-                <div className="project-meta">
-                  <span className="meta-item">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                    {project.location}
-                  </span>
-                  <span className="meta-item">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-                    {project.type}
-                  </span>
-                  <span className="meta-item">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
-                    {project.size}
-                  </span>
-                </div>
-
-                <p className="project-desc">{project.desc}</p>
-
-                <hr className="project-divider" />
-
-                <div className="project-stats-row">
-                  <div className="stat-col">
-                    <span className="stat-label">{project.unitsLabel}</span>
-                    <span className="stat-value">{project.units}</span>
-                  </div>
-                  <div className="stat-divider"></div>
-                  
-                  <div className="stat-col">
-                    <span className="stat-label">Starting From</span>
-                    <span className="stat-value highlight">{project.price}</span>
-                  </div>
-                  <div className="stat-divider"></div>
-                  
-                  <div className="stat-col">
-                    <span className="stat-label">Status</span>
-                    <span className="stat-value text-green">{project.status}</span>
-                  </div>
-                  
-                  <div className="stat-action">
-                    <Link to={`/projects/${project.id}`} className="btn-outline-green" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}>
-                      VIEW DETAILS
-                    </Link>
-                  </div>
-                </div>
-
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* Bottom Banner */}
-        <div className="projects-contact-banner">
-          <div className="pcb-left">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5">
-              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-              <line x1="16" y1="2" x2="16" y2="6"></line>
-              <line x1="8" y1="2" x2="8" y2="6"></line>
-              <line x1="3" y1="10" x2="21" y2="10"></line>
-              <rect x="7" y="14" width="2" height="2"></rect>
-              <rect x="11" y="14" width="2" height="2"></rect>
-              <rect x="15" y="14" width="2" height="2"></rect>
-              <rect x="7" y="18" width="2" height="2"></rect>
-              <rect x="11" y="18" width="2" height="2"></rect>
-              <rect x="15" y="18" width="2" height="2"></rect>
+        {/* Have a Project Requirement? Bottom Strip */}
+        <div className="project-requirement-strip">
+          <div className="strip-left-icon">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#E69535" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
             </svg>
-            <div className="pcb-text">
-              <h4>Can't Find What<br/>You're Looking For?</h4>
-            </div>
           </div>
-          <div className="pcb-center">
-            <p>Our experts will help you find the perfect<br/>property that suits your needs.</p>
+          <div className="strip-content">
+            <h3 className="strip-title">Have a Project Requirement?</h3>
+            <p className="strip-desc">Let's discuss your land, villa or infrastructure project today.</p>
           </div>
-          <div className="pcb-right">
-            <button className="btn btn-primary enquire-btn">
-              ENQUIRE NOW 
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ marginLeft: '8px' }}><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </button>
-          </div>
+          <Link to="/contact" className="strip-enquire-btn">
+            <span>Enquire Now</span>
+            <span>→</span>
+          </Link>
         </div>
       </div>
-
-      {/* Mobile Filter Modal */}
-      {isFilterModalOpen && (
-        <div className="filter-modal-overlay" onClick={() => setIsFilterModalOpen(false)}>
-          <div className="filter-modal-content" onClick={e => e.stopPropagation()}>
-            <div className="filter-modal-header">
-              <h3>Filter Projects</h3>
-              <button className="close-modal-btn" onClick={() => setIsFilterModalOpen(false)}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-              </button>
-            </div>
-            <div className="filter-modal-options">
-              {tabs.map(tab => (
-                <button 
-                  key={tab} 
-                  className={`filter-modal-option ${activeTab === tab ? 'active' : ''}`}
-                  onClick={() => {
-                    setActiveTab(tab);
-                    setIsFilterModalOpen(false);
-                  }}
-                >
-                  {tab}
-                  {activeTab === tab && (
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  )}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 };
