@@ -5,27 +5,28 @@
 
 .horizontal-gallery-section {
   position: relative;
-  min-height: auto;
+  height: 100vh;
+  min-height: 600px;
   width: 100%;
   overflow: hidden;
   background-color: var(--color-background, #FFF7EC);
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  padding-top: 24px;
-  padding-bottom: 24px;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
-/* Header in normal flow matching 90% website width */
+/* Header pinned nicely inside the pinned viewport container */
 .horizontal-gallery-header {
   width: 90%;
-  margin: 0 auto 34px auto; /* 34px clear gap between subtitle text and slider cards */
+  max-width: 1720px;
+  margin: 0 auto 30px auto;
   position: relative;
   z-index: 10;
 }
 
 .horizontal-gallery-header .title {
-  font-size: 42px;
+  font-size: clamp(28px, 3.5vw, 42px);
   font-weight: 800;
   color: var(--color-primary, #381A0B);
   margin-bottom: 6px;
@@ -34,10 +35,11 @@
 }
 
 .horizontal-gallery-header .subtitle {
-  font-size: 16px;
+  font-size: clamp(14px, 1.5vw, 16px);
   color: #665C54;
   font-weight: 500;
   line-height: 1.4;
+  margin: 0;
 }
 
 /* Slider Track */
@@ -45,7 +47,7 @@
   display: flex;
   flex-wrap: nowrap;
   gap: 32px;
-  padding: 0 5vw; /* Aligns first card with 5% margin of 90% container */
+  padding: 0 5vw;
   width: max-content;
   align-items: center;
   height: auto;
@@ -54,8 +56,8 @@
 /* Individual Gallery Card */
 .horizontal-gallery-item {
   position: relative;
-  width: 520px;
-  height: 380px;
+  width: 500px;
+  height: 360px;
   flex-shrink: 0;
   border-radius: 16px;
   overflow: hidden;
@@ -100,14 +102,14 @@
 }
 
 .hg-info h3 {
-  font-size: 28px;
+  font-size: 26px;
   margin-bottom: 4px;
   font-weight: 700;
   color: #FFFFFF;
 }
 
 .hg-info span {
-  font-size: 14px;
+  font-size: 13px;
   color: #FAC460;
   font-weight: 600;
   text-transform: uppercase;
@@ -121,39 +123,27 @@
 @media (max-width: 1024px) {
   .horizontal-gallery-item {
     width: 420px;
-    height: 330px;
+    height: 320px;
   }
 
   .horizontal-gallery-header {
-    margin-bottom: 24px;
-  }
-
-  .horizontal-gallery-header .title {
-    font-size: 34px;
+    margin-bottom: 20px;
   }
 }
 
 @media (max-width: 768px) {
   .horizontal-gallery-section {
-    padding-top: 18px;
+    height: 100vh;
   }
 
   .horizontal-gallery-header {
     width: 92%;
-    margin-bottom: 20px;
-  }
-
-  .horizontal-gallery-header .title {
-    font-size: 28px;
-  }
-
-  .horizontal-gallery-header .subtitle {
-    font-size: 14px;
+    margin-bottom: 16px;
   }
 
   .horizontal-gallery-item {
-    width: 310px;
-    height: 380px;
+    width: 300px;
+    height: 350px;
   }
 
   .horizontal-gallery-track {
@@ -161,5 +151,3 @@
     padding: 0 4vw;
   }
 }
-
-

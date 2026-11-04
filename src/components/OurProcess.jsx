@@ -89,9 +89,7 @@ const OurProcess = () => {
     <section className="about-our-process-section">
       {/* Decorative Assets matching Exact Mockup */}
       <img src={leavesImg} alt="" className="process-leaves-bg" aria-hidden="true" />
-      <img src={villaImg} alt="" className="process-villa-bg" aria-hidden="true" />
       <img src={buildingLeftImg} alt="" className="process-building-left" aria-hidden="true" />
-      <img src={buildingRightImg} alt="" className="process-building-right" aria-hidden="true" />
       <img src={waveBarImg} alt="" className="process-wave-bar" aria-hidden="true" />
 
       <div className="container about-process-container">
